@@ -8,7 +8,6 @@ export class PlayerState extends Schema {
     @type("number")
     totalCountriesFound: number = 0;
 
-
     constructor(playerUsername: string) {
         super();
         this.playerUsername = playerUsername;

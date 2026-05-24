@@ -7,22 +7,18 @@ import {
     createEndpoint,
 } from "colyseus";
 
-
 import { CountriesGameRoom } from "./rooms/CountriesGameRoom.js";
 
 const server = defineServer({
-
     rooms: {
-        countries_game: defineRoom(CountriesGameRoom)
+        countries_game: defineRoom(CountriesGameRoom),
     },
 
-
     routes: createRouter({
-        api_hello: createEndpoint("/api/hello", { method: "GET", }, async (ctx) => {
-            return { message: "Hello World" }
-        })
+        api_hello: createEndpoint("/api/hello", { method: "GET" }, async (ctx) => {
+            return { message: "Hello World" };
+        }),
     }),
-
 
     express: (app) => {
         app.get("/hi", (req, res) => {
@@ -43,8 +39,7 @@ const server = defineServer({
         if (process.env.NODE_ENV !== "production") {
             app.use("/", playground());
         }
-    }
-
+    },
 });
 
 export default server;

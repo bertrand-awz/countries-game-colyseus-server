@@ -1,7 +1,6 @@
 import { Schema, type } from "@colyseus/schema";
 
-export class ContinentProgressState  extends Schema
-{
+export class ContinentProgressState extends Schema {
     @type("string")
     name: string;
     @type("number")
@@ -15,7 +14,7 @@ export class ContinentProgressState  extends Schema
         this.numberOfCountries = numberOfCountries;
     }
 
-    incrementNumberOfCountriesFound(){
-        this.totalCountriesFound ++;
+    incrementNumberOfCountriesFound() {
+        this.totalCountriesFound++;
     }
 }
