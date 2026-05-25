@@ -2,7 +2,7 @@ import { Schema, type } from "@colyseus/schema";
 
 export class PlayerState extends Schema {
     @type("string")
-    playerUsername: string;
+    username: string;
     @type("number")
     score: number = 0;
     @type("number")
@@ -10,7 +10,7 @@ export class PlayerState extends Schema {
 
     constructor(playerUsername: string) {
         super();
-        this.playerUsername = playerUsername;
+        this.username = playerUsername;
     }
 
     addScore(points: number) {

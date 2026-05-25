@@ -8,6 +8,7 @@ import {
 } from "colyseus";
 
 import { CountriesGameRoom } from "./rooms/CountriesGameRoom.js";
+import {buildContinentsTranslations, continentsDetails} from "./data/continents.js";
 
 const server = defineServer({
     rooms: {
@@ -15,15 +16,18 @@ const server = defineServer({
     },
 
     routes: createRouter({
-        api_hello: createEndpoint("/api/hello", { method: "GET" }, async (ctx) => {
-            return { message: "Hello World" };
+        api_heartbeat: createEndpoint("/api/heartbeat", { method: "GET" }, async (ctx) => {
+            return { message: "Yes, your heart is beating. You're not dead yet. You're still alive :)" };
         }),
+        game_details: createEndpoint("/api/details",{method:"GET"}, async () => {
+            return {
+                continents: continentsDetails,
+                translations: buildContinentsTranslations(),
+            };
+        })
     }),
 
     express: (app) => {
-        app.get("/hi", (req, res) => {
-            res.send("It's time to kick ass and chew bubblegum!");
-        });
 
         /**
          * Use @colyseus/monitor
