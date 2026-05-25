@@ -1,5 +1,3 @@
-// src/data/continents.ts
-
 export type SupportedLanguage = "fr" | "en";
 
 export type ContinentCode =

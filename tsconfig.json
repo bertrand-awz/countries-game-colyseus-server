@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
         "outDir": "build",
         "target": "ESNext",
         "module": "NodeNext",
@@ -11,7 +12,13 @@
         "experimentalDecorators": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "useDefineForClassFields": false
+        "useDefineForClassFields": false,
+        "baseUrl": ".",
+        "paths": {
+            "#data/*": ["src/data/*"],
+            "#rooms/*": ["src/rooms/*"],
+            "#services/*": ["src/services/*"]
+        }
     },
     "include": ["src", "test"]
 }

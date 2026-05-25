@@ -1,6 +1,7 @@
 import { Room, Client, CloseCode } from "colyseus";
 import { CountriesGameState, GameStatus } from "./schema/CountriesGameState.js";
 import { PlayerState } from "./schema/PlayerState.js";
+import { countriesAnswerValidationService } from "#services/CountriesAnswerValidationService.js";
 
 type JoinOptions = {
     username?: string;

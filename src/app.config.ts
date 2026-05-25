@@ -7,8 +7,9 @@ import {
     createEndpoint,
 } from "colyseus";
 
-import { CountriesGameRoom } from "./rooms/CountriesGameRoom.js";
-import { buildContinentsTranslations, continentsDetails } from "./data/continents.js";
+import { CountriesGameRoom } from "#rooms/CountriesGameRoom.js";
+import { buildContinentsTranslations, continentsDetails } from "#data/continents.js";
+import { countriesMapService } from "#services/CountriesMapService.js";
 
 const server = defineServer({
     rooms: {
@@ -21,11 +22,16 @@ const server = defineServer({
                 message: "Yes, your heart is beating. You're not dead yet. You're still alive :)",
             };
         }),
+
         game_details: createEndpoint("/api/details", { method: "GET" }, async () => {
             return {
                 continents: continentsDetails,
                 translations: buildContinentsTranslations(),
             };
+        }),
+
+        game_map: createEndpoint("/api/map", { method: "GET" }, async () => {
+            return countriesMapService.getCountriesMapFeatures();
         }),
     }),
 
