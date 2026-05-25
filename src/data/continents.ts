@@ -78,18 +78,12 @@ export function buildContinentsTranslations() {
     return {
         fr: {
             CONTINENTS: Object.fromEntries(
-                continentsDetails.map((continent) => [
-                    continent.code,
-                    continent.names.fr,
-                ]),
+                continentsDetails.map((continent) => [continent.code, continent.names.fr]),
             ),
         },
         en: {
             CONTINENTS: Object.fromEntries(
-                continentsDetails.map((continent) => [
-                    continent.code,
-                    continent.names.en,
-                ]),
+                continentsDetails.map((continent) => [continent.code, continent.names.en]),
             ),
         },
     };
