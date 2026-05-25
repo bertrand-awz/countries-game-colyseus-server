@@ -1,0 +1,2458 @@
+{
+    "countries": [
+        {
+            "id": "AFG",
+            "names": {
+                "fr": "Afghanistan",
+                "en": "Afghanistan",
+                "de": "Afghanistan",
+                "es": "Afganistán",
+                "ja": "アフガニスタン"
+            },
+            "acceptedAnswers": ["afghanistan", "afganistan", "アフカニスタン"]
+        },
+        {
+            "id": "ALA",
+            "names": {
+                "fr": "Åland",
+                "en": "Åland",
+                "de": "Åland",
+                "es": "Åland",
+                "ja": "オーランド諸島"
+            },
+            "acceptedAnswers": ["aland", "オラント諸島"]
+        },
+        {
+            "id": "ALB",
+            "names": {
+                "fr": "Albanie",
+                "en": "Albania",
+                "de": "Albanien",
+                "es": "Albania",
+                "ja": "アルバニア"
+            },
+            "acceptedAnswers": ["albanie", "albania", "albanien", "アルハニア"]
+        },
+        {
+            "id": "DZA",
+            "names": {
+                "fr": "Algérie",
+                "en": "Algeria",
+                "de": "Algerien",
+                "es": "Argelia",
+                "ja": "アルジェリア"
+            },
+            "acceptedAnswers": ["algerie", "algeria", "algerien", "argelia", "アルシェリア"]
+        },
+        {
+            "id": "AND",
+            "names": {
+                "fr": "Andorre",
+                "en": "Andorra",
+                "de": "Andorra",
+                "es": "Andorra",
+                "ja": "アンドラ"
+            },
+            "acceptedAnswers": ["andorre", "andorra", "アントラ"]
+        },
+        {
+            "id": "AGO",
+            "names": {
+                "fr": "Angola",
+                "en": "Angola",
+                "de": "Angola",
+                "es": "Angola",
+                "ja": "アンゴラ"
+            },
+            "acceptedAnswers": ["angola", "アンコラ"]
+        },
+        {
+            "id": "ATG",
+            "names": {
+                "fr": "Antigua-et-Barbuda",
+                "en": "Antigua and Barbuda",
+                "de": "Antigua und Barbuda",
+                "es": "Antigua y Barbuda",
+                "ja": "アンティグア・バーブーダ"
+            },
+            "acceptedAnswers": [
+                "antigua et barbuda",
+                "antigua and barbuda",
+                "antigua und barbuda",
+                "antigua y barbuda",
+                "アンティクア・ハフタ"
+            ]
+        },
+        {
+            "id": "ARG",
+            "names": {
+                "fr": "Argentine",
+                "en": "Argentina",
+                "de": "Argentinien",
+                "es": "Argentina",
+                "ja": "アルゼンチン"
+            },
+            "acceptedAnswers": ["argentine", "argentina", "argentinien", "アルセンチン"]
+        },
+        {
+            "id": "ARM",
+            "names": {
+                "fr": "Arménie",
+                "en": "Armenia",
+                "de": "Armenien",
+                "es": "Armenia",
+                "ja": "アルメニア"
+            },
+            "acceptedAnswers": ["armenie", "armenia", "armenien", "アルメニア"]
+        },
+        {
+            "id": "ABW",
+            "names": {
+                "fr": "Aruba",
+                "en": "Aruba",
+                "de": "Aruba",
+                "es": "Aruba",
+                "ja": "アルバ"
+            },
+            "acceptedAnswers": ["aruba", "アルハ"]
+        },
+        {
+            "id": "AUS",
+            "names": {
+                "fr": "Australie",
+                "en": "Australia",
+                "de": "Australien",
+                "es": "Australia",
+                "ja": "オーストラリア"
+            },
+            "acceptedAnswers": ["australie", "australia", "australien", "オストラリア"]
+        },
+        {
+            "id": "AUT",
+            "names": {
+                "fr": "Autriche",
+                "en": "Austria",
+                "de": "Österreich",
+                "es": "Austria",
+                "ja": "オーストリア"
+            },
+            "acceptedAnswers": ["autriche", "austria", "osterreich", "オストリア"]
+        },
+        {
+            "id": "AZE",
+            "names": {
+                "fr": "Azerbaïdjan",
+                "en": "Azerbaijan",
+                "de": "Aserbaidschan",
+                "es": "Azerbaiyán",
+                "ja": "アゼルバイジャン"
+            },
+            "acceptedAnswers": [
+                "azerbaidjan",
+                "azerbaijan",
+                "aserbaidschan",
+                "azerbaiyan",
+                "アセルハイシャン"
+            ]
+        },
+        {
+            "id": "BHR",
+            "names": {
+                "fr": "Bahreïn",
+                "en": "Bahrain",
+                "de": "Bahrain",
+                "es": "Baréin",
+                "ja": "バーレーン"
+            },
+            "acceptedAnswers": ["bahrein", "bahrain", "barein", "ハレン"]
+        },
+        {
+            "id": "BGD",
+            "names": {
+                "fr": "Bangladesh",
+                "en": "Bangladesh",
+                "de": "Bangladesch",
+                "es": "Bangladés",
+                "ja": "バングラデシュ"
+            },
+            "acceptedAnswers": ["bangladesh", "bangladesch", "banglades", "ハンクラテシュ"]
+        },
+        {
+            "id": "BRB",
+            "names": {
+                "fr": "Barbade",
+                "en": "Barbados",
+                "de": "Barbados",
+                "es": "Barbados",
+                "ja": "バルバドス"
+            },
+            "acceptedAnswers": ["barbade", "barbados", "ハルハトス"]
+        },
+        {
+            "id": "BLR",
+            "names": {
+                "fr": "Biélorussie",
+                "en": "Belarus",
+                "de": "Belarus",
+                "es": "Bielorrusia",
+                "ja": "ベラルーシ"
+            },
+            "acceptedAnswers": ["bielorussie", "belarus", "bielorrusia", "ヘラルシ"]
+        },
+        {
+            "id": "BEL",
+            "names": {
+                "fr": "Belgique",
+                "en": "Belgium",
+                "de": "Belgien",
+                "es": "Bélgica",
+                "ja": "ベルギー"
+            },
+            "acceptedAnswers": ["belgique", "belgium", "belgien", "belgica", "ヘルキ"]
+        },
+        {
+            "id": "BLZ",
+            "names": {
+                "fr": "Belize",
+                "en": "Belize",
+                "de": "Belize",
+                "es": "Belice",
+                "ja": "ベリーズ"
+            },
+            "acceptedAnswers": ["belize", "belice", "ヘリス"]
+        },
+        {
+            "id": "BEN",
+            "names": {
+                "fr": "Bénin",
+                "en": "Benin",
+                "de": "Benin",
+                "es": "Benín",
+                "ja": "ベナン"
+            },
+            "acceptedAnswers": ["benin", "ヘナン"]
+        },
+        {
+            "id": "BTN",
+            "names": {
+                "fr": "Bhoutan",
+                "en": "Bhutan",
+                "de": "Bhutan",
+                "es": "Bután",
+                "ja": "ブータン"
+            },
+            "acceptedAnswers": ["bhoutan", "bhutan", "butan", "フタン"]
+        },
+        {
+            "id": "BOL",
+            "names": {
+                "fr": "Bolivie",
+                "en": "Bolivia",
+                "de": "Bolivien",
+                "es": "Bolivia",
+                "ja": "ボリビア"
+            },
+            "acceptedAnswers": ["bolivie", "bolivia", "bolivien", "ホリヒア"]
+        },
+        {
+            "id": "BIH",
+            "names": {
+                "fr": "Bosnie-Herzégovine",
+                "en": "Bosnia and Herzegovina",
+                "de": "Bosnien und Herzegowina",
+                "es": "Bosnia y Herzegovina",
+                "ja": "ボスニア・ヘルツェゴビナ"
+            },
+            "acceptedAnswers": [
+                "bosnie herzegovine",
+                "bosnia and herzegovina",
+                "bosnien und herzegowina",
+                "bosnia y herzegovina",
+                "ホスニア・ヘルツェコヒナ"
+            ]
+        },
+        {
+            "id": "BWA",
+            "names": {
+                "fr": "Botswana",
+                "en": "Botswana",
+                "de": "Botswana",
+                "es": "Botsuana",
+                "ja": "ボツワナ"
+            },
+            "acceptedAnswers": ["botswana", "botsuana", "ホツワナ"]
+        },
+        {
+            "id": "BRA",
+            "names": {
+                "fr": "Brésil",
+                "en": "Brazil",
+                "de": "Brasilien",
+                "es": "Brasil",
+                "ja": "ブラジル"
+            },
+            "acceptedAnswers": ["bresil", "brazil", "brasilien", "brasil", "フラシル"]
+        },
+        {
+            "id": "BRN",
+            "names": {
+                "fr": "Brunei",
+                "en": "Brunei",
+                "de": "Brunei",
+                "es": "Brunéi",
+                "ja": "ブルネイ"
+            },
+            "acceptedAnswers": ["brunei", "フルネイ"]
+        },
+        {
+            "id": "BGR",
+            "names": {
+                "fr": "Bulgarie",
+                "en": "Bulgaria",
+                "de": "Bulgarien",
+                "es": "Bulgaria",
+                "ja": "ブルガリア"
+            },
+            "acceptedAnswers": ["bulgarie", "bulgaria", "bulgarien", "フルカリア"]
+        },
+        {
+            "id": "BFA",
+            "names": {
+                "fr": "Burkina Faso",
+                "en": "Burkina Faso",
+                "de": "Burkina Faso",
+                "es": "Burkina Faso",
+                "ja": "ブルキナファソ"
+            },
+            "acceptedAnswers": ["burkina faso", "フルキナファソ"]
+        },
+        {
+            "id": "BDI",
+            "names": {
+                "fr": "Burundi",
+                "en": "Burundi",
+                "de": "Burundi",
+                "es": "Burundi",
+                "ja": "ブルンジ"
+            },
+            "acceptedAnswers": ["burundi", "フルンシ"]
+        },
+        {
+            "id": "KHM",
+            "names": {
+                "fr": "Cambodge",
+                "en": "Cambodia",
+                "de": "Kambodscha",
+                "es": "Camboya",
+                "ja": "カンボジア"
+            },
+            "acceptedAnswers": ["cambodge", "cambodia", "kambodscha", "camboya", "カンホシア"]
+        },
+        {
+            "id": "CMR",
+            "names": {
+                "fr": "Cameroun",
+                "en": "Cameroon",
+                "de": "Kamerun",
+                "es": "Camerún",
+                "ja": "カメルーン"
+            },
+            "acceptedAnswers": ["cameroun", "cameroon", "kamerun", "camerun", "カメルン"]
+        },
+        {
+            "id": "CAN",
+            "names": {
+                "fr": "Canada",
+                "en": "Canada",
+                "de": "Kanada",
+                "es": "Canadá",
+                "ja": "カナダ"
+            },
+            "acceptedAnswers": ["canada", "kanada", "カナタ"]
+        },
+        {
+            "id": "CPV",
+            "names": {
+                "fr": "Cap-Vert",
+                "en": "Cape Verde",
+                "de": "Kap Verde",
+                "es": "Cabo Verde",
+                "ja": "カーボベルデ"
+            },
+            "acceptedAnswers": ["cap vert", "cape verde", "kap verde", "cabo verde", "カホヘルテ"]
+        },
+        {
+            "id": "CAF",
+            "names": {
+                "fr": "République centrafricaine",
+                "en": "Central African Republic",
+                "de": "Zentralafrikanische Republik",
+                "es": "República Centroafricana",
+                "ja": "中央アフリカ共和国"
+            },
+            "acceptedAnswers": [
+                "republique centrafricaine",
+                "central african republic",
+                "zentralafrikanische republik",
+                "republica centroafricana",
+                "中央アフリカ共和国"
+            ]
+        },
+        {
+            "id": "TCD",
+            "names": {
+                "fr": "Tchad",
+                "en": "Chad",
+                "de": "Tschad",
+                "es": "Chad",
+                "ja": "チャド"
+            },
+            "acceptedAnswers": ["tchad", "chad", "tschad", "チャト"]
+        },
+        {
+            "id": "CHL",
+            "names": {
+                "fr": "Chili",
+                "en": "Chile",
+                "de": "Chile",
+                "es": "Chile",
+                "ja": "チリ"
+            },
+            "acceptedAnswers": ["chili", "chile", "チリ"]
+        },
+        {
+            "id": "COL",
+            "names": {
+                "fr": "Colombie",
+                "en": "Colombia",
+                "de": "Kolumbien",
+                "es": "Colombia",
+                "ja": "コロンビア"
+            },
+            "acceptedAnswers": ["colombie", "colombia", "kolumbien", "コロンヒア"]
+        },
+        {
+            "id": "COM",
+            "names": {
+                "fr": "Comores",
+                "en": "Comoros",
+                "de": "Komoren",
+                "es": "Comoras",
+                "ja": "コモロ"
+            },
+            "acceptedAnswers": ["comores", "comoros", "komoren", "comoras", "コモロ"]
+        },
+        {
+            "id": "CRI",
+            "names": {
+                "fr": "Costa Rica",
+                "en": "Costa Rica",
+                "de": "Costa Rica",
+                "es": "Costa Rica",
+                "ja": "コスタリカ"
+            },
+            "acceptedAnswers": ["costa rica", "コスタリカ"]
+        },
+        {
+            "id": "HRV",
+            "names": {
+                "fr": "Croatie",
+                "en": "Croatia",
+                "de": "Kroatien",
+                "es": "Croacia",
+                "ja": "クロアチア"
+            },
+            "acceptedAnswers": ["croatie", "croatia", "kroatien", "croacia", "クロアチア"]
+        },
+        {
+            "id": "CUW",
+            "names": {
+                "fr": "Curaçao",
+                "en": "Curaçao",
+                "de": "Curaçao",
+                "es": "Curazao",
+                "ja": "キュラソー"
+            },
+            "acceptedAnswers": ["curacao", "curazao", "キュラソ"]
+        },
+        {
+            "id": "CYP",
+            "names": {
+                "fr": "Chypre",
+                "en": "Cyprus",
+                "de": "Republik Zypern",
+                "es": "Chipre",
+                "ja": "キプロス"
+            },
+            "acceptedAnswers": ["chypre", "cyprus", "republik zypern", "chipre", "キフロス"]
+        },
+        {
+            "id": "CZE",
+            "names": {
+                "fr": "Tchéquie",
+                "en": "Czech Republic",
+                "de": "Tschechien",
+                "es": "República Checa",
+                "ja": "チェコ"
+            },
+            "acceptedAnswers": [
+                "tchequie",
+                "czech republic",
+                "tschechien",
+                "republica checa",
+                "チェコ"
+            ]
+        },
+        {
+            "id": "COD",
+            "names": {
+                "fr": "République démocratique du Congo",
+                "en": "Democratic Republic of the Congo",
+                "de": "Demokratische Republik Kongo",
+                "es": "República Democrática del Congo",
+                "ja": "コンゴ民主共和国"
+            },
+            "acceptedAnswers": [
+                "republique democratique du congo",
+                "democratic republic of the congo",
+                "demokratische republik kongo",
+                "republica democratica del congo",
+                "コンコ民主共和国"
+            ]
+        },
+        {
+            "id": "DNK",
+            "names": {
+                "fr": "Danemark",
+                "en": "Denmark",
+                "de": "Dänemark",
+                "es": "Dinamarca",
+                "ja": "デンマーク"
+            },
+            "acceptedAnswers": ["danemark", "denmark", "dinamarca", "テンマク"]
+        },
+        {
+            "id": "DJI",
+            "names": {
+                "fr": "Djibouti",
+                "en": "Djibouti",
+                "de": "Dschibuti",
+                "es": "Yibuti",
+                "ja": "ジブチ"
+            },
+            "acceptedAnswers": ["djibouti", "dschibuti", "yibuti", "シフチ"]
+        },
+        {
+            "id": "DMA",
+            "names": {
+                "fr": "Dominique",
+                "en": "Dominica",
+                "de": "Dominica",
+                "es": "Dominica",
+                "ja": "ドミニカ国"
+            },
+            "acceptedAnswers": ["dominique", "dominica", "トミニカ国"]
+        },
+        {
+            "id": "DOM",
+            "names": {
+                "fr": "République dominicaine",
+                "en": "Dominican Republic",
+                "de": "Dominikanische Republik",
+                "es": "República Dominicana",
+                "ja": "ドミニカ共和国"
+            },
+            "acceptedAnswers": [
+                "republique dominicaine",
+                "dominican republic",
+                "dominikanische republik",
+                "republica dominicana",
+                "トミニカ共和国"
+            ]
+        },
+        {
+            "id": "TLS",
+            "names": {
+                "fr": "Timor oriental",
+                "en": "East Timor",
+                "de": "Osttimor",
+                "es": "Timor Oriental",
+                "ja": "東ティモール"
+            },
+            "acceptedAnswers": ["timor oriental", "east timor", "osttimor", "東ティモル"]
+        },
+        {
+            "id": "ECU",
+            "names": {
+                "fr": "Équateur",
+                "en": "Ecuador",
+                "de": "Ecuador",
+                "es": "Ecuador",
+                "ja": "エクアドル"
+            },
+            "acceptedAnswers": ["equateur", "ecuador", "エクアトル"]
+        },
+        {
+            "id": "EGY",
+            "names": {
+                "fr": "Égypte",
+                "en": "Egypt",
+                "de": "Ägypten",
+                "es": "Egipto",
+                "ja": "エジプト"
+            },
+            "acceptedAnswers": ["egypte", "egypt", "agypten", "egipto", "エシフト"]
+        },
+        {
+            "id": "SLV",
+            "names": {
+                "fr": "Salvador",
+                "en": "El Salvador",
+                "de": "El Salvador",
+                "es": "El Salvador",
+                "ja": "エルサルバドル"
+            },
+            "acceptedAnswers": ["salvador", "el salvador", "エルサルハトル"]
+        },
+        {
+            "id": "GNQ",
+            "names": {
+                "fr": "Guinée équatoriale",
+                "en": "Equatorial Guinea",
+                "de": "Äquatorialguinea",
+                "es": "Guinea Ecuatorial",
+                "ja": "赤道ギニア"
+            },
+            "acceptedAnswers": [
+                "guinee equatoriale",
+                "equatorial guinea",
+                "aquatorialguinea",
+                "guinea ecuatorial",
+                "赤道キニア"
+            ]
+        },
+        {
+            "id": "ERI",
+            "names": {
+                "fr": "Érythrée",
+                "en": "Eritrea",
+                "de": "Eritrea",
+                "es": "Eritrea",
+                "ja": "エリトリア"
+            },
+            "acceptedAnswers": ["erythree", "eritrea", "エリトリア"]
+        },
+        {
+            "id": "EST",
+            "names": {
+                "fr": "Estonie",
+                "en": "Estonia",
+                "de": "Estland",
+                "es": "Estonia",
+                "ja": "エストニア"
+            },
+            "acceptedAnswers": ["estonie", "estonia", "estland", "エストニア"]
+        },
+        {
+            "id": "SWZ",
+            "names": {
+                "fr": "Eswatini",
+                "en": "Eswatini",
+                "de": "Eswatini",
+                "es": "Suazilandia",
+                "ja": "エスワティニ"
+            },
+            "acceptedAnswers": ["eswatini", "suazilandia", "エスワティニ"]
+        },
+        {
+            "id": "ETH",
+            "names": {
+                "fr": "Éthiopie",
+                "en": "Ethiopia",
+                "de": "Äthiopien",
+                "es": "Etiopía",
+                "ja": "エチオピア"
+            },
+            "acceptedAnswers": ["ethiopie", "ethiopia", "athiopien", "etiopia", "エチオヒア"]
+        },
+        {
+            "id": "FSM",
+            "names": {
+                "fr": "États fédérés de Micronésie",
+                "en": "Federated States of Micronesia",
+                "de": "Föderierte Staaten von Mikronesien",
+                "es": "Estados Federados de Micronesia",
+                "ja": "ミクロネシア連邦"
+            },
+            "acceptedAnswers": [
+                "etats federes de micronesie",
+                "federated states of micronesia",
+                "foderierte staaten von mikronesien",
+                "estados federados de micronesia",
+                "ミクロネシア連邦"
+            ]
+        },
+        {
+            "id": "FJI",
+            "names": {
+                "fr": "Fidji",
+                "en": "Fiji",
+                "de": "Fidschi",
+                "es": "Fiyi",
+                "ja": "フィジー"
+            },
+            "acceptedAnswers": ["fidji", "fiji", "fidschi", "fiyi", "フィシ"]
+        },
+        {
+            "id": "FIN",
+            "names": {
+                "fr": "Finlande",
+                "en": "Finland",
+                "de": "Finnland",
+                "es": "Finlandia",
+                "ja": "フィンランド"
+            },
+            "acceptedAnswers": ["finlande", "finland", "finnland", "finlandia", "フィンラント"]
+        },
+        {
+            "id": "FRA",
+            "names": {
+                "fr": "France",
+                "en": "France",
+                "de": "Frankreich",
+                "es": "Francia",
+                "ja": "フランス"
+            },
+            "acceptedAnswers": ["france", "frankreich", "francia", "フランス"]
+        },
+        {
+            "id": "GAB",
+            "names": {
+                "fr": "Gabon",
+                "en": "Gabon",
+                "de": "Gabun",
+                "es": "Gabón",
+                "ja": "ガボン"
+            },
+            "acceptedAnswers": ["gabon", "gabun", "カホン"]
+        },
+        {
+            "id": "GEO",
+            "names": {
+                "fr": "Géorgie",
+                "en": "Georgia",
+                "de": "Georgien",
+                "es": "Georgia",
+                "ja": "ジョージア"
+            },
+            "acceptedAnswers": ["georgie", "georgia", "georgien", "ショシア"]
+        },
+        {
+            "id": "DEU",
+            "names": {
+                "fr": "Allemagne",
+                "en": "Germany",
+                "de": "Deutschland",
+                "es": "Alemania",
+                "ja": "ドイツ"
+            },
+            "acceptedAnswers": ["allemagne", "germany", "deutschland", "alemania", "トイツ"]
+        },
+        {
+            "id": "GHA",
+            "names": {
+                "fr": "Ghana",
+                "en": "Ghana",
+                "de": "Ghana",
+                "es": "Ghana",
+                "ja": "ガーナ"
+            },
+            "acceptedAnswers": ["ghana", "カナ"]
+        },
+        {
+            "id": "GRC",
+            "names": {
+                "fr": "Grèce",
+                "en": "Greece",
+                "de": "Griechenland",
+                "es": "Grecia",
+                "ja": "ギリシャ"
+            },
+            "acceptedAnswers": ["grece", "greece", "griechenland", "grecia", "キリシャ"]
+        },
+        {
+            "id": "GRL",
+            "names": {
+                "fr": "Groenland",
+                "en": "Greenland",
+                "de": "Grönland",
+                "es": "Groenlandia",
+                "ja": "グリーンランド"
+            },
+            "acceptedAnswers": ["groenland", "greenland", "gronland", "groenlandia", "クリンラント"]
+        },
+        {
+            "id": "GRD",
+            "names": {
+                "fr": "Grenade",
+                "en": "Grenada",
+                "de": "Grenada",
+                "es": "Granada",
+                "ja": "グレナダ"
+            },
+            "acceptedAnswers": ["grenade", "grenada", "granada", "クレナタ"]
+        },
+        {
+            "id": "GTM",
+            "names": {
+                "fr": "Guatemala",
+                "en": "Guatemala",
+                "de": "Guatemala",
+                "es": "Guatemala",
+                "ja": "グアテマラ"
+            },
+            "acceptedAnswers": ["guatemala", "クアテマラ"]
+        },
+        {
+            "id": "GGY",
+            "names": {
+                "fr": "Guernesey",
+                "en": "Guernsey",
+                "de": "Guernsey",
+                "es": "Guernsey",
+                "ja": "ガーンジー"
+            },
+            "acceptedAnswers": ["guernesey", "guernsey", "カンシ"]
+        },
+        {
+            "id": "GIN",
+            "names": {
+                "fr": "Guinée",
+                "en": "Guinea",
+                "de": "Guinea",
+                "es": "Guinea",
+                "ja": "ギニア"
+            },
+            "acceptedAnswers": ["guinee", "guinea", "キニア"]
+        },
+        {
+            "id": "GNB",
+            "names": {
+                "fr": "Guinée-Bissau",
+                "en": "Guinea-Bissau",
+                "de": "Guinea-Bissau",
+                "es": "Guinea-Bisáu",
+                "ja": "ギニアビサウ"
+            },
+            "acceptedAnswers": ["guinee bissau", "guinea bissau", "guinea bisau", "キニアヒサウ"]
+        },
+        {
+            "id": "GUY",
+            "names": {
+                "fr": "Guyana",
+                "en": "Guyana",
+                "de": "Guyana",
+                "es": "Guyana",
+                "ja": "ガイアナ"
+            },
+            "acceptedAnswers": ["guyana", "カイアナ"]
+        },
+        {
+            "id": "HTI",
+            "names": {
+                "fr": "Haïti",
+                "en": "Haiti",
+                "de": "Haiti",
+                "es": "Haití",
+                "ja": "ハイチ"
+            },
+            "acceptedAnswers": ["haiti", "ハイチ"]
+        },
+        {
+            "id": "HND",
+            "names": {
+                "fr": "Honduras",
+                "en": "Honduras",
+                "de": "Honduras",
+                "es": "Honduras",
+                "ja": "ホンジュラス"
+            },
+            "acceptedAnswers": ["honduras", "ホンシュラス"]
+        },
+        {
+            "id": "HKG",
+            "names": {
+                "fr": "Hong Kong",
+                "en": "Hong Kong",
+                "de": "Hongkong",
+                "es": "Hong Kong",
+                "ja": "香港"
+            },
+            "acceptedAnswers": ["hong kong", "hongkong", "香港"]
+        },
+        {
+            "id": "HUN",
+            "names": {
+                "fr": "Hongrie",
+                "en": "Hungary",
+                "de": "Ungarn",
+                "es": "Hungría",
+                "ja": "ハンガリー"
+            },
+            "acceptedAnswers": ["hongrie", "hungary", "ungarn", "hungria", "ハンカリ"]
+        },
+        {
+            "id": "ISL",
+            "names": {
+                "fr": "Islande",
+                "en": "Iceland",
+                "de": "Island",
+                "es": "Islandia",
+                "ja": "アイスランド"
+            },
+            "acceptedAnswers": ["islande", "iceland", "island", "islandia", "アイスラント"]
+        },
+        {
+            "id": "IND",
+            "names": {
+                "fr": "Inde",
+                "en": "India",
+                "de": "Indien",
+                "es": "India",
+                "ja": "インド"
+            },
+            "acceptedAnswers": ["inde", "india", "indien", "イント"]
+        },
+        {
+            "id": "IDN",
+            "names": {
+                "fr": "Indonésie",
+                "en": "Indonesia",
+                "de": "Indonesien",
+                "es": "Indonesia",
+                "ja": "インドネシア"
+            },
+            "acceptedAnswers": ["indonesie", "indonesia", "indonesien", "イントネシア"]
+        },
+        {
+            "id": "IRN",
+            "names": {
+                "fr": "Iran",
+                "en": "Iran",
+                "de": "Iran",
+                "es": "Irán",
+                "ja": "イラン"
+            },
+            "acceptedAnswers": ["iran", "イラン"]
+        },
+        {
+            "id": "IRQ",
+            "names": {
+                "fr": "Irak",
+                "en": "Iraq",
+                "de": "Irak",
+                "es": "Irak",
+                "ja": "イラク"
+            },
+            "acceptedAnswers": ["irak", "iraq", "イラク"]
+        },
+        {
+            "id": "IRL",
+            "names": {
+                "fr": "Irlande",
+                "en": "Ireland",
+                "de": "Irland",
+                "es": "Irlanda",
+                "ja": "アイルランド"
+            },
+            "acceptedAnswers": ["irlande", "ireland", "irland", "irlanda", "アイルラント"]
+        },
+        {
+            "id": "IMN",
+            "names": {
+                "fr": "île de Man",
+                "en": "Isle of Man",
+                "de": "Isle of Man",
+                "es": "Isla de Man",
+                "ja": "マン島"
+            },
+            "acceptedAnswers": ["ile de man", "isle of man", "isla de man", "マン島"]
+        },
+        {
+            "id": "ITA",
+            "names": {
+                "fr": "Italie",
+                "en": "Italy",
+                "de": "Italien",
+                "es": "Italia",
+                "ja": "イタリア"
+            },
+            "acceptedAnswers": ["italie", "italy", "italien", "italia", "イタリア"]
+        },
+        {
+            "id": "CIV",
+            "names": {
+                "fr": "Côte d'Ivoire",
+                "en": "Ivory Coast",
+                "de": "Elfenbeinküste",
+                "es": "Costa de Marfil",
+                "ja": "コートジボワール"
+            },
+            "acceptedAnswers": [
+                "cote d ivoire",
+                "ivory coast",
+                "elfenbeinkuste",
+                "costa de marfil",
+                "コトシホワル"
+            ]
+        },
+        {
+            "id": "JAM",
+            "names": {
+                "fr": "Jamaïque",
+                "en": "Jamaica",
+                "de": "Jamaika",
+                "es": "Jamaica",
+                "ja": "ジャマイカ"
+            },
+            "acceptedAnswers": ["jamaique", "jamaica", "jamaika", "シャマイカ"]
+        },
+        {
+            "id": "JPN",
+            "names": {
+                "fr": "Japon",
+                "en": "Japan",
+                "de": "Japan",
+                "es": "Japón",
+                "ja": "日本"
+            },
+            "acceptedAnswers": ["japon", "japan", "日本"]
+        },
+        {
+            "id": "JEY",
+            "names": {
+                "fr": "Jersey",
+                "en": "Jersey",
+                "de": "Jersey",
+                "es": "Jersey",
+                "ja": "ジャージー"
+            },
+            "acceptedAnswers": ["jersey", "シャシ"]
+        },
+        {
+            "id": "JOR",
+            "names": {
+                "fr": "Jordanie",
+                "en": "Jordan",
+                "de": "Jordanien",
+                "es": "Jordania",
+                "ja": "ヨルダン"
+            },
+            "acceptedAnswers": ["jordanie", "jordan", "jordanien", "jordania", "ヨルタン"]
+        },
+        {
+            "id": "KEN",
+            "names": {
+                "fr": "Kenya",
+                "en": "Kenya",
+                "de": "Kenia",
+                "es": "Kenia",
+                "ja": "ケニア"
+            },
+            "acceptedAnswers": ["kenya", "kenia", "ケニア"]
+        },
+        {
+            "id": "KIR",
+            "names": {
+                "fr": "Kiribati",
+                "en": "Kiribati",
+                "de": "Kiribati",
+                "es": "Kiribati",
+                "ja": "キリバス"
+            },
+            "acceptedAnswers": ["kiribati", "キリハス"]
+        },
+        {
+            "id": "KWT",
+            "names": {
+                "fr": "Koweït",
+                "en": "Kuwait",
+                "de": "Kuwait",
+                "es": "Kuwait",
+                "ja": "クウェート"
+            },
+            "acceptedAnswers": ["koweit", "kuwait", "クウェト"]
+        },
+        {
+            "id": "KGZ",
+            "names": {
+                "fr": "Kirghizistan",
+                "en": "Kyrgyzstan",
+                "de": "Kirgisistan",
+                "es": "Kirguistán",
+                "ja": "キルギス"
+            },
+            "acceptedAnswers": [
+                "kirghizistan",
+                "kyrgyzstan",
+                "kirgisistan",
+                "kirguistan",
+                "キルキス"
+            ]
+        },
+        {
+            "id": "LAO",
+            "names": {
+                "fr": "Laos",
+                "en": "Laos",
+                "de": "Laos",
+                "es": "Laos",
+                "ja": "ラオス"
+            },
+            "acceptedAnswers": ["laos", "ラオス"]
+        },
+        {
+            "id": "LVA",
+            "names": {
+                "fr": "Lettonie",
+                "en": "Latvia",
+                "de": "Lettland",
+                "es": "Letonia",
+                "ja": "ラトビア"
+            },
+            "acceptedAnswers": ["lettonie", "latvia", "lettland", "letonia", "ラトヒア"]
+        },
+        {
+            "id": "LBN",
+            "names": {
+                "fr": "Liban",
+                "en": "Lebanon",
+                "de": "Libanon",
+                "es": "Líbano",
+                "ja": "レバノン"
+            },
+            "acceptedAnswers": ["liban", "lebanon", "libanon", "libano", "レハノン"]
+        },
+        {
+            "id": "LSO",
+            "names": {
+                "fr": "Lesotho",
+                "en": "Lesotho",
+                "de": "Lesotho",
+                "es": "Lesoto",
+                "ja": "レソト"
+            },
+            "acceptedAnswers": ["lesotho", "lesoto", "レソト"]
+        },
+        {
+            "id": "LBR",
+            "names": {
+                "fr": "Liberia",
+                "en": "Liberia",
+                "de": "Liberia",
+                "es": "Liberia",
+                "ja": "リベリア"
+            },
+            "acceptedAnswers": ["liberia", "リヘリア"]
+        },
+        {
+            "id": "LBY",
+            "names": {
+                "fr": "Libye",
+                "en": "Libya",
+                "de": "Libyen",
+                "es": "Libia",
+                "ja": "リビア"
+            },
+            "acceptedAnswers": ["libye", "libya", "libyen", "libia", "リヒア"]
+        },
+        {
+            "id": "LIE",
+            "names": {
+                "fr": "Liechtenstein",
+                "en": "Liechtenstein",
+                "de": "Liechtenstein",
+                "es": "Liechtenstein",
+                "ja": "リヒテンシュタイン"
+            },
+            "acceptedAnswers": ["liechtenstein", "リヒテンシュタイン"]
+        },
+        {
+            "id": "LTU",
+            "names": {
+                "fr": "Lituanie",
+                "en": "Lithuania",
+                "de": "Litauen",
+                "es": "Lituania",
+                "ja": "リトアニア"
+            },
+            "acceptedAnswers": ["lituanie", "lithuania", "litauen", "lituania", "リトアニア"]
+        },
+        {
+            "id": "LUX",
+            "names": {
+                "fr": "Luxembourg",
+                "en": "Luxembourg",
+                "de": "Luxemburg",
+                "es": "Luxemburgo",
+                "ja": "ルクセンブルク"
+            },
+            "acceptedAnswers": ["luxembourg", "luxemburg", "luxemburgo", "ルクセンフルク"]
+        },
+        {
+            "id": "MAC",
+            "names": {
+                "fr": "Macao",
+                "en": "Macau",
+                "de": "Macau",
+                "es": "Macao",
+                "ja": "マカオ"
+            },
+            "acceptedAnswers": ["macao", "macau", "マカオ"]
+        },
+        {
+            "id": "MDG",
+            "names": {
+                "fr": "Madagascar",
+                "en": "Madagascar",
+                "de": "Madagaskar",
+                "es": "Madagascar",
+                "ja": "マダガスカル"
+            },
+            "acceptedAnswers": ["madagascar", "madagaskar", "マタカスカル"]
+        },
+        {
+            "id": "MWI",
+            "names": {
+                "fr": "Malawi",
+                "en": "Malawi",
+                "de": "Malawi",
+                "es": "Malaui",
+                "ja": "マラウイ"
+            },
+            "acceptedAnswers": ["malawi", "malaui", "マラウイ"]
+        },
+        {
+            "id": "MYS",
+            "names": {
+                "fr": "Malaisie",
+                "en": "Malaysia",
+                "de": "Malaysia",
+                "es": "Malasia",
+                "ja": "マレーシア"
+            },
+            "acceptedAnswers": ["malaisie", "malaysia", "malasia", "マレシア"]
+        },
+        {
+            "id": "MDV",
+            "names": {
+                "fr": "Maldives",
+                "en": "Maldives",
+                "de": "Malediven",
+                "es": "Maldivas",
+                "ja": "モルディブ"
+            },
+            "acceptedAnswers": ["maldives", "malediven", "maldivas", "モルティフ"]
+        },
+        {
+            "id": "MLI",
+            "names": {
+                "fr": "Mali",
+                "en": "Mali",
+                "de": "Mali",
+                "es": "Malí",
+                "ja": "マリ共和国"
+            },
+            "acceptedAnswers": ["mali", "マリ共和国"]
+        },
+        {
+            "id": "MLT",
+            "names": {
+                "fr": "Malte",
+                "en": "Malta",
+                "de": "Malta",
+                "es": "Malta",
+                "ja": "マルタ"
+            },
+            "acceptedAnswers": ["malte", "malta", "マルタ"]
+        },
+        {
+            "id": "MHL",
+            "names": {
+                "fr": "Îles Marshall",
+                "en": "Marshall Islands",
+                "de": "Marshallinseln",
+                "es": "Islas Marshall",
+                "ja": "マーシャル諸島"
+            },
+            "acceptedAnswers": [
+                "iles marshall",
+                "marshall islands",
+                "marshallinseln",
+                "islas marshall",
+                "マシャル諸島"
+            ]
+        },
+        {
+            "id": "MRT",
+            "names": {
+                "fr": "Mauritanie",
+                "en": "Mauritania",
+                "de": "Mauretanien",
+                "es": "Mauritania",
+                "ja": "モーリタニア"
+            },
+            "acceptedAnswers": ["mauritanie", "mauritania", "mauretanien", "モリタニア"]
+        },
+        {
+            "id": "MUS",
+            "names": {
+                "fr": "Maurice",
+                "en": "Mauritius",
+                "de": "Mauritius",
+                "es": "Mauricio",
+                "ja": "モーリシャス"
+            },
+            "acceptedAnswers": ["maurice", "mauritius", "mauricio", "モリシャス"]
+        },
+        {
+            "id": "MEX",
+            "names": {
+                "fr": "Mexique",
+                "en": "Mexico",
+                "de": "Mexiko",
+                "es": "México",
+                "ja": "メキシコ"
+            },
+            "acceptedAnswers": ["mexique", "mexico", "mexiko", "メキシコ"]
+        },
+        {
+            "id": "MDA",
+            "names": {
+                "fr": "Moldavie",
+                "en": "Moldova",
+                "de": "Republik Moldau",
+                "es": "Moldavia",
+                "ja": "モルドバ"
+            },
+            "acceptedAnswers": ["moldavie", "moldova", "republik moldau", "moldavia", "モルトハ"]
+        },
+        {
+            "id": "MCO",
+            "names": {
+                "fr": "Monaco",
+                "en": "Monaco",
+                "de": "Monaco",
+                "es": "Mónaco",
+                "ja": "モナコ"
+            },
+            "acceptedAnswers": ["monaco", "モナコ"]
+        },
+        {
+            "id": "MNG",
+            "names": {
+                "fr": "Mongolie",
+                "en": "Mongolia",
+                "de": "Mongolei",
+                "es": "Mongolia",
+                "ja": "モンゴル国"
+            },
+            "acceptedAnswers": ["mongolie", "mongolia", "mongolei", "モンコル国"]
+        },
+        {
+            "id": "MNE",
+            "names": {
+                "fr": "Monténégro",
+                "en": "Montenegro",
+                "de": "Montenegro",
+                "es": "Montenegro",
+                "ja": "モンテネグロ"
+            },
+            "acceptedAnswers": ["montenegro", "モンテネクロ"]
+        },
+        {
+            "id": "MAR",
+            "names": {
+                "fr": "Maroc",
+                "en": "Morocco",
+                "de": "Marokko",
+                "es": "Marruecos",
+                "ja": "モロッコ"
+            },
+            "acceptedAnswers": ["maroc", "morocco", "marokko", "marruecos", "モロッコ"]
+        },
+        {
+            "id": "MOZ",
+            "names": {
+                "fr": "Mozambique",
+                "en": "Mozambique",
+                "de": "Mosambik",
+                "es": "Mozambique",
+                "ja": "モザンビーク"
+            },
+            "acceptedAnswers": ["mozambique", "mosambik", "モサンヒク"]
+        },
+        {
+            "id": "MMR",
+            "names": {
+                "fr": "Birmanie",
+                "en": "Myanmar",
+                "de": "Myanmar",
+                "es": "Birmania",
+                "ja": "ミャンマー"
+            },
+            "acceptedAnswers": ["birmanie", "myanmar", "birmania", "ミャンマ"]
+        },
+        {
+            "id": "NAM",
+            "names": {
+                "fr": "Namibie",
+                "en": "Namibia",
+                "de": "Namibia",
+                "es": "Namibia",
+                "ja": "ナミビア"
+            },
+            "acceptedAnswers": ["namibie", "namibia", "ナミヒア"]
+        },
+        {
+            "id": "NRU",
+            "names": {
+                "fr": "Nauru",
+                "en": "Nauru",
+                "de": "Nauru",
+                "es": "Nauru",
+                "ja": "ナウル"
+            },
+            "acceptedAnswers": ["nauru", "ナウル"]
+        },
+        {
+            "id": "NPL",
+            "names": {
+                "fr": "Népal",
+                "en": "Nepal",
+                "de": "Nepal",
+                "es": "Nepal",
+                "ja": "ネパール"
+            },
+            "acceptedAnswers": ["nepal", "ネハル"]
+        },
+        {
+            "id": "NLD",
+            "names": {
+                "fr": "Pays-Bas",
+                "en": "Netherlands",
+                "de": "Niederlande",
+                "es": "Países Bajos",
+                "ja": "オランダ"
+            },
+            "acceptedAnswers": [
+                "pays bas",
+                "netherlands",
+                "niederlande",
+                "paises bajos",
+                "オランタ"
+            ]
+        },
+        {
+            "id": "NZL",
+            "names": {
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand",
+                "de": "Neuseeland",
+                "es": "Nueva Zelanda",
+                "ja": "ニュージーランド"
+            },
+            "acceptedAnswers": [
+                "nouvelle zelande",
+                "new zealand",
+                "neuseeland",
+                "nueva zelanda",
+                "ニュシラント"
+            ]
+        },
+        {
+            "id": "NIC",
+            "names": {
+                "fr": "Nicaragua",
+                "en": "Nicaragua",
+                "de": "Nicaragua",
+                "es": "Nicaragua",
+                "ja": "ニカラグア"
+            },
+            "acceptedAnswers": ["nicaragua", "ニカラクア"]
+        },
+        {
+            "id": "NER",
+            "names": {
+                "fr": "Niger",
+                "en": "Niger",
+                "de": "Niger",
+                "es": "Níger",
+                "ja": "ニジェール"
+            },
+            "acceptedAnswers": ["niger", "ニシェル"]
+        },
+        {
+            "id": "NGA",
+            "names": {
+                "fr": "Nigeria",
+                "en": "Nigeria",
+                "de": "Nigeria",
+                "es": "Nigeria",
+                "ja": "ナイジェリア"
+            },
+            "acceptedAnswers": ["nigeria", "ナイシェリア"]
+        },
+        {
+            "id": "PRK",
+            "names": {
+                "fr": "Corée du Nord",
+                "en": "North Korea",
+                "de": "Nordkorea",
+                "es": "Corea del Norte",
+                "ja": "朝鮮民主主義人民共和国"
+            },
+            "acceptedAnswers": [
+                "coree du nord",
+                "north korea",
+                "nordkorea",
+                "corea del norte",
+                "朝鮮民主主義人民共和国"
+            ]
+        },
+        {
+            "id": "MKD",
+            "names": {
+                "fr": "Macédoine du Nord",
+                "en": "North Macedonia",
+                "de": "Nordmazedonien",
+                "es": "Macedonia del Norte",
+                "ja": "北マケドニア"
+            },
+            "acceptedAnswers": [
+                "macedoine du nord",
+                "north macedonia",
+                "nordmazedonien",
+                "macedonia del norte",
+                "北マケトニア"
+            ]
+        },
+        {
+            "id": "NOR",
+            "names": {
+                "fr": "Norvège",
+                "en": "Norway",
+                "de": "Norwegen",
+                "es": "Noruega",
+                "ja": "ノルウェー"
+            },
+            "acceptedAnswers": ["norvege", "norway", "norwegen", "noruega", "ノルウェ"]
+        },
+        {
+            "id": "OMN",
+            "names": {
+                "fr": "Oman",
+                "en": "Oman",
+                "de": "Oman",
+                "es": "Omán",
+                "ja": "オマーン"
+            },
+            "acceptedAnswers": ["oman", "オマン"]
+        },
+        {
+            "id": "PAK",
+            "names": {
+                "fr": "Pakistan",
+                "en": "Pakistan",
+                "de": "Pakistan",
+                "es": "Pakistán",
+                "ja": "パキスタン"
+            },
+            "acceptedAnswers": ["pakistan", "ハキスタン"]
+        },
+        {
+            "id": "PLW",
+            "names": {
+                "fr": "Palaos",
+                "en": "Palau",
+                "de": "Palau",
+                "es": "Palaos",
+                "ja": "パラオ"
+            },
+            "acceptedAnswers": ["palaos", "palau", "ハラオ"]
+        },
+        {
+            "id": "PAN",
+            "names": {
+                "fr": "Panama",
+                "en": "Panama",
+                "de": "Panama",
+                "es": "Panamá",
+                "ja": "パナマ"
+            },
+            "acceptedAnswers": ["panama", "ハナマ"]
+        },
+        {
+            "id": "PNG",
+            "names": {
+                "fr": "Papouasie-Nouvelle-Guinée",
+                "en": "Papua New Guinea",
+                "de": "Papua-Neuguinea",
+                "es": "Papúa Nueva Guinea",
+                "ja": "パプアニューギニア"
+            },
+            "acceptedAnswers": [
+                "papouasie nouvelle guinee",
+                "papua new guinea",
+                "papua neuguinea",
+                "papua nueva guinea",
+                "ハフアニュキニア"
+            ]
+        },
+        {
+            "id": "PRY",
+            "names": {
+                "fr": "Paraguay",
+                "en": "Paraguay",
+                "de": "Paraguay",
+                "es": "Paraguay",
+                "ja": "パラグアイ"
+            },
+            "acceptedAnswers": ["paraguay", "ハラクアイ"]
+        },
+        {
+            "id": "CHN",
+            "names": {
+                "fr": "République populaire de Chine",
+                "en": "People's Republic of China",
+                "de": "Volksrepublik China",
+                "es": "China",
+                "ja": "中華人民共和国"
+            },
+            "acceptedAnswers": [
+                "republique populaire de chine",
+                "people s republic of china",
+                "volksrepublik china",
+                "china",
+                "中華人民共和国"
+            ]
+        },
+        {
+            "id": "PER",
+            "names": {
+                "fr": "Pérou",
+                "en": "Peru",
+                "de": "Peru",
+                "es": "Perú",
+                "ja": "ペルー"
+            },
+            "acceptedAnswers": ["perou", "peru", "ヘル"]
+        },
+        {
+            "id": "PHL",
+            "names": {
+                "fr": "Philippines",
+                "en": "Philippines",
+                "de": "Philippinen",
+                "es": "Filipinas",
+                "ja": "フィリピン"
+            },
+            "acceptedAnswers": ["philippines", "philippinen", "filipinas", "フィリヒン"]
+        },
+        {
+            "id": "POL",
+            "names": {
+                "fr": "Pologne",
+                "en": "Poland",
+                "de": "Polen",
+                "es": "Polonia",
+                "ja": "ポーランド"
+            },
+            "acceptedAnswers": ["pologne", "poland", "polen", "polonia", "ホラント"]
+        },
+        {
+            "id": "PRT",
+            "names": {
+                "fr": "Portugal",
+                "en": "Portugal",
+                "de": "Portugal",
+                "es": "Portugal",
+                "ja": "ポルトガル"
+            },
+            "acceptedAnswers": ["portugal", "ホルトカル"]
+        },
+        {
+            "id": "QAT",
+            "names": {
+                "fr": "Qatar",
+                "en": "Qatar",
+                "de": "Katar",
+                "es": "Catar",
+                "ja": "カタール"
+            },
+            "acceptedAnswers": ["qatar", "katar", "catar", "カタル"]
+        },
+        {
+            "id": "COG",
+            "names": {
+                "fr": "République du Congo",
+                "en": "Republic of the Congo",
+                "de": "Republik Kongo",
+                "es": "República del Congo",
+                "ja": "コンゴ共和国"
+            },
+            "acceptedAnswers": [
+                "republique du congo",
+                "republic of the congo",
+                "republik kongo",
+                "republica del congo",
+                "コンコ共和国"
+            ]
+        },
+        {
+            "id": "ROU",
+            "names": {
+                "fr": "Roumanie",
+                "en": "Romania",
+                "de": "Rumänien",
+                "es": "Rumania",
+                "ja": "ルーマニア"
+            },
+            "acceptedAnswers": ["roumanie", "romania", "rumanien", "rumania", "ルマニア"]
+        },
+        {
+            "id": "RUS",
+            "names": {
+                "fr": "Russie",
+                "en": "Russia",
+                "de": "Russland",
+                "es": "Rusia",
+                "ja": "ロシア"
+            },
+            "acceptedAnswers": ["russie", "russia", "russland", "rusia", "ロシア"]
+        },
+        {
+            "id": "RWA",
+            "names": {
+                "fr": "Rwanda",
+                "en": "Rwanda",
+                "de": "Ruanda",
+                "es": "Ruanda",
+                "ja": "ルワンダ"
+            },
+            "acceptedAnswers": ["rwanda", "ruanda", "ルワンタ"]
+        },
+        {
+            "id": "KNA",
+            "names": {
+                "fr": "Saint-Christophe-et-Niévès",
+                "en": "Saint Kitts and Nevis",
+                "de": "St. Kitts und Nevis",
+                "es": "San Cristóbal y Nieves",
+                "ja": "セントクリストファー・ネイビス"
+            },
+            "acceptedAnswers": [
+                "saint christophe et nieves",
+                "saint kitts and nevis",
+                "st kitts und nevis",
+                "san cristobal y nieves",
+                "セントクリストファ・ネイヒス"
+            ]
+        },
+        {
+            "id": "LCA",
+            "names": {
+                "fr": "Sainte-Lucie",
+                "en": "Saint Lucia",
+                "de": "St. Lucia",
+                "es": "Santa Lucía",
+                "ja": "セントルシア"
+            },
+            "acceptedAnswers": [
+                "sainte lucie",
+                "saint lucia",
+                "st lucia",
+                "santa lucia",
+                "セントルシア"
+            ]
+        },
+        {
+            "id": "VCT",
+            "names": {
+                "fr": "Saint-Vincent-et-les-Grenadines",
+                "en": "Saint Vincent and the Grenadines",
+                "de": "St. Vincent und die Grenadinen",
+                "es": "San Vicente y las Granadinas",
+                "ja": "セントビンセント・グレナディーン"
+            },
+            "acceptedAnswers": [
+                "saint vincent et les grenadines",
+                "saint vincent and the grenadines",
+                "st vincent und die grenadinen",
+                "san vicente y las granadinas",
+                "セントヒンセント・クレナティン"
+            ]
+        },
+        {
+            "id": "WSM",
+            "names": {
+                "fr": "Samoa",
+                "en": "Samoa",
+                "de": "Samoa",
+                "es": "Samoa",
+                "ja": "サモア"
+            },
+            "acceptedAnswers": ["samoa", "サモア"]
+        },
+        {
+            "id": "SMR",
+            "names": {
+                "fr": "Saint-Marin",
+                "en": "San Marino",
+                "de": "San Marino",
+                "es": "San Marino",
+                "ja": "サンマリノ"
+            },
+            "acceptedAnswers": ["saint marin", "san marino", "サンマリノ"]
+        },
+        {
+            "id": "STP",
+            "names": {
+                "fr": "Sao Tomé-et-Principe",
+                "en": "São Tomé and Príncipe",
+                "de": "São Tomé und Príncipe",
+                "es": "Santo Tomé y Príncipe",
+                "ja": "サントメ・プリンシペ"
+            },
+            "acceptedAnswers": [
+                "sao tome et principe",
+                "sao tome and principe",
+                "sao tome und principe",
+                "santo tome y principe",
+                "サントメ・フリンシヘ"
+            ]
+        },
+        {
+            "id": "SAU",
+            "names": {
+                "fr": "Arabie saoudite",
+                "en": "Saudi Arabia",
+                "de": "Saudi-Arabien",
+                "es": "Arabia Saudita",
+                "ja": "サウジアラビア"
+            },
+            "acceptedAnswers": [
+                "arabie saoudite",
+                "saudi arabia",
+                "saudi arabien",
+                "arabia saudita",
+                "サウシアラヒア"
+            ]
+        },
+        {
+            "id": "SEN",
+            "names": {
+                "fr": "Sénégal",
+                "en": "Senegal",
+                "de": "Senegal",
+                "es": "Senegal",
+                "ja": "セネガル"
+            },
+            "acceptedAnswers": ["senegal", "セネカル"]
+        },
+        {
+            "id": "SRB",
+            "names": {
+                "fr": "Serbie",
+                "en": "Serbia",
+                "de": "Serbien",
+                "es": "Serbia",
+                "ja": "セルビア"
+            },
+            "acceptedAnswers": ["serbie", "serbia", "serbien", "セルヒア"]
+        },
+        {
+            "id": "SYC",
+            "names": {
+                "fr": "Seychelles",
+                "en": "Seychelles",
+                "de": "Seychellen",
+                "es": "Seychelles",
+                "ja": "セーシェル"
+            },
+            "acceptedAnswers": ["seychelles", "seychellen", "セシェル"]
+        },
+        {
+            "id": "SLE",
+            "names": {
+                "fr": "Sierra Leone",
+                "en": "Sierra Leone",
+                "de": "Sierra Leone",
+                "es": "Sierra Leona",
+                "ja": "シエラレオネ"
+            },
+            "acceptedAnswers": ["sierra leone", "sierra leona", "シエラレオネ"]
+        },
+        {
+            "id": "SGP",
+            "names": {
+                "fr": "Singapour",
+                "en": "Singapore",
+                "de": "Singapur",
+                "es": "Singapur",
+                "ja": "シンガポール"
+            },
+            "acceptedAnswers": ["singapour", "singapore", "singapur", "シンカホル"]
+        },
+        {
+            "id": "SXM",
+            "names": {
+                "fr": "Saint-Martin",
+                "en": "Sint Maarten",
+                "de": "Sint Maarten",
+                "es": "San Martín",
+                "ja": "シント・マールテン"
+            },
+            "acceptedAnswers": ["saint martin", "sint maarten", "san martin", "シント・マルテン"]
+        },
+        {
+            "id": "SVK",
+            "names": {
+                "fr": "Slovaquie",
+                "en": "Slovakia",
+                "de": "Slowakei",
+                "es": "Eslovaquia",
+                "ja": "スロバキア"
+            },
+            "acceptedAnswers": ["slovaquie", "slovakia", "slowakei", "eslovaquia", "スロハキア"]
+        },
+        {
+            "id": "SVN",
+            "names": {
+                "fr": "Slovénie",
+                "en": "Slovenia",
+                "de": "Slowenien",
+                "es": "Eslovenia",
+                "ja": "スロベニア"
+            },
+            "acceptedAnswers": ["slovenie", "slovenia", "slowenien", "eslovenia", "スロヘニア"]
+        },
+        {
+            "id": "SLB",
+            "names": {
+                "fr": "Îles Salomon",
+                "en": "Solomon Islands",
+                "de": "Salomonen",
+                "es": "Islas Salomón",
+                "ja": "ソロモン諸島"
+            },
+            "acceptedAnswers": [
+                "iles salomon",
+                "solomon islands",
+                "salomonen",
+                "islas salomon",
+                "ソロモン諸島"
+            ]
+        },
+        {
+            "id": "SOM",
+            "names": {
+                "fr": "Somalie",
+                "en": "Somalia",
+                "de": "Somalia",
+                "es": "Somalia",
+                "ja": "ソマリア"
+            },
+            "acceptedAnswers": ["somalie", "somalia", "ソマリア"]
+        },
+        {
+            "id": "SOL",
+            "names": {
+                "fr": "Somaliland",
+                "en": "Somaliland",
+                "de": "Somaliland",
+                "es": "Somalilandia",
+                "ja": "ソマリランド"
+            },
+            "acceptedAnswers": ["somaliland", "somalilandia", "ソマリラント"]
+        },
+        {
+            "id": "ZAF",
+            "names": {
+                "fr": "Afrique du Sud",
+                "en": "South Africa",
+                "de": "Südafrika",
+                "es": "Sudáfrica",
+                "ja": "南アフリカ共和国"
+            },
+            "acceptedAnswers": [
+                "afrique du sud",
+                "south africa",
+                "sudafrika",
+                "sudafrica",
+                "南アフリカ共和国"
+            ]
+        },
+        {
+            "id": "KOR",
+            "names": {
+                "fr": "Corée du Sud",
+                "en": "South Korea",
+                "de": "Südkorea",
+                "es": "Corea del Sur",
+                "ja": "大韓民国"
+            },
+            "acceptedAnswers": [
+                "coree du sud",
+                "south korea",
+                "sudkorea",
+                "corea del sur",
+                "大韓民国"
+            ]
+        },
+        {
+            "id": "SSD",
+            "names": {
+                "fr": "Soudan du Sud",
+                "en": "South Sudan",
+                "de": "Südsudan",
+                "es": "Sudán del Sur",
+                "ja": "南スーダン"
+            },
+            "acceptedAnswers": [
+                "soudan du sud",
+                "south sudan",
+                "sudsudan",
+                "sudan del sur",
+                "南スタン"
+            ]
+        },
+        {
+            "id": "ESP",
+            "names": {
+                "fr": "Espagne",
+                "en": "Spain",
+                "de": "Spanien",
+                "es": "España",
+                "ja": "スペイン"
+            },
+            "acceptedAnswers": ["espagne", "spain", "spanien", "espana", "スヘイン"]
+        },
+        {
+            "id": "LKA",
+            "names": {
+                "fr": "Sri Lanka",
+                "en": "Sri Lanka",
+                "de": "Sri Lanka",
+                "es": "Sri Lanka",
+                "ja": "スリランカ"
+            },
+            "acceptedAnswers": ["sri lanka", "スリランカ"]
+        },
+        {
+            "id": "SDN",
+            "names": {
+                "fr": "Soudan",
+                "en": "Sudan",
+                "de": "Sudan",
+                "es": "Sudán",
+                "ja": "スーダン"
+            },
+            "acceptedAnswers": ["soudan", "sudan", "スタン"]
+        },
+        {
+            "id": "SUR",
+            "names": {
+                "fr": "Suriname",
+                "en": "Suriname",
+                "de": "Suriname",
+                "es": "Surinam",
+                "ja": "スリナム"
+            },
+            "acceptedAnswers": ["suriname", "surinam", "スリナム"]
+        },
+        {
+            "id": "SWE",
+            "names": {
+                "fr": "Suède",
+                "en": "Sweden",
+                "de": "Schweden",
+                "es": "Suecia",
+                "ja": "スウェーデン"
+            },
+            "acceptedAnswers": ["suede", "sweden", "schweden", "suecia", "スウェテン"]
+        },
+        {
+            "id": "CHE",
+            "names": {
+                "fr": "Suisse",
+                "en": "Switzerland",
+                "de": "Schweiz",
+                "es": "Suiza",
+                "ja": "スイス"
+            },
+            "acceptedAnswers": ["suisse", "switzerland", "schweiz", "suiza", "スイス"]
+        },
+        {
+            "id": "SYR",
+            "names": {
+                "fr": "Syrie",
+                "en": "Syria",
+                "de": "Syrien",
+                "es": "Siria",
+                "ja": "シリア"
+            },
+            "acceptedAnswers": ["syrie", "syria", "syrien", "siria", "シリア"]
+        },
+        {
+            "id": "TWN",
+            "names": {
+                "fr": "Taïwan",
+                "en": "Taiwan",
+                "de": "Republik China",
+                "es": "República de China",
+                "ja": "中華民国"
+            },
+            "acceptedAnswers": ["taiwan", "republik china", "republica de china", "中華民国"]
+        },
+        {
+            "id": "TJK",
+            "names": {
+                "fr": "Tadjikistan",
+                "en": "Tajikistan",
+                "de": "Tadschikistan",
+                "es": "Tayikistán",
+                "ja": "タジキスタン"
+            },
+            "acceptedAnswers": [
+                "tadjikistan",
+                "tajikistan",
+                "tadschikistan",
+                "tayikistan",
+                "タシキスタン"
+            ]
+        },
+        {
+            "id": "TZA",
+            "names": {
+                "fr": "Tanzanie",
+                "en": "Tanzania",
+                "de": "Tansania",
+                "es": "Tanzania",
+                "ja": "タンザニア"
+            },
+            "acceptedAnswers": ["tanzanie", "tanzania", "tansania", "タンサニア"]
+        },
+        {
+            "id": "THA",
+            "names": {
+                "fr": "Thaïlande",
+                "en": "Thailand",
+                "de": "Thailand",
+                "es": "Tailandia",
+                "ja": "タイ王国"
+            },
+            "acceptedAnswers": ["thailande", "thailand", "tailandia", "タイ王国"]
+        },
+        {
+            "id": "BHS",
+            "names": {
+                "fr": "Bahamas",
+                "en": "The Bahamas",
+                "de": "Bahamas",
+                "es": "Bahamas",
+                "ja": "バハマ"
+            },
+            "acceptedAnswers": ["bahamas", "the bahamas", "ハハマ"]
+        },
+        {
+            "id": "GMB",
+            "names": {
+                "fr": "Gambie",
+                "en": "The Gambia",
+                "de": "Gambia",
+                "es": "Gambia",
+                "ja": "ガンビア"
+            },
+            "acceptedAnswers": ["gambie", "the gambia", "gambia", "カンヒア"]
+        },
+        {
+            "id": "TGO",
+            "names": {
+                "fr": "Togo",
+                "en": "Togo",
+                "de": "Togo",
+                "es": "Togo",
+                "ja": "トーゴ"
+            },
+            "acceptedAnswers": ["togo", "トコ"]
+        },
+        {
+            "id": "TON",
+            "names": {
+                "fr": "Tonga",
+                "en": "Tonga",
+                "de": "Tonga",
+                "es": "Tonga",
+                "ja": "トンガ"
+            },
+            "acceptedAnswers": ["tonga", "トンカ"]
+        },
+        {
+            "id": "TTO",
+            "names": {
+                "fr": "Trinité-et-Tobago",
+                "en": "Trinidad and Tobago",
+                "de": "Trinidad und Tobago",
+                "es": "Trinidad y Tobago",
+                "ja": "トリニダード・トバゴ"
+            },
+            "acceptedAnswers": [
+                "trinite et tobago",
+                "trinidad and tobago",
+                "trinidad und tobago",
+                "trinidad y tobago",
+                "トリニタト・トハコ"
+            ]
+        },
+        {
+            "id": "TUN",
+            "names": {
+                "fr": "Tunisie",
+                "en": "Tunisia",
+                "de": "Tunesien",
+                "es": "Túnez",
+                "ja": "チュニジア"
+            },
+            "acceptedAnswers": ["tunisie", "tunisia", "tunesien", "tunez", "チュニシア"]
+        },
+        {
+            "id": "TUR",
+            "names": {
+                "fr": "Turquie",
+                "en": "Turkey",
+                "de": "Türkei",
+                "es": "Turquía",
+                "ja": "トルコ"
+            },
+            "acceptedAnswers": ["turquie", "turkey", "turkei", "turquia", "トルコ"]
+        },
+        {
+            "id": "CYN",
+            "names": {
+                "fr": "Chypre du Nord",
+                "en": "Turkish Republic of Northern Cyprus",
+                "de": "Türkische Republik Nordzypern",
+                "es": "República Turca del Norte de Chipre",
+                "ja": "北キプロス・トルコ共和国"
+            },
+            "acceptedAnswers": [
+                "chypre du nord",
+                "turkish republic of northern cyprus",
+                "turkische republik nordzypern",
+                "republica turca del norte de chipre",
+                "北キフロス・トルコ共和国"
+            ]
+        },
+        {
+            "id": "TKM",
+            "names": {
+                "fr": "Turkménistan",
+                "en": "Turkmenistan",
+                "de": "Turkmenistan",
+                "es": "Turkmenistán",
+                "ja": "トルクメニスタン"
+            },
+            "acceptedAnswers": ["turkmenistan", "トルクメニスタン"]
+        },
+        {
+            "id": "TUV",
+            "names": {
+                "fr": "Tuvalu",
+                "en": "Tuvalu",
+                "de": "Tuvalu",
+                "es": "Tuvalu",
+                "ja": "ツバル"
+            },
+            "acceptedAnswers": ["tuvalu", "ツハル"]
+        },
+        {
+            "id": "UGA",
+            "names": {
+                "fr": "Ouganda",
+                "en": "Uganda",
+                "de": "Uganda",
+                "es": "Uganda",
+                "ja": "ウガンダ"
+            },
+            "acceptedAnswers": ["ouganda", "uganda", "ウカンタ"]
+        },
+        {
+            "id": "UKR",
+            "names": {
+                "fr": "Ukraine",
+                "en": "Ukraine",
+                "de": "Ukraine",
+                "es": "Ucrania",
+                "ja": "ウクライナ"
+            },
+            "acceptedAnswers": ["ukraine", "ucrania", "ウクライナ"]
+        },
+        {
+            "id": "ARE",
+            "names": {
+                "fr": "Émirats arabes unis",
+                "en": "United Arab Emirates",
+                "de": "Vereinigte Arabische Emirate",
+                "es": "Emiratos Árabes Unidos",
+                "ja": "アラブ首長国連邦"
+            },
+            "acceptedAnswers": [
+                "emirats arabes unis",
+                "united arab emirates",
+                "vereinigte arabische emirate",
+                "emiratos arabes unidos",
+                "アラフ首長国連邦"
+            ]
+        },
+        {
+            "id": "GBR",
+            "names": {
+                "fr": "Royaume-Uni",
+                "en": "United Kingdom",
+                "de": "Vereinigtes Königreich",
+                "es": "Reino Unido",
+                "ja": "イギリス"
+            },
+            "acceptedAnswers": [
+                "royaume uni",
+                "united kingdom",
+                "vereinigtes konigreich",
+                "reino unido",
+                "イキリス"
+            ]
+        },
+        {
+            "id": "USA",
+            "names": {
+                "fr": "États-Unis",
+                "en": "United States of America",
+                "de": "Vereinigte Staaten",
+                "es": "Estados Unidos",
+                "ja": "アメリカ合衆国"
+            },
+            "acceptedAnswers": [
+                "etats unis",
+                "united states of america",
+                "vereinigte staaten",
+                "estados unidos",
+                "アメリカ合衆国"
+            ]
+        },
+        {
+            "id": "URY",
+            "names": {
+                "fr": "Uruguay",
+                "en": "Uruguay",
+                "de": "Uruguay",
+                "es": "Uruguay",
+                "ja": "ウルグアイ"
+            },
+            "acceptedAnswers": ["uruguay", "ウルクアイ"]
+        },
+        {
+            "id": "UZB",
+            "names": {
+                "fr": "Ouzbékistan",
+                "en": "Uzbekistan",
+                "de": "Usbekistan",
+                "es": "Uzbekistán",
+                "ja": "ウズベキスタン"
+            },
+            "acceptedAnswers": ["ouzbekistan", "uzbekistan", "usbekistan", "ウスヘキスタン"]
+        },
+        {
+            "id": "VUT",
+            "names": {
+                "fr": "Vanuatu",
+                "en": "Vanuatu",
+                "de": "Vanuatu",
+                "es": "Vanuatu",
+                "ja": "バヌアツ"
+            },
+            "acceptedAnswers": ["vanuatu", "ハヌアツ"]
+        },
+        {
+            "id": "VAT",
+            "names": {
+                "fr": "Cité du Vatican",
+                "en": "Vatican City",
+                "de": "Vatikanstadt",
+                "es": "Ciudad del Vaticano",
+                "ja": "バチカン"
+            },
+            "acceptedAnswers": [
+                "cite du vatican",
+                "vatican city",
+                "vatikanstadt",
+                "ciudad del vaticano",
+                "ハチカン"
+            ]
+        },
+        {
+            "id": "VEN",
+            "names": {
+                "fr": "Venezuela",
+                "en": "Venezuela",
+                "de": "Venezuela",
+                "es": "Venezuela",
+                "ja": "ベネズエラ"
+            },
+            "acceptedAnswers": ["venezuela", "ヘネスエラ"]
+        },
+        {
+            "id": "VNM",
+            "names": {
+                "fr": "Viêt Nam",
+                "en": "Vietnam",
+                "de": "Vietnam",
+                "es": "Vietnam",
+                "ja": "ベトナム"
+            },
+            "acceptedAnswers": ["viet nam", "vietnam", "ヘトナム"]
+        },
+        {
+            "id": "YEM",
+            "names": {
+                "fr": "Yémen",
+                "en": "Yemen",
+                "de": "Jemen",
+                "es": "Yemen",
+                "ja": "イエメン"
+            },
+            "acceptedAnswers": ["yemen", "jemen", "イエメン"]
+        },
+        {
+            "id": "ZMB",
+            "names": {
+                "fr": "Zambie",
+                "en": "Zambia",
+                "de": "Sambia",
+                "es": "Zambia",
+                "ja": "ザンビア"
+            },
+            "acceptedAnswers": ["zambie", "zambia", "sambia", "サンヒア"]
+        },
+        {
+            "id": "ZWE",
+            "names": {
+                "fr": "Zimbabwe",
+                "en": "Zimbabwe",
+                "de": "Simbabwe",
+                "es": "Zimbabue",
+                "ja": "ジンバブエ"
+            },
+            "acceptedAnswers": ["zimbabwe", "simbabwe", "zimbabue", "シンハフエ"]
+        }
+    ]
+}
