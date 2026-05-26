@@ -1,4 +1,4 @@
-import countriesAnswerValidationData from "../data/json/countries-answer-validation.json" with { type: "json" };
+import countriesAnswerValidationData from "#data/json/countries-answer-validation.json" with { type: "json" };
 
 export type SupportedLanguage = "fr" | "en" | "de" | "es" | "ja";
 

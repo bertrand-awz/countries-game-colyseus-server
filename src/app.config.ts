@@ -29,13 +29,27 @@ const server = defineServer({
                 translations: buildContinentsTranslations(),
             };
         }),
-
-        game_map: createEndpoint("/api/map", { method: "GET" }, async () => {
-            return countriesMapService.getCountriesMapFeatures();
-        }),
     }),
 
     express: (app) => {
+        app.get("/api/map", async (_req, res, next) => {
+            try {
+                console.time("GET /api/map");
+
+                const features = countriesMapService.getCountriesMapFeatures();
+
+                const body = JSON.stringify(features);
+
+                res.setHeader("Content-Type", "application/json; charset=utf-8");
+                res.setHeader("Content-Length", Buffer.byteLength(body));
+                res.status(200).end(body);
+
+                console.timeEnd("GET /api/map");
+            } catch (error) {
+                next(error);
+            }
+        });
+
         /**
          * Use @colyseus/monitor
          * It is recommended to protect this route with a password

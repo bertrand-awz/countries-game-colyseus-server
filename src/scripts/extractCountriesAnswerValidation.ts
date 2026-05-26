@@ -3,6 +3,27 @@ import { mkdir, writeFile } from "node:fs/promises";
 const NATURAL_EARTH_URL =
     "https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_50m_admin_0_countries.geojson";
 
+type SupportedLanguage = "fr" | "en" | "de" | "es" | "ja";
+
+export type ContinentCode =
+    | "AFRICA"
+    | "ASIA"
+    | "EUROPE"
+    | "NORTH_AMERICA"
+    | "SOUTH_AMERICA"
+    | "OCEANIA"
+    | "SEVEN_SEAS";
+
+type NaturalEarthContinent =
+    | "Africa"
+    | "Asia"
+    | "Europe"
+    | "North America"
+    | "South America"
+    | "Oceania"
+    | "Seven seas (open ocean)"
+    | "Antarctica";
+
 type NaturalEarthFeature = {
     type: "Feature";
     properties: {
@@ -16,7 +37,7 @@ type NaturalEarthFeature = {
         ISO_A2?: string;
         ISO_A3?: string;
         ADM0_A3?: string;
-        CONTINENT?: string;
+        CONTINENT?: NaturalEarthContinent | string;
     };
     geometry: unknown;
 };
@@ -26,16 +47,25 @@ type NaturalEarthGeoJson = {
     features: NaturalEarthFeature[];
 };
 
-type SupportedLanguage = "fr" | "en" | "de" | "es" | "ja";
-
 type CountryAnswerValidation = {
     id: string;
+    continentID: ContinentCode;
     names: Record<SupportedLanguage, string>;
     acceptedAnswers: string[];
 };
 
 type CountriesAnswerValidationData = {
     countries: CountryAnswerValidation[];
+};
+
+const continentCodeByNaturalEarthName: Record<string, ContinentCode> = {
+    Africa: "AFRICA",
+    Asia: "ASIA",
+    Europe: "EUROPE",
+    "North America": "NORTH_AMERICA",
+    "South America": "SOUTH_AMERICA",
+    Oceania: "OCEANIA",
+    "Seven seas (open ocean)": "SEVEN_SEAS",
 };
 
 function clean(value: string | undefined | null): string | null {
@@ -58,7 +88,7 @@ function normalizeAnswer(value: string): string {
         .toLowerCase()
         .normalize("NFD")
         .replace(/\p{Diacritic}/gu, "")
-        .replace(/[’']/g, " ")
+        .replace(/[’'`´]/g, " ")
         .replace(/[-_]/g, " ")
         .replace(/[.,()]/g, " ")
         .replace(/\s+/g, " ")
@@ -76,6 +106,16 @@ function getCountryId(props: NaturalEarthFeature["properties"]): string | null {
     );
 }
 
+function getContinentID(props: NaturalEarthFeature["properties"]): ContinentCode | null {
+    const continentName = clean(props.CONTINENT);
+
+    if (!continentName) {
+        return null;
+    }
+
+    return continentCodeByNaturalEarthName[continentName] ?? null;
+}
+
 function isPlayableCountry(feature: NaturalEarthFeature): boolean {
     const props = feature.properties;
 
@@ -83,6 +123,7 @@ function isPlayableCountry(feature: NaturalEarthFeature): boolean {
         return false;
     }
 
+    // On exclut seulement Antarctica. On garde Seven seas (open ocean).
     if (props.CONTINENT === "Antarctica") {
         return false;
     }
@@ -109,11 +150,18 @@ async function main() {
             const props = feature.properties;
 
             const fallbackName = clean(props.NAME_EN) || clean(props.NAME) || "Unknown";
-
             const id = getCountryId(props);
 
             if (!id) {
                 throw new Error(`Country without valid id: ${fallbackName}`);
+            }
+
+            const continentID = getContinentID(props);
+
+            if (!continentID) {
+                throw new Error(
+                    `Country without valid continent: ${fallbackName}, continent=${props.CONTINENT}`,
+                );
             }
 
             const names: Record<SupportedLanguage, string> = {
@@ -134,6 +182,7 @@ async function main() {
 
             return {
                 id,
+                continentID,
                 names,
                 acceptedAnswers,
             };

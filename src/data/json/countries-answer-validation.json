@@ -2,6 +2,7 @@
     "countries": [
         {
             "id": "AFG",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Afghanistan",
                 "en": "Afghanistan",
@@ -13,6 +14,7 @@
         },
         {
             "id": "ALA",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Åland",
                 "en": "Åland",
@@ -24,6 +26,7 @@
         },
         {
             "id": "ALB",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Albanie",
                 "en": "Albania",
@@ -35,6 +38,7 @@
         },
         {
             "id": "DZA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Algérie",
                 "en": "Algeria",
@@ -46,6 +50,7 @@
         },
         {
             "id": "AND",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Andorre",
                 "en": "Andorra",
@@ -57,6 +62,7 @@
         },
         {
             "id": "AGO",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Angola",
                 "en": "Angola",
@@ -68,6 +74,7 @@
         },
         {
             "id": "ATG",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Antigua-et-Barbuda",
                 "en": "Antigua and Barbuda",
@@ -85,6 +92,7 @@
         },
         {
             "id": "ARG",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Argentine",
                 "en": "Argentina",
@@ -96,6 +104,7 @@
         },
         {
             "id": "ARM",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Arménie",
                 "en": "Armenia",
@@ -107,6 +116,7 @@
         },
         {
             "id": "ABW",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Aruba",
                 "en": "Aruba",
@@ -118,6 +128,7 @@
         },
         {
             "id": "AUS",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Australie",
                 "en": "Australia",
@@ -129,6 +140,7 @@
         },
         {
             "id": "AUT",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Autriche",
                 "en": "Austria",
@@ -140,6 +152,7 @@
         },
         {
             "id": "AZE",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Azerbaïdjan",
                 "en": "Azerbaijan",
@@ -157,6 +170,7 @@
         },
         {
             "id": "BHR",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Bahreïn",
                 "en": "Bahrain",
@@ -168,6 +182,7 @@
         },
         {
             "id": "BGD",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Bangladesh",
                 "en": "Bangladesh",
@@ -179,6 +194,7 @@
         },
         {
             "id": "BRB",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Barbade",
                 "en": "Barbados",
@@ -190,6 +206,7 @@
         },
         {
             "id": "BLR",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Biélorussie",
                 "en": "Belarus",
@@ -201,6 +218,7 @@
         },
         {
             "id": "BEL",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Belgique",
                 "en": "Belgium",
@@ -212,6 +230,7 @@
         },
         {
             "id": "BLZ",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Belize",
                 "en": "Belize",
@@ -223,6 +242,7 @@
         },
         {
             "id": "BEN",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Bénin",
                 "en": "Benin",
@@ -234,6 +254,7 @@
         },
         {
             "id": "BTN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Bhoutan",
                 "en": "Bhutan",
@@ -245,6 +266,7 @@
         },
         {
             "id": "BOL",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Bolivie",
                 "en": "Bolivia",
@@ -256,6 +278,7 @@
         },
         {
             "id": "BIH",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Bosnie-Herzégovine",
                 "en": "Bosnia and Herzegovina",
@@ -273,6 +296,7 @@
         },
         {
             "id": "BWA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Botswana",
                 "en": "Botswana",
@@ -284,6 +308,7 @@
         },
         {
             "id": "BRA",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Brésil",
                 "en": "Brazil",
@@ -295,6 +320,7 @@
         },
         {
             "id": "BRN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Brunei",
                 "en": "Brunei",
@@ -306,6 +332,7 @@
         },
         {
             "id": "BGR",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Bulgarie",
                 "en": "Bulgaria",
@@ -317,6 +344,7 @@
         },
         {
             "id": "BFA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Burkina Faso",
                 "en": "Burkina Faso",
@@ -328,6 +356,7 @@
         },
         {
             "id": "BDI",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Burundi",
                 "en": "Burundi",
@@ -339,6 +368,7 @@
         },
         {
             "id": "KHM",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Cambodge",
                 "en": "Cambodia",
@@ -350,6 +380,7 @@
         },
         {
             "id": "CMR",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Cameroun",
                 "en": "Cameroon",
@@ -361,6 +392,7 @@
         },
         {
             "id": "CAN",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Canada",
                 "en": "Canada",
@@ -372,6 +404,7 @@
         },
         {
             "id": "CPV",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Cap-Vert",
                 "en": "Cape Verde",
@@ -383,6 +416,7 @@
         },
         {
             "id": "CAF",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "République centrafricaine",
                 "en": "Central African Republic",
@@ -400,6 +434,7 @@
         },
         {
             "id": "TCD",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Tchad",
                 "en": "Chad",
@@ -411,6 +446,7 @@
         },
         {
             "id": "CHL",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Chili",
                 "en": "Chile",
@@ -422,6 +458,7 @@
         },
         {
             "id": "COL",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Colombie",
                 "en": "Colombia",
@@ -433,6 +470,7 @@
         },
         {
             "id": "COM",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Comores",
                 "en": "Comoros",
@@ -444,6 +482,7 @@
         },
         {
             "id": "CRI",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Costa Rica",
                 "en": "Costa Rica",
@@ -455,6 +494,7 @@
         },
         {
             "id": "HRV",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Croatie",
                 "en": "Croatia",
@@ -466,6 +506,7 @@
         },
         {
             "id": "CUW",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Curaçao",
                 "en": "Curaçao",
@@ -477,6 +518,7 @@
         },
         {
             "id": "CYP",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Chypre",
                 "en": "Cyprus",
@@ -488,6 +530,7 @@
         },
         {
             "id": "CZE",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Tchéquie",
                 "en": "Czech Republic",
@@ -505,6 +548,7 @@
         },
         {
             "id": "COD",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "République démocratique du Congo",
                 "en": "Democratic Republic of the Congo",
@@ -522,6 +566,7 @@
         },
         {
             "id": "DNK",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Danemark",
                 "en": "Denmark",
@@ -533,6 +578,7 @@
         },
         {
             "id": "DJI",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Djibouti",
                 "en": "Djibouti",
@@ -544,6 +590,7 @@
         },
         {
             "id": "DMA",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Dominique",
                 "en": "Dominica",
@@ -555,6 +602,7 @@
         },
         {
             "id": "DOM",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "République dominicaine",
                 "en": "Dominican Republic",
@@ -572,6 +620,7 @@
         },
         {
             "id": "TLS",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Timor oriental",
                 "en": "East Timor",
@@ -583,6 +632,7 @@
         },
         {
             "id": "ECU",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Équateur",
                 "en": "Ecuador",
@@ -594,6 +644,7 @@
         },
         {
             "id": "EGY",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Égypte",
                 "en": "Egypt",
@@ -605,6 +656,7 @@
         },
         {
             "id": "SLV",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Salvador",
                 "en": "El Salvador",
@@ -616,6 +668,7 @@
         },
         {
             "id": "GNQ",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Guinée équatoriale",
                 "en": "Equatorial Guinea",
@@ -633,6 +686,7 @@
         },
         {
             "id": "ERI",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Érythrée",
                 "en": "Eritrea",
@@ -644,6 +698,7 @@
         },
         {
             "id": "EST",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Estonie",
                 "en": "Estonia",
@@ -655,6 +710,7 @@
         },
         {
             "id": "SWZ",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Eswatini",
                 "en": "Eswatini",
@@ -666,6 +722,7 @@
         },
         {
             "id": "ETH",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Éthiopie",
                 "en": "Ethiopia",
@@ -677,6 +734,7 @@
         },
         {
             "id": "FSM",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "États fédérés de Micronésie",
                 "en": "Federated States of Micronesia",
@@ -694,6 +752,7 @@
         },
         {
             "id": "FJI",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Fidji",
                 "en": "Fiji",
@@ -705,6 +764,7 @@
         },
         {
             "id": "FIN",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Finlande",
                 "en": "Finland",
@@ -716,6 +776,7 @@
         },
         {
             "id": "FRA",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "France",
                 "en": "France",
@@ -727,6 +788,7 @@
         },
         {
             "id": "GAB",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Gabon",
                 "en": "Gabon",
@@ -738,6 +800,7 @@
         },
         {
             "id": "GEO",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Géorgie",
                 "en": "Georgia",
@@ -749,6 +812,7 @@
         },
         {
             "id": "DEU",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Allemagne",
                 "en": "Germany",
@@ -760,6 +824,7 @@
         },
         {
             "id": "GHA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Ghana",
                 "en": "Ghana",
@@ -771,6 +836,7 @@
         },
         {
             "id": "GRC",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Grèce",
                 "en": "Greece",
@@ -782,6 +848,7 @@
         },
         {
             "id": "GRL",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Groenland",
                 "en": "Greenland",
@@ -793,6 +860,7 @@
         },
         {
             "id": "GRD",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Grenade",
                 "en": "Grenada",
@@ -804,6 +872,7 @@
         },
         {
             "id": "GTM",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Guatemala",
                 "en": "Guatemala",
@@ -815,6 +884,7 @@
         },
         {
             "id": "GGY",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Guernesey",
                 "en": "Guernsey",
@@ -826,6 +896,7 @@
         },
         {
             "id": "GIN",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Guinée",
                 "en": "Guinea",
@@ -837,6 +908,7 @@
         },
         {
             "id": "GNB",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Guinée-Bissau",
                 "en": "Guinea-Bissau",
@@ -848,6 +920,7 @@
         },
         {
             "id": "GUY",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Guyana",
                 "en": "Guyana",
@@ -859,6 +932,7 @@
         },
         {
             "id": "HTI",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Haïti",
                 "en": "Haiti",
@@ -870,6 +944,7 @@
         },
         {
             "id": "HND",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Honduras",
                 "en": "Honduras",
@@ -881,6 +956,7 @@
         },
         {
             "id": "HKG",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Hong Kong",
                 "en": "Hong Kong",
@@ -892,6 +968,7 @@
         },
         {
             "id": "HUN",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Hongrie",
                 "en": "Hungary",
@@ -903,6 +980,7 @@
         },
         {
             "id": "ISL",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Islande",
                 "en": "Iceland",
@@ -914,6 +992,7 @@
         },
         {
             "id": "IND",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Inde",
                 "en": "India",
@@ -925,6 +1004,7 @@
         },
         {
             "id": "IDN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Indonésie",
                 "en": "Indonesia",
@@ -936,6 +1016,7 @@
         },
         {
             "id": "IRN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Iran",
                 "en": "Iran",
@@ -947,6 +1028,7 @@
         },
         {
             "id": "IRQ",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Irak",
                 "en": "Iraq",
@@ -958,6 +1040,7 @@
         },
         {
             "id": "IRL",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Irlande",
                 "en": "Ireland",
@@ -969,6 +1052,7 @@
         },
         {
             "id": "IMN",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "île de Man",
                 "en": "Isle of Man",
@@ -980,6 +1064,7 @@
         },
         {
             "id": "ITA",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Italie",
                 "en": "Italy",
@@ -991,6 +1076,7 @@
         },
         {
             "id": "CIV",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Côte d'Ivoire",
                 "en": "Ivory Coast",
@@ -1008,6 +1094,7 @@
         },
         {
             "id": "JAM",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Jamaïque",
                 "en": "Jamaica",
@@ -1019,6 +1106,7 @@
         },
         {
             "id": "JPN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Japon",
                 "en": "Japan",
@@ -1030,6 +1118,7 @@
         },
         {
             "id": "JEY",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Jersey",
                 "en": "Jersey",
@@ -1041,6 +1130,7 @@
         },
         {
             "id": "JOR",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Jordanie",
                 "en": "Jordan",
@@ -1052,6 +1142,7 @@
         },
         {
             "id": "KEN",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Kenya",
                 "en": "Kenya",
@@ -1063,6 +1154,7 @@
         },
         {
             "id": "KIR",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Kiribati",
                 "en": "Kiribati",
@@ -1074,6 +1166,7 @@
         },
         {
             "id": "KWT",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Koweït",
                 "en": "Kuwait",
@@ -1085,6 +1178,7 @@
         },
         {
             "id": "KGZ",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Kirghizistan",
                 "en": "Kyrgyzstan",
@@ -1102,6 +1196,7 @@
         },
         {
             "id": "LAO",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Laos",
                 "en": "Laos",
@@ -1113,6 +1208,7 @@
         },
         {
             "id": "LVA",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Lettonie",
                 "en": "Latvia",
@@ -1124,6 +1220,7 @@
         },
         {
             "id": "LBN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Liban",
                 "en": "Lebanon",
@@ -1135,6 +1232,7 @@
         },
         {
             "id": "LSO",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Lesotho",
                 "en": "Lesotho",
@@ -1146,6 +1244,7 @@
         },
         {
             "id": "LBR",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Liberia",
                 "en": "Liberia",
@@ -1157,6 +1256,7 @@
         },
         {
             "id": "LBY",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Libye",
                 "en": "Libya",
@@ -1168,6 +1268,7 @@
         },
         {
             "id": "LIE",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Liechtenstein",
                 "en": "Liechtenstein",
@@ -1179,6 +1280,7 @@
         },
         {
             "id": "LTU",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Lituanie",
                 "en": "Lithuania",
@@ -1190,6 +1292,7 @@
         },
         {
             "id": "LUX",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Luxembourg",
                 "en": "Luxembourg",
@@ -1201,6 +1304,7 @@
         },
         {
             "id": "MAC",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Macao",
                 "en": "Macau",
@@ -1212,6 +1316,7 @@
         },
         {
             "id": "MDG",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Madagascar",
                 "en": "Madagascar",
@@ -1223,6 +1328,7 @@
         },
         {
             "id": "MWI",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Malawi",
                 "en": "Malawi",
@@ -1234,6 +1340,7 @@
         },
         {
             "id": "MYS",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Malaisie",
                 "en": "Malaysia",
@@ -1245,6 +1352,7 @@
         },
         {
             "id": "MDV",
+            "continentID": "SEVEN_SEAS",
             "names": {
                 "fr": "Maldives",
                 "en": "Maldives",
@@ -1256,6 +1364,7 @@
         },
         {
             "id": "MLI",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Mali",
                 "en": "Mali",
@@ -1267,6 +1376,7 @@
         },
         {
             "id": "MLT",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Malte",
                 "en": "Malta",
@@ -1278,6 +1388,7 @@
         },
         {
             "id": "MHL",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Îles Marshall",
                 "en": "Marshall Islands",
@@ -1295,6 +1406,7 @@
         },
         {
             "id": "MRT",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Mauritanie",
                 "en": "Mauritania",
@@ -1306,6 +1418,7 @@
         },
         {
             "id": "MUS",
+            "continentID": "SEVEN_SEAS",
             "names": {
                 "fr": "Maurice",
                 "en": "Mauritius",
@@ -1317,6 +1430,7 @@
         },
         {
             "id": "MEX",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Mexique",
                 "en": "Mexico",
@@ -1328,6 +1442,7 @@
         },
         {
             "id": "MDA",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Moldavie",
                 "en": "Moldova",
@@ -1339,6 +1454,7 @@
         },
         {
             "id": "MCO",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Monaco",
                 "en": "Monaco",
@@ -1350,6 +1466,7 @@
         },
         {
             "id": "MNG",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Mongolie",
                 "en": "Mongolia",
@@ -1361,6 +1478,7 @@
         },
         {
             "id": "MNE",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Monténégro",
                 "en": "Montenegro",
@@ -1372,6 +1490,7 @@
         },
         {
             "id": "MAR",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Maroc",
                 "en": "Morocco",
@@ -1383,6 +1502,7 @@
         },
         {
             "id": "MOZ",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Mozambique",
                 "en": "Mozambique",
@@ -1394,6 +1514,7 @@
         },
         {
             "id": "MMR",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Birmanie",
                 "en": "Myanmar",
@@ -1405,6 +1526,7 @@
         },
         {
             "id": "NAM",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Namibie",
                 "en": "Namibia",
@@ -1416,6 +1538,7 @@
         },
         {
             "id": "NRU",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Nauru",
                 "en": "Nauru",
@@ -1427,6 +1550,7 @@
         },
         {
             "id": "NPL",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Népal",
                 "en": "Nepal",
@@ -1438,6 +1562,7 @@
         },
         {
             "id": "NLD",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Pays-Bas",
                 "en": "Netherlands",
@@ -1455,6 +1580,7 @@
         },
         {
             "id": "NZL",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Nouvelle-Zélande",
                 "en": "New Zealand",
@@ -1472,6 +1598,7 @@
         },
         {
             "id": "NIC",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Nicaragua",
                 "en": "Nicaragua",
@@ -1483,6 +1610,7 @@
         },
         {
             "id": "NER",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Niger",
                 "en": "Niger",
@@ -1494,6 +1622,7 @@
         },
         {
             "id": "NGA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Nigeria",
                 "en": "Nigeria",
@@ -1505,6 +1634,7 @@
         },
         {
             "id": "PRK",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Corée du Nord",
                 "en": "North Korea",
@@ -1522,6 +1652,7 @@
         },
         {
             "id": "MKD",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Macédoine du Nord",
                 "en": "North Macedonia",
@@ -1539,6 +1670,7 @@
         },
         {
             "id": "NOR",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Norvège",
                 "en": "Norway",
@@ -1550,6 +1682,7 @@
         },
         {
             "id": "OMN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Oman",
                 "en": "Oman",
@@ -1561,6 +1694,7 @@
         },
         {
             "id": "PAK",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Pakistan",
                 "en": "Pakistan",
@@ -1572,6 +1706,7 @@
         },
         {
             "id": "PLW",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Palaos",
                 "en": "Palau",
@@ -1583,6 +1718,7 @@
         },
         {
             "id": "PAN",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Panama",
                 "en": "Panama",
@@ -1594,6 +1730,7 @@
         },
         {
             "id": "PNG",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Papouasie-Nouvelle-Guinée",
                 "en": "Papua New Guinea",
@@ -1611,6 +1748,7 @@
         },
         {
             "id": "PRY",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Paraguay",
                 "en": "Paraguay",
@@ -1622,6 +1760,7 @@
         },
         {
             "id": "CHN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "République populaire de Chine",
                 "en": "People's Republic of China",
@@ -1639,6 +1778,7 @@
         },
         {
             "id": "PER",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Pérou",
                 "en": "Peru",
@@ -1650,6 +1790,7 @@
         },
         {
             "id": "PHL",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Philippines",
                 "en": "Philippines",
@@ -1661,6 +1802,7 @@
         },
         {
             "id": "POL",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Pologne",
                 "en": "Poland",
@@ -1672,6 +1814,7 @@
         },
         {
             "id": "PRT",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Portugal",
                 "en": "Portugal",
@@ -1683,6 +1826,7 @@
         },
         {
             "id": "QAT",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Qatar",
                 "en": "Qatar",
@@ -1694,6 +1838,7 @@
         },
         {
             "id": "COG",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "République du Congo",
                 "en": "Republic of the Congo",
@@ -1711,6 +1856,7 @@
         },
         {
             "id": "ROU",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Roumanie",
                 "en": "Romania",
@@ -1722,6 +1868,7 @@
         },
         {
             "id": "RUS",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Russie",
                 "en": "Russia",
@@ -1733,6 +1880,7 @@
         },
         {
             "id": "RWA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Rwanda",
                 "en": "Rwanda",
@@ -1744,6 +1892,7 @@
         },
         {
             "id": "KNA",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Saint-Christophe-et-Niévès",
                 "en": "Saint Kitts and Nevis",
@@ -1761,6 +1910,7 @@
         },
         {
             "id": "LCA",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Sainte-Lucie",
                 "en": "Saint Lucia",
@@ -1778,6 +1928,7 @@
         },
         {
             "id": "VCT",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Saint-Vincent-et-les-Grenadines",
                 "en": "Saint Vincent and the Grenadines",
@@ -1795,6 +1946,7 @@
         },
         {
             "id": "WSM",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Samoa",
                 "en": "Samoa",
@@ -1806,6 +1958,7 @@
         },
         {
             "id": "SMR",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Saint-Marin",
                 "en": "San Marino",
@@ -1817,6 +1970,7 @@
         },
         {
             "id": "STP",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Sao Tomé-et-Principe",
                 "en": "São Tomé and Príncipe",
@@ -1834,6 +1988,7 @@
         },
         {
             "id": "SAU",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Arabie saoudite",
                 "en": "Saudi Arabia",
@@ -1851,6 +2006,7 @@
         },
         {
             "id": "SEN",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Sénégal",
                 "en": "Senegal",
@@ -1862,6 +2018,7 @@
         },
         {
             "id": "SRB",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Serbie",
                 "en": "Serbia",
@@ -1873,6 +2030,7 @@
         },
         {
             "id": "SYC",
+            "continentID": "SEVEN_SEAS",
             "names": {
                 "fr": "Seychelles",
                 "en": "Seychelles",
@@ -1884,6 +2042,7 @@
         },
         {
             "id": "SLE",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Sierra Leone",
                 "en": "Sierra Leone",
@@ -1895,6 +2054,7 @@
         },
         {
             "id": "SGP",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Singapour",
                 "en": "Singapore",
@@ -1906,6 +2066,7 @@
         },
         {
             "id": "SXM",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Saint-Martin",
                 "en": "Sint Maarten",
@@ -1917,6 +2078,7 @@
         },
         {
             "id": "SVK",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Slovaquie",
                 "en": "Slovakia",
@@ -1928,6 +2090,7 @@
         },
         {
             "id": "SVN",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Slovénie",
                 "en": "Slovenia",
@@ -1939,6 +2102,7 @@
         },
         {
             "id": "SLB",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Îles Salomon",
                 "en": "Solomon Islands",
@@ -1956,6 +2120,7 @@
         },
         {
             "id": "SOM",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Somalie",
                 "en": "Somalia",
@@ -1967,6 +2132,7 @@
         },
         {
             "id": "SOL",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Somaliland",
                 "en": "Somaliland",
@@ -1978,6 +2144,7 @@
         },
         {
             "id": "ZAF",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Afrique du Sud",
                 "en": "South Africa",
@@ -1995,6 +2162,7 @@
         },
         {
             "id": "KOR",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Corée du Sud",
                 "en": "South Korea",
@@ -2012,6 +2180,7 @@
         },
         {
             "id": "SSD",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Soudan du Sud",
                 "en": "South Sudan",
@@ -2029,6 +2198,7 @@
         },
         {
             "id": "ESP",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Espagne",
                 "en": "Spain",
@@ -2040,6 +2210,7 @@
         },
         {
             "id": "LKA",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Sri Lanka",
                 "en": "Sri Lanka",
@@ -2051,6 +2222,7 @@
         },
         {
             "id": "SDN",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Soudan",
                 "en": "Sudan",
@@ -2062,6 +2234,7 @@
         },
         {
             "id": "SUR",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Suriname",
                 "en": "Suriname",
@@ -2073,6 +2246,7 @@
         },
         {
             "id": "SWE",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Suède",
                 "en": "Sweden",
@@ -2084,6 +2258,7 @@
         },
         {
             "id": "CHE",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Suisse",
                 "en": "Switzerland",
@@ -2095,6 +2270,7 @@
         },
         {
             "id": "SYR",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Syrie",
                 "en": "Syria",
@@ -2106,6 +2282,7 @@
         },
         {
             "id": "TWN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Taïwan",
                 "en": "Taiwan",
@@ -2117,6 +2294,7 @@
         },
         {
             "id": "TJK",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Tadjikistan",
                 "en": "Tajikistan",
@@ -2134,6 +2312,7 @@
         },
         {
             "id": "TZA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Tanzanie",
                 "en": "Tanzania",
@@ -2145,6 +2324,7 @@
         },
         {
             "id": "THA",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Thaïlande",
                 "en": "Thailand",
@@ -2156,6 +2336,7 @@
         },
         {
             "id": "BHS",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Bahamas",
                 "en": "The Bahamas",
@@ -2167,6 +2348,7 @@
         },
         {
             "id": "GMB",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Gambie",
                 "en": "The Gambia",
@@ -2178,6 +2360,7 @@
         },
         {
             "id": "TGO",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Togo",
                 "en": "Togo",
@@ -2189,6 +2372,7 @@
         },
         {
             "id": "TON",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Tonga",
                 "en": "Tonga",
@@ -2200,6 +2384,7 @@
         },
         {
             "id": "TTO",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "Trinité-et-Tobago",
                 "en": "Trinidad and Tobago",
@@ -2217,6 +2402,7 @@
         },
         {
             "id": "TUN",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Tunisie",
                 "en": "Tunisia",
@@ -2228,6 +2414,7 @@
         },
         {
             "id": "TUR",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Turquie",
                 "en": "Turkey",
@@ -2239,6 +2426,7 @@
         },
         {
             "id": "CYN",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Chypre du Nord",
                 "en": "Turkish Republic of Northern Cyprus",
@@ -2256,6 +2444,7 @@
         },
         {
             "id": "TKM",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Turkménistan",
                 "en": "Turkmenistan",
@@ -2267,6 +2456,7 @@
         },
         {
             "id": "TUV",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Tuvalu",
                 "en": "Tuvalu",
@@ -2278,6 +2468,7 @@
         },
         {
             "id": "UGA",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Ouganda",
                 "en": "Uganda",
@@ -2289,6 +2480,7 @@
         },
         {
             "id": "UKR",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Ukraine",
                 "en": "Ukraine",
@@ -2300,6 +2492,7 @@
         },
         {
             "id": "ARE",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Émirats arabes unis",
                 "en": "United Arab Emirates",
@@ -2317,6 +2510,7 @@
         },
         {
             "id": "GBR",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Royaume-Uni",
                 "en": "United Kingdom",
@@ -2334,6 +2528,7 @@
         },
         {
             "id": "USA",
+            "continentID": "NORTH_AMERICA",
             "names": {
                 "fr": "États-Unis",
                 "en": "United States of America",
@@ -2351,6 +2546,7 @@
         },
         {
             "id": "URY",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Uruguay",
                 "en": "Uruguay",
@@ -2362,6 +2558,7 @@
         },
         {
             "id": "UZB",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Ouzbékistan",
                 "en": "Uzbekistan",
@@ -2373,6 +2570,7 @@
         },
         {
             "id": "VUT",
+            "continentID": "OCEANIA",
             "names": {
                 "fr": "Vanuatu",
                 "en": "Vanuatu",
@@ -2384,6 +2582,7 @@
         },
         {
             "id": "VAT",
+            "continentID": "EUROPE",
             "names": {
                 "fr": "Cité du Vatican",
                 "en": "Vatican City",
@@ -2401,6 +2600,7 @@
         },
         {
             "id": "VEN",
+            "continentID": "SOUTH_AMERICA",
             "names": {
                 "fr": "Venezuela",
                 "en": "Venezuela",
@@ -2412,6 +2612,7 @@
         },
         {
             "id": "VNM",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Viêt Nam",
                 "en": "Vietnam",
@@ -2423,6 +2624,7 @@
         },
         {
             "id": "YEM",
+            "continentID": "ASIA",
             "names": {
                 "fr": "Yémen",
                 "en": "Yemen",
@@ -2434,6 +2636,7 @@
         },
         {
             "id": "ZMB",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Zambie",
                 "en": "Zambia",
@@ -2445,6 +2648,7 @@
         },
         {
             "id": "ZWE",
+            "continentID": "AFRICA",
             "names": {
                 "fr": "Zimbabwe",
                 "en": "Zimbabwe",

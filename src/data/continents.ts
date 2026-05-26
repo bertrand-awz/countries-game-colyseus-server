@@ -6,10 +6,12 @@ export type ContinentCode =
     | "EUROPE"
     | "NORTH_AMERICA"
     | "SOUTH_AMERICA"
-    | "OCEANIA";
+    | "OCEANIA"
+    | "SEVEN_SEAS";
 
 export type ContinentDetails = {
     code: ContinentCode;
+    naturalEarthName: string;
     translationKey: `CONTINENTS.${ContinentCode}`;
     numberOfCountries: number;
     names: Record<SupportedLanguage, string>;
@@ -18,6 +20,7 @@ export type ContinentDetails = {
 export const continentsDetails: ContinentDetails[] = [
     {
         code: "AFRICA",
+        naturalEarthName: "Africa",
         translationKey: "CONTINENTS.AFRICA",
         numberOfCountries: 54,
         names: {
@@ -27,6 +30,7 @@ export const continentsDetails: ContinentDetails[] = [
     },
     {
         code: "ASIA",
+        naturalEarthName: "Asia",
         translationKey: "CONTINENTS.ASIA",
         numberOfCountries: 49,
         names: {
@@ -36,6 +40,7 @@ export const continentsDetails: ContinentDetails[] = [
     },
     {
         code: "EUROPE",
+        naturalEarthName: "Europe",
         translationKey: "CONTINENTS.EUROPE",
         numberOfCountries: 44,
         names: {
@@ -45,6 +50,7 @@ export const continentsDetails: ContinentDetails[] = [
     },
     {
         code: "NORTH_AMERICA",
+        naturalEarthName: "North America",
         translationKey: "CONTINENTS.NORTH_AMERICA",
         numberOfCountries: 23,
         names: {
@@ -54,6 +60,7 @@ export const continentsDetails: ContinentDetails[] = [
     },
     {
         code: "SOUTH_AMERICA",
+        naturalEarthName: "South America",
         translationKey: "CONTINENTS.SOUTH_AMERICA",
         numberOfCountries: 12,
         names: {
@@ -63,11 +70,22 @@ export const continentsDetails: ContinentDetails[] = [
     },
     {
         code: "OCEANIA",
+        naturalEarthName: "Oceania",
         translationKey: "CONTINENTS.OCEANIA",
         numberOfCountries: 14,
         names: {
             fr: "Océanie",
             en: "Oceania",
+        },
+    },
+    {
+        code: "SEVEN_SEAS",
+        naturalEarthName: "Seven seas (open ocean)",
+        translationKey: "CONTINENTS.SEVEN_SEAS",
+        numberOfCountries: 0,
+        names: {
+            fr: "Sept mers",
+            en: "Seven seas",
         },
     },
 ];

@@ -1,7 +1,7 @@
 import { Room, Client, CloseCode } from "colyseus";
-import { CountriesGameState, GameStatus } from "./schema/CountriesGameState.js";
-import { PlayerState } from "./schema/PlayerState.js";
-import { countriesAnswerValidationService } from "#services/CountriesAnswerValidationService.js";
+import { CountriesGameState, GameStatus } from "#rooms/schema/CountriesGameState.js";
+import { PlayerState } from "#rooms/schema/PlayerState.js";
+import { CountriesGame } from "#game/CountriesGame.js";
 
 type JoinOptions = {
     username?: string;
@@ -20,6 +20,7 @@ type SubmitCountryMessage = {
 export class CountriesGameRoom extends Room {
     maxClients: number = 8;
     state: CountriesGameState;
+    game: CountriesGame;
 
     private gameTimeout?: ReturnType<typeof this.clock.setTimeout>;
 

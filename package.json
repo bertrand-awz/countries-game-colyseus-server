@@ -11,10 +11,12 @@
     "imports": {
         "#rooms": "./dist/rooms/*",
         "#services": "./dist/services/*",
-        "#data": "./dist/data/*"
+        "#data": "./dist/data/*",
+        "#game": "./dist/game/*"
     },
     "scripts": {
         "extract:answers": "tsx src/scripts/extractCountriesAnswerValidation.ts",
+        "extract:continents": "tsx src/scripts/extractContinents.ts",
         "extract:public-map": "tsx src/scripts/extractPublicCountryMapFeatures.ts",
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
@@ -41,7 +43,7 @@
         "@types/mocha": "^10.0.1",
         "eslint": "^10.4.0",
         "eslint-config-prettier": "^10.1.8",
-        "mocha": "^11.7.5",
+        "mocha": "^11.7.6",
         "prettier": "^3.8.3",
         "rimraf": "^5.0.0",
         "tsx": "^4.22.3",
