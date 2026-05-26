@@ -6,19 +6,22 @@ import { GameRoomMessageType } from "#rooms/GameRoomMessageType.js";
 import { CountryNameValidator } from "#game/CountryNameValidator.js";
 
 import countriesAnswerValidation from "#data/json/countries-answer-validation.json" with { type: "json" };
+import {SupportedLanguage} from "#data/continents.js";
+import {AnswerValidationRequest} from "#game/types.js";
 
 type JoinOptions = {
     username?: string;
 };
 
 type CreateOptions = {
-    gameLanguage: string;
+    gameLanguage: SupportedLanguage;
     gameDurationInSeconds: number;
     maxPlayersAllowed: number;
 };
 
 type SubmitCountryMessage = {
     countryName: string;
+    validationLanguage: SupportedLanguage;
 };
 
 export class CountriesGameRoom extends Room {
@@ -164,7 +167,8 @@ export class CountriesGameRoom extends Room {
     }
 
     private handleCountrySubmission(client: Client, message: SubmitCountryMessage): void {
-        const result = this.game.submitAnswer(client.sessionId, message.countryName);
+        const answer = {answer: message.countryName, language: message.validationLanguage } as AnswerValidationRequest;
+        const result = this.game.submitAnswer(client.sessionId, answer);
 
         client.send(GameRoomMessageType.SUBMIT_COUNTRY_NAME_RESULT, result);
 
