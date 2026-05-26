@@ -1,6 +1,7 @@
 import { MapSchema, Schema, type } from "@colyseus/schema";
 import { PlayerState } from "./PlayerState.js";
 import { ContinentProgressState } from "./ContinentProgressState.js";
+import { SupportedLanguage } from "#game/CountryNameValidator.js";
 
 export enum GameStatus {
     WAITING = "waiting",
@@ -28,15 +29,21 @@ export class CountriesGameState extends Schema {
     @type("string")
     status: GameStatus = GameStatus.WAITING;
 
+    @type("boolean")
+    allowAnswerValidationInPlayerCurrentLanguage: boolean = true;
+
+    @type("string")
+    defaultLanguage: SupportedLanguage;
+
     @type({ map: PlayerState })
     players = new MapSchema<PlayerState>();
 
     @type({ map: ContinentProgressState })
     continents = new MapSchema<ContinentProgressState>();
 
-    constructor(gameLanguage: string, gameDuration: number) {
+    constructor(defaultLanguage: SupportedLanguage, gameDuration: number) {
         super();
-        this.language = gameLanguage;
+        this.defaultLanguage = defaultLanguage;
         this.durationInSeconds = gameDuration;
     }
 

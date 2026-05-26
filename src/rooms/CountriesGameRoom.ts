@@ -1,7 +1,11 @@
 import { Room, Client, CloseCode } from "colyseus";
+
 import { CountriesGameState, GameStatus } from "#rooms/schema/CountriesGameState.js";
-import { PlayerState } from "#rooms/schema/PlayerState.js";
 import { CountriesGame } from "#game/CountriesGame.js";
+import { GameRoomMessageType } from "#rooms/GameRoomMessageType.js";
+import { CountryNameValidator } from "#game/CountryNameValidator.js";
+
+import countriesAnswerValidation from "#data/json/countries-answer-validation.json" with { type: "json" };
 
 type JoinOptions = {
     username?: string;
@@ -18,96 +22,208 @@ type SubmitCountryMessage = {
 };
 
 export class CountriesGameRoom extends Room {
-    maxClients: number = 8;
+    maxClients = 8;
     state: CountriesGameState;
-    game: CountriesGame;
 
-    private gameTimeout?: ReturnType<typeof this.clock.setTimeout>;
+    private game!: CountriesGame;
+    private gameEndTimeout: NodeJS.Timeout | null = null;
 
-    onCreate(options: CreateOptions) {
+    onCreate(options: CreateOptions): void {
         this.state = new CountriesGameState(options.gameLanguage, options.gameDurationInSeconds);
 
-        this.maxClients = options.maxPlayersAllowed;
+        this.maxClients = options.maxPlayersAllowed ?? 8;
 
-        this.onMessage("submit-country", (client, message: SubmitCountryMessage) => {
-            this.handleCountrySubmission(client, message);
+        const countryNameValidator = new CountryNameValidator(countriesAnswerValidation.countries);
+
+        this.game = new CountriesGame(
+            this.state,
+            countryNameValidator,
+            countriesAnswerValidation.countries.length,
+        );
+
+        this.onMessage(
+            GameRoomMessageType.SUBMIT_COUNTRY_NAME,
+            (client, message: SubmitCountryMessage) => {
+                this.handleCountrySubmission(client, message);
+            },
+        );
+
+        this.onMessage(GameRoomMessageType.PASS_TURN, (client) => {
+            this.handlePassTurn(client);
         });
 
-        this.onMessage("start-game", (client) => {
-            this.startGame();
+        this.onMessage(GameRoomMessageType.START_GAME, (client) => {
+            this.startGame(client);
+        });
+
+        this.onMessage(GameRoomMessageType.PAUSE_GAME, (client) => {
+            this.pauseGame(client);
+        });
+
+        this.onMessage(GameRoomMessageType.RESUME_GAME, (client) => {
+            this.resumeGame(client);
+        });
+
+        this.onMessage(GameRoomMessageType.END_GAME, (client) => {
+            this.endGame(client);
         });
     }
 
-    onJoin(client: Client, options: JoinOptions) {
+    onJoin(client: Client, options: JoinOptions): void {
         const username = options.username || `Player-${client.sessionId.slice(0, 4)}`;
 
-        this.state.addPlayer(client.sessionId, new PlayerState(username));
+        this.game.addPlayer(client.sessionId, username);
 
-        console.log(client.sessionId, "joined!");
+        this.broadcast(GameRoomMessageType.PLAYER_JOIN_ROOM, {
+            playerSessionId: client.sessionId,
+            username,
+            numberOfPlayers: this.state.numberOfPlayers,
+            currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
+        });
     }
 
-    onLeave(client: Client, code: CloseCode) {
-        this.state.removePlayer(client.sessionId);
+    onLeave(client: Client, code: CloseCode): void {
+        const player = this.state.getPlayer(client.sessionId);
+        const username = player?.username ?? `Player-${client.sessionId.slice(0, 4)}`;
 
-        console.log(client.sessionId, "left!", code);
+        this.game.removePlayer(client.sessionId);
+
+        this.broadcast(GameRoomMessageType.PLAYER_LEFT_ROOM, {
+            playerSessionId: client.sessionId,
+            username,
+            numberOfPlayers: this.state.numberOfPlayers,
+            currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
+            code,
+        });
+
+        if (this.state.status !== GameStatus.PLAYING) {
+            this.clearGameEndTimeout();
+        }
     }
 
-    onDispose() {
-        this.gameTimeout?.clear();
+    onDispose(): void {
+        this.clearGameEndTimeout();
 
         console.log("room", this.roomId, "disposing...");
     }
 
-    private startGame() {
-        if (this.state.status !== GameStatus.WAITING) {
+    private startGame(client: Client): void {
+        const result = this.game.start();
+
+        if (!result.accepted) {
+            client.send(GameRoomMessageType.START_GAME_REJECTED, result);
             return;
         }
 
-        const now = Date.now();
+        this.scheduleGameEnd();
 
-        this.state.startAt = now;
-        this.state.endAt = now + this.state.durationInSeconds * 1000;
-        this.state.status = GameStatus.PLAYING;
-
-        this.gameTimeout = this.clock.setTimeout(() => {
-            this.endGame();
-        }, this.state.durationInSeconds * 1000);
-    }
-
-    private endGame() {
-        if (this.state.status === GameStatus.FINISHED) {
-            return;
-        }
-
-        this.state.status = GameStatus.FINISHED;
-
-        this.broadcast("game-ended", {
-            endedAt: Date.now(),
+        this.broadcast(GameRoomMessageType.GAME_STARTED, {
+            startAt: result.startAt,
+            endAt: result.endAt,
+            durationInSeconds: this.state.durationInSeconds,
+            currentPlayerSessionId: result.currentPlayerSessionId,
+            startedBy: client.sessionId,
         });
     }
 
-    private handleCountrySubmission(client: Client, message: SubmitCountryMessage) {
-        if (this.state.status !== GameStatus.PLAYING) {
+    private pauseGame(client: Client): void {
+        const result = this.game.pause();
+
+        if (!result.accepted) {
+            client.send(GameRoomMessageType.PAUSE_GAME_REJECTED, result);
             return;
         }
 
-        if (Date.now() >= this.state.endAt) {
-            this.endGame();
+        this.clearGameEndTimeout();
+
+        this.broadcast(GameRoomMessageType.GAME_PAUSED, {
+            pausedAt: result.pausedAt,
+            pausedBy: client.sessionId,
+        });
+    }
+
+    private resumeGame(client: Client): void {
+        const result = this.game.resume();
+
+        if (!result.accepted) {
+            client.send(GameRoomMessageType.RESUME_GAME_REJECTED, result);
             return;
         }
 
-        const player = this.state.getPlayer(client.sessionId);
-        if (!player) return;
+        this.scheduleGameEnd();
 
-        const countryName = message.countryName.trim();
+        this.broadcast(GameRoomMessageType.GAME_RESUMED, {
+            resumedAt: result.resumedAt,
+            endAt: result.endAt,
+            resumedBy: client.sessionId,
+        });
+    }
 
-        if (!countryName) return;
+    private endGame(client: Client): void {
+        this.finishGame("MANUAL_END", client.sessionId);
+    }
 
-        // TODO:
-        // 1. vérifier si le pays existe
-        // 2. vérifier s'il n'a pas déjà été trouvé
-        // 3. ajouter les points
-        // 4. mettre à jour le continent
-        // 5. broadcast le résultat aux joueurs
+    private handleCountrySubmission(client: Client, message: SubmitCountryMessage): void {
+        const result = this.game.submitAnswer(client.sessionId, message.countryName);
+
+        client.send(GameRoomMessageType.SUBMIT_COUNTRY_NAME_RESULT, result);
+
+        this.broadcast(GameRoomMessageType.COUNTRY_SUBMITTED, {
+            result,
+            currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
+        });
+
+        if (this.state.status === GameStatus.FINISHED) {
+            this.finishGame("ALL_COUNTRIES_FOUND");
+        }
+    }
+
+    private handlePassTurn(client: Client): void {
+        const result = this.game.passTurn(client.sessionId);
+
+        client.send(GameRoomMessageType.PASS_TURN_RESULT, result);
+
+        this.broadcast(GameRoomMessageType.TURN_PASSED, {
+            result,
+            currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
+        });
+
+        if (this.state.status === GameStatus.FINISHED) {
+            this.finishGame("TIME_EXPIRED");
+        }
+    }
+
+    private scheduleGameEnd(): void {
+        this.clearGameEndTimeout();
+
+        const remainingMilliseconds = Math.max(0, this.state.endAt - Date.now());
+
+        this.gameEndTimeout = setTimeout(() => {
+            this.finishGame("TIME_EXPIRED");
+        }, remainingMilliseconds);
+    }
+
+    private finishGame(
+        reason: "TIME_EXPIRED" | "MANUAL_END" | "ALL_COUNTRIES_FOUND",
+        endedBy?: string,
+    ): void {
+        this.clearGameEndTimeout();
+
+        this.game.finish();
+
+        this.broadcast(GameRoomMessageType.GAME_FINISHED, {
+            reason,
+            endedBy,
+            finishedAt: Date.now(),
+        });
+    }
+
+    private clearGameEndTimeout(): void {
+        if (!this.gameEndTimeout) {
+            return;
+        }
+
+        clearTimeout(this.gameEndTimeout);
+        this.gameEndTimeout = null;
     }
 }

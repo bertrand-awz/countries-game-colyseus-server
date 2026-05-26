@@ -1,51 +1,29 @@
 import { TurnManager } from "./TurnManager.js";
 import { CountriesGameState, GameStatus } from "#rooms/schema/CountriesGameState.js";
 import { PlayerState } from "#rooms/schema/PlayerState.js";
-import { CountryNameValidator, type CountryValidationResult } from "./CountryNameValidator.js";
+import {
+    CountryNameValidator,
+    type CountryValidationResult,
+    SupportedLanguage,
+} from "./CountryNameValidator.js";
+import {
+    AnswerValidationRequest,
+    PassTurnResult,
+    PauseGameResult,
+    ResumeGameResult,
+    StartGameResult,
+    SubmitAnswerResult,
+} from "#game/types.js";
 
-export type SubmitAnswerResult =
-    | {
-          accepted: true;
-          playerSessionId: string;
-          countryCode: string;
-          continentCode: string;
-          canonicalName: string;
-          pointsAwarded: number;
-          currentPlayerSessionId: string;
-          nextPlayerSessionId: string;
-      }
-    | {
-          accepted: false;
-          playerSessionId: string;
-          reason:
-              | "GAME_NOT_PLAYING"
-              | "NOT_YOUR_TURN"
-              | "EMPTY_ANSWER"
-              | "WRONG_ANSWER"
-              | "COUNTRY_ALREADY_FOUND";
-          currentPlayerSessionId: string;
-          nextPlayerSessionId: string;
-      };
+class SubmitAnswerFailureReason {}
 
-export type PassTurnResult =
-    | {
-          accepted: true;
-          playerSessionId: string;
-          currentPlayerSessionId: string;
-          nextPlayerSessionId: string;
-      }
-    | {
-          accepted: false;
-          playerSessionId: string;
-          reason: "GAME_NOT_PLAYING" | "NOT_YOUR_TURN";
-          currentPlayerSessionId: string;
-          nextPlayerSessionId: string;
-      };
+class PassTurnFailureReason {}
 
 export class CountriesGame {
     private readonly turnManager: TurnManager;
-
     private readonly foundCountries = new Set<string>();
+
+    private pausedAt: number | null = null;
 
     constructor(
         private readonly state: CountriesGameState,
@@ -64,10 +42,6 @@ export class CountriesGame {
         }
 
         this.turnManager.addPlayer(sessionId);
-
-        if (this.state.status === GameStatus.WAITING) {
-            this.startGame();
-        }
     }
 
     removePlayer(sessionId: string): void {
@@ -75,68 +49,149 @@ export class CountriesGame {
         this.turnManager.removePlayer(sessionId);
 
         if (this.state.numberOfPlayers === 0) {
-            this.resetGameTime();
-            this.state.status = GameStatus.WAITING;
+            this.resetGame();
         }
     }
 
-    submitAnswer(sessionId: string, answer: string): SubmitAnswerResult {
-        const currentPlayerSessionId = this.turnManager.getCurrentPlayerId();
+    start(): StartGameResult {
+        if (this.state.status !== GameStatus.WAITING) {
+            return {
+                accepted: false,
+                reason: "GAME_ALREADY_STARTED",
+            };
+        }
 
+        if (this.state.numberOfPlayers === 0) {
+            return {
+                accepted: false,
+                reason: "NO_PLAYERS",
+            };
+        }
+
+        this.state.status = GameStatus.PLAYING;
+        this.state.startAt = Date.now();
+        this.state.endAt = this.state.startAt + this.state.durationInSeconds * 1000;
+
+        return {
+            accepted: true,
+            startAt: this.state.startAt,
+            endAt: this.state.endAt,
+            currentPlayerSessionId: this.getCurrentPlayerSessionId(),
+        };
+    }
+
+    pause(): PauseGameResult {
         if (this.state.status !== GameStatus.PLAYING) {
             return {
                 accepted: false,
-                playerSessionId: sessionId,
                 reason: "GAME_NOT_PLAYING",
-                currentPlayerSessionId,
-                nextPlayerSessionId: currentPlayerSessionId,
             };
+        }
+
+        this.pausedAt = Date.now();
+        this.state.status = GameStatus.PAUSED;
+
+        return {
+            accepted: true,
+            pausedAt: this.pausedAt,
+        };
+    }
+
+    resume(): ResumeGameResult {
+        if (this.state.status !== GameStatus.PAUSED || this.pausedAt === null) {
+            return {
+                accepted: false,
+                reason: "GAME_NOT_PAUSED",
+            };
+        }
+
+        const resumedAt = Date.now();
+        const pauseDurationInMilliseconds = resumedAt - this.pausedAt;
+
+        this.state.endAt += pauseDurationInMilliseconds;
+        this.state.status = GameStatus.PLAYING;
+        this.pausedAt = null;
+
+        return {
+            accepted: true,
+            resumedAt,
+            endAt: this.state.endAt,
+        };
+    }
+
+    finish(): void {
+        if (this.state.status === GameStatus.FINISHED) {
+            return;
+        }
+
+        this.state.status = GameStatus.FINISHED;
+    }
+
+    submitAnswer(
+        sessionId: string,
+        answerValidationRequest: AnswerValidationRequest,
+    ): SubmitAnswerResult | SubmitAnswerFailureReason {
+        const currentPlayerSessionId = this.turnManager.getCurrentPlayerId();
+
+        if (this.state.status !== GameStatus.PLAYING) {
+            return this.createSubmitAnswerFailureResult(
+                sessionId,
+                "GAME_NOT_PLAYING",
+                currentPlayerSessionId,
+            );
+        }
+
+        if (this.isTimeExpired()) {
+            this.finish();
+
+            return this.createSubmitAnswerFailureResult(
+                sessionId,
+                "TIME_EXPIRED",
+                currentPlayerSessionId,
+            );
         }
 
         if (!this.turnManager.isCurrentPlayer(sessionId)) {
-            return {
-                accepted: false,
-                playerSessionId: sessionId,
-                reason: "NOT_YOUR_TURN",
+            return this.createSubmitAnswerFailureResult(
+                sessionId,
+                "NOT_YOUR_TURN",
                 currentPlayerSessionId,
-                nextPlayerSessionId: currentPlayerSessionId,
-            };
+            );
         }
 
-        if (!answer.trim()) {
-            return {
-                accepted: false,
-                playerSessionId: sessionId,
-                reason: "EMPTY_ANSWER",
+        if (!answerValidationRequest.answer.trim()) {
+            return this.createSubmitAnswerFailureResult(
+                sessionId,
+                "EMPTY_ANSWER",
                 currentPlayerSessionId,
-                nextPlayerSessionId: currentPlayerSessionId,
-            };
+            );
         }
 
-        const validation = this.validateAnswer(answer);
+        const validation = this.validateAnswer(
+            answerValidationRequest.answer,
+            answerValidationRequest.language,
+        );
 
         if (!validation.valid) {
             const nextPlayerSessionId = this.turnManager.nextTurn();
 
-            return {
-                accepted: false,
-                playerSessionId: sessionId,
-                reason: "WRONG_ANSWER",
+            return this.createSubmitAnswerFailureResult(
+                sessionId,
+                "WRONG_ANSWER",
                 currentPlayerSessionId,
                 nextPlayerSessionId,
-            };
+            );
         }
 
         if (this.hasCountryBeenFound(validation.countryId)) {
             const nextPlayerSessionId = this.turnManager.nextTurn();
 
-            return {
-                accepted: false,
-                playerSessionId: sessionId,
-                reason: "COUNTRY_ALREADY_FOUND",
+            return this.createSubmitAnswerFailureResult(
+                sessionId,
+                "COUNTRY_ALREADY_FOUND",
                 currentPlayerSessionId,
                 nextPlayerSessionId,
-            };
+            );
         }
 
         const pointsAwarded = 1;
@@ -145,20 +200,21 @@ export class CountriesGame {
         this.markCountryAsFound(validation.countryId);
         this.incrementContinentProgress(validation.continentId);
 
-        if (this.foundCountries.size >= this.totalCountries) {
-            this.state.status = GameStatus.FINISHED;
+        const isGameFinished = this.foundCountries.size >= this.totalCountries;
+
+        if (isGameFinished) {
+            this.finish();
         }
 
-        const nextPlayerSessionId =
-            this.state.status === GameStatus.FINISHED
-                ? this.turnManager.getCurrentPlayerId()
-                : this.turnManager.nextTurn();
+        const nextPlayerSessionId = isGameFinished
+            ? this.turnManager.getCurrentPlayerId()
+            : this.turnManager.nextTurn();
 
         return {
             accepted: true,
             playerSessionId: sessionId,
-            countryCode: validation.countryId,
-            continentCode: validation.continentId,
+            countryId: validation.countryId,
+            continentId: validation.continentId,
             canonicalName: validation.canonicalName,
             pointsAwarded,
             currentPlayerSessionId,
@@ -166,27 +222,33 @@ export class CountriesGame {
         };
     }
 
-    passTurn(sessionId: string): PassTurnResult {
+    passTurn(sessionId: string): PassTurnResult | PassTurnFailureReason {
         const currentPlayerSessionId = this.turnManager.getCurrentPlayerId();
 
         if (this.state.status !== GameStatus.PLAYING) {
-            return {
-                accepted: false,
-                playerSessionId: sessionId,
-                reason: "GAME_NOT_PLAYING",
+            return this.createPassTurnFailureResult(
+                sessionId,
+                "GAME_NOT_PLAYING",
                 currentPlayerSessionId,
-                nextPlayerSessionId: currentPlayerSessionId,
-            };
+            );
+        }
+
+        if (this.isTimeExpired()) {
+            this.finish();
+
+            return this.createPassTurnFailureResult(
+                sessionId,
+                "TIME_EXPIRED",
+                currentPlayerSessionId,
+            );
         }
 
         if (!this.turnManager.isCurrentPlayer(sessionId)) {
-            return {
-                accepted: false,
-                playerSessionId: sessionId,
-                reason: "NOT_YOUR_TURN",
+            return this.createPassTurnFailureResult(
+                sessionId,
+                "NOT_YOUR_TURN",
                 currentPlayerSessionId,
-                nextPlayerSessionId: currentPlayerSessionId,
-            };
+            );
         }
 
         const nextPlayerSessionId = this.turnManager.nextTurn();
@@ -199,39 +261,56 @@ export class CountriesGame {
         };
     }
 
-    pause(): void {
-        if (this.state.status === GameStatus.PLAYING) {
-            this.state.status = GameStatus.PAUSED;
-        }
-    }
-
-    resume(): void {
-        if (this.state.status === GameStatus.PAUSED) {
-            this.state.status = GameStatus.PLAYING;
-        }
-    }
-
-    finish(): void {
-        this.state.status = GameStatus.FINISHED;
-    }
-
     getCurrentPlayerSessionId(): string {
         return this.turnManager.getCurrentPlayerId();
     }
 
-    private startGame(): void {
-        this.state.status = GameStatus.PLAYING;
-        this.state.startAt = Date.now();
-        this.state.endAt = this.state.startAt + this.state.durationInSeconds * 1000;
+    private createSubmitAnswerFailureResult(
+        sessionId: string,
+        reason: SubmitAnswerFailureReason,
+        currentPlayerSessionId: string,
+        nextPlayerSessionId: string = currentPlayerSessionId,
+    ): SubmitAnswerFailureReason {
+        return {
+            accepted: false,
+            playerSessionId: sessionId,
+            reason,
+            currentPlayerSessionId,
+            nextPlayerSessionId,
+        };
     }
 
-    private resetGameTime(): void {
+    private createPassTurnFailureResult(
+        sessionId: string,
+        reason: PassTurnFailureReason,
+        currentPlayerSessionId: string,
+        nextPlayerSessionId: string = currentPlayerSessionId,
+    ): PassTurnFailureReason {
+        return {
+            accepted: false,
+            playerSessionId: sessionId,
+            reason,
+            currentPlayerSessionId,
+            nextPlayerSessionId,
+        };
+    }
+
+    private isTimeExpired(): boolean {
+        return Date.now() >= this.state.endAt;
+    }
+    private resetGame(): void {
+        this.state.status = GameStatus.WAITING;
         this.state.startAt = 0;
         this.state.endAt = 0;
+        this.pausedAt = null;
+        this.foundCountries.clear();
     }
 
-    private validateAnswer(answer: string): CountryValidationResult {
-        return this.answerValidator.validate(answer);
+    private validateAnswer(answer: string, language: SupportedLanguage): CountryValidationResult {
+        const validationLanguage = this.state.allowAnswerValidationInPlayerCurrentLanguage
+            ? language
+            : this.state.defaultLanguage;
+        return this.answerValidator.validate(answer, validationLanguage);
     }
 
     private addPointToPlayer(sessionId: string, points: number): void {
@@ -245,16 +324,16 @@ export class CountriesGame {
         player.incrementCountriesFound();
     }
 
-    private markCountryAsFound(countryCode: string): void {
-        this.foundCountries.add(countryCode);
+    private markCountryAsFound(countryId: string): void {
+        this.foundCountries.add(countryId);
     }
 
-    private hasCountryBeenFound(countryCode: string): boolean {
-        return this.foundCountries.has(countryCode);
+    private hasCountryBeenFound(countryId: string): boolean {
+        return this.foundCountries.has(countryId);
     }
 
-    private incrementContinentProgress(continentCode: string): void {
-        const continent = this.state.continents.get(continentCode);
+    private incrementContinentProgress(continentId: string): void {
+        const continent = this.state.continents.get(continentId);
 
         if (!continent) {
             return;
