@@ -1,20 +1,33 @@
 import { Schema, type } from "@colyseus/schema";
+import type { ContinentCode } from "#data/continents.js";
+
+export class ContinentState extends Schema {
+    @type("string")
+    id: ContinentCode;
+
+    @type("number")
+    countriesNumber: number = 0;
+
+    constructor(id: ContinentCode, countriesNumber: number) {
+        super();
+        this.id = id;
+        this.countriesNumber = countriesNumber;
+    }
+}
 
 export class ContinentProgressState extends Schema {
-    @type("string")
-    name: string;
-    @type("number")
-    totalCountriesFound: number = 0;
-    @type("number")
-    numberOfCountries: number = 0;
+    @type(ContinentState)
+    continent: ContinentState;
 
-    constructor(continentName: string, numberOfCountries: number) {
+    @type("number")
+    countriesFoundNumber: number = 0;
+
+    constructor(continentId: ContinentCode, countriesNumber: number) {
         super();
-        this.name = continentName;
-        this.numberOfCountries = numberOfCountries;
+        this.continent = new ContinentState(continentId, countriesNumber);
     }
 
     incrementNumberOfCountriesFound() {
-        this.totalCountriesFound++;
+        this.countriesFoundNumber++;
     }
 }

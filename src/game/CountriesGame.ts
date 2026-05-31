@@ -37,7 +37,7 @@ export class CountriesGame {
         const existingPlayer = this.state.getPlayer(sessionId);
 
         if (!existingPlayer) {
-            const player = new PlayerState(username);
+            const player = new PlayerState(sessionId, username);
             this.state.addPlayer(sessionId, player);
         }
 
@@ -333,7 +333,7 @@ export class CountriesGame {
     }
 
     private incrementContinentProgress(continentId: string): void {
-        const continent = this.state.continents.get(continentId);
+        const continent = this.state.getContinentProgress(continentId);
 
         if (!continent) {
             return;

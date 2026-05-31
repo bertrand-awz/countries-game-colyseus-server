@@ -1,74 +1,30 @@
-{
-    "continents": [
-        {
-            "code": "AFRICA",
-            "naturalEarthName": "Africa",
-            "translationKey": "CONTINENTS.AFRICA",
-            "numberOfCountries": 54,
-            "names": {
-                "fr": "Afrique",
-                "en": "Africa"
-            }
-        },
-        {
-            "code": "ASIA",
-            "naturalEarthName": "Asia",
-            "translationKey": "CONTINENTS.ASIA",
-            "numberOfCountries": 49,
-            "names": {
-                "fr": "Asie",
-                "en": "Asia"
-            }
-        },
-        {
-            "code": "EUROPE",
-            "naturalEarthName": "Europe",
-            "translationKey": "CONTINENTS.EUROPE",
-            "numberOfCountries": 44,
-            "names": {
-                "fr": "Europe",
-                "en": "Europe"
-            }
-        },
-        {
-            "code": "NORTH_AMERICA",
-            "naturalEarthName": "North America",
-            "translationKey": "CONTINENTS.NORTH_AMERICA",
-            "numberOfCountries": 23,
-            "names": {
-                "fr": "Amérique du Nord",
-                "en": "North America"
-            }
-        },
-        {
-            "code": "SOUTH_AMERICA",
-            "naturalEarthName": "South America",
-            "translationKey": "CONTINENTS.SOUTH_AMERICA",
-            "numberOfCountries": 12,
-            "names": {
-                "fr": "Amérique du Sud",
-                "en": "South America"
-            }
-        },
-        {
-            "code": "OCEANIA",
-            "naturalEarthName": "Oceania",
-            "translationKey": "CONTINENTS.OCEANIA",
-            "numberOfCountries": 14,
-            "names": {
-                "fr": "Océanie",
-                "en": "Oceania"
-            }
-        },
-        {
-            "code": "SEVEN_SEAS",
-            "naturalEarthName": "Seven seas (open ocean)",
-            "translationKey": "CONTINENTS.SEVEN_SEAS",
-            "numberOfCountries": 0,
-            "names": {
-                "fr": "Sept mers",
-                "en": "Seven seas"
-            }
-        }
-    ]
-}
+[
+  {
+    "id": "AFRICA",
+    "countriesNumber": 54
+  },
+  {
+    "id": "ASIA",
+    "countriesNumber": 49
+  },
+  {
+    "id": "EUROPE",
+    "countriesNumber": 44
+  },
+  {
+    "id": "NORTH_AMERICA",
+    "countriesNumber": 23
+  },
+  {
+    "id": "SOUTH_AMERICA",
+    "countriesNumber": 12
+  },
+  {
+    "id": "OCEANIA",
+    "countriesNumber": 14
+  },
+  {
+    "id": "SEVEN_SEAS",
+    "countriesNumber": 0
+  }
+]

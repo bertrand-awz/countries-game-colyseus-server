@@ -2,6 +2,9 @@ import { Schema, type } from "@colyseus/schema";
 
 export class PlayerState extends Schema {
     @type("string")
+    id: string;
+
+    @type("string")
     username: string;
 
     @type("number")
@@ -10,8 +13,9 @@ export class PlayerState extends Schema {
     @type("number")
     totalCountriesFound: number = 0;
 
-    constructor(username: string) {
+    constructor(id: string, username: string) {
         super();
+        this.id = id;
         this.username = username;
     }
 

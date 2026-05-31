@@ -11,13 +11,18 @@ import { CountriesGameRoom } from "#rooms/CountriesGameRoom.js";
 import { buildContinentsTranslations, continentsDetails } from "#data/continents.js";
 import { countriesMapService } from "#services/CountriesMapService.js";
 
+const publicContinents = continentsDetails.map((continent) => ({
+    id: continent.code,
+    countriesNumber: continent.numberOfCountries,
+}));
+
 const server = defineServer({
     rooms: {
         countries_game: defineRoom(CountriesGameRoom),
     },
 
     routes: createRouter({
-        api_heartbeat: createEndpoint("/api/heartbeat", { method: "GET" }, async (ctx) => {
+        api_heartbeat: createEndpoint("/api/heartbeat", { method: "GET" }, async (_ctx) => {
             return {
                 message: "Yes, your heart is beating. You're not dead yet. You're still alive :)",
             };
@@ -29,9 +34,31 @@ const server = defineServer({
                 translations: buildContinentsTranslations(),
             };
         }),
+
+        continents: createEndpoint("/api/continents", { method: "GET" }, async () => {
+            return publicContinents;
+        }),
     }),
 
     express: (app) => {
+        app.get("/api/countries", async (_req, res, next) => {
+            try {
+                console.time("GET /api/countries");
+
+                const features = countriesMapService.getCountriesMapFeatures();
+
+                const body = JSON.stringify(features);
+
+                res.setHeader("Content-Type", "application/json; charset=utf-8");
+                res.setHeader("Content-Length", Buffer.byteLength(body));
+                res.status(200).end(body);
+
+                console.timeEnd("GET /api/countries");
+            } catch (error) {
+                next(error);
+            }
+        });
+
         app.get("/api/map", async (_req, res, next) => {
             try {
                 console.time("GET /api/map");
