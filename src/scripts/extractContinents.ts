@@ -14,7 +14,11 @@ async function main() {
 
     await mkdir("src/data/json", { recursive: true });
 
-    await writeFile("src/data/json/continents.json", `${JSON.stringify(output, null, 2)}\n`, "utf-8");
+    await writeFile(
+        "src/data/json/continents.json",
+        `${JSON.stringify(output, null, 2)}\n`,
+        "utf-8",
+    );
 
     console.log(`Extracted ${output.length} continents.`);
     console.log("Output: src/data/json/continents.json");

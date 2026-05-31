@@ -1,30 +1,30 @@
 [
-  {
-    "id": "AFRICA",
-    "countriesNumber": 54
-  },
-  {
-    "id": "ASIA",
-    "countriesNumber": 49
-  },
-  {
-    "id": "EUROPE",
-    "countriesNumber": 44
-  },
-  {
-    "id": "NORTH_AMERICA",
-    "countriesNumber": 23
-  },
-  {
-    "id": "SOUTH_AMERICA",
-    "countriesNumber": 12
-  },
-  {
-    "id": "OCEANIA",
-    "countriesNumber": 14
-  },
-  {
-    "id": "SEVEN_SEAS",
-    "countriesNumber": 0
-  }
+    {
+        "id": "AFRICA",
+        "countriesNumber": 53
+    },
+    {
+        "id": "ASIA",
+        "countriesNumber": 48
+    },
+    {
+        "id": "EUROPE",
+        "countriesNumber": 48
+    },
+    {
+        "id": "NORTH_AMERICA",
+        "countriesNumber": 26
+    },
+    {
+        "id": "SOUTH_AMERICA",
+        "countriesNumber": 12
+    },
+    {
+        "id": "OCEANIA",
+        "countriesNumber": 14
+    },
+    {
+        "id": "SEVEN_SEAS",
+        "countriesNumber": 3
+    }
 ]

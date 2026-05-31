@@ -135,6 +135,18 @@ function unique(values: string[]): string[] {
     return [...new Set(values.filter(Boolean))];
 }
 
+function countCountriesByContinent(
+    countries: CountryAnswerValidation[],
+): Record<ContinentCode, number> {
+    return countries.reduce(
+        (counts, country) => {
+            counts[country.continentID] = (counts[country.continentID] ?? 0) + 1;
+            return counts;
+        },
+        {} as Record<ContinentCode, number>,
+    );
+}
+
 async function main() {
     const response = await fetch(NATURAL_EARTH_URL);
 
@@ -201,7 +213,15 @@ async function main() {
         "utf-8",
     );
 
+    const countryCountByContinent = countCountriesByContinent(countries);
+
     console.log(`Extracted ${countries.length} countries for answer validation.`);
+    console.log("Countries by continent:");
+
+    for (const [continentID, countryCount] of Object.entries(countryCountByContinent)) {
+        console.log(`- ${continentID}: ${countryCount}`);
+    }
+
     console.log("Output: src/data/json/countries-answer-validation.json");
 }
 

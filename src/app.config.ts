@@ -1,20 +1,9 @@
-import {
-    defineServer,
-    defineRoom,
-    monitor,
-    playground,
-    createRouter,
-    createEndpoint,
-} from "colyseus";
+import {createEndpoint, createRouter, defineRoom, defineServer, monitor, playground,} from "colyseus";
 
-import { CountriesGameRoom } from "#rooms/CountriesGameRoom.js";
-import { buildContinentsTranslations, continentsDetails } from "#data/continents.js";
-import { countriesMapService } from "#services/CountriesMapService.js";
+import {CountriesGameRoom} from "#rooms/CountriesGameRoom.js";
+import continentsJSON from "#data/json/continents.json" with {type: "json"};
+import {countriesMapService} from "#services/CountriesMapService.js";
 
-const publicContinents = continentsDetails.map((continent) => ({
-    id: continent.code,
-    countriesNumber: continent.numberOfCountries,
-}));
 
 const server = defineServer({
     rooms: {
@@ -28,20 +17,13 @@ const server = defineServer({
             };
         }),
 
-        game_details: createEndpoint("/api/details", { method: "GET" }, async () => {
-            return {
-                continents: continentsDetails,
-                translations: buildContinentsTranslations(),
-            };
-        }),
-
-        continents: createEndpoint("/api/continents", { method: "GET" }, async () => {
-            return publicContinents;
+        continents: createEndpoint("/api/map/continents", { method: "GET" }, async () => {
+            return continentsJSON;
         }),
     }),
 
     express: (app) => {
-        app.get("/api/countries", async (_req, res, next) => {
+        app.get("/api/map/countries", async (_req, res, next) => {
             try {
                 console.time("GET /api/countries");
 
@@ -54,24 +36,6 @@ const server = defineServer({
                 res.status(200).end(body);
 
                 console.timeEnd("GET /api/countries");
-            } catch (error) {
-                next(error);
-            }
-        });
-
-        app.get("/api/map", async (_req, res, next) => {
-            try {
-                console.time("GET /api/map");
-
-                const features = countriesMapService.getCountriesMapFeatures();
-
-                const body = JSON.stringify(features);
-
-                res.setHeader("Content-Type", "application/json; charset=utf-8");
-                res.setHeader("Content-Length", Buffer.byteLength(body));
-                res.status(200).end(body);
-
-                console.timeEnd("GET /api/map");
             } catch (error) {
                 next(error);
             }
