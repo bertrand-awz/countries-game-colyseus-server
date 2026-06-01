@@ -18,6 +18,7 @@ const server = defineServer({
         }),
 
         continents: createEndpoint("/api/map/continents", { method: "GET" }, async () => {
+            console.time("GET /api/map/continents");
             return continentsJSON;
         }),
     }),
