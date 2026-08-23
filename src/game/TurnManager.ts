@@ -63,6 +63,10 @@ export class TurnManager {
         return this.getCurrentPlayerId();
     }
 
+    resetTurn(): void {
+        this.currentTurnIndex = 0;
+    }
+
     hasPlayers(): boolean {
         return this.turnOrder.length > 0;
     }

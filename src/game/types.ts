@@ -33,6 +33,17 @@ export type ResumeGameResult =
           reason: "GAME_NOT_PAUSED";
       };
 
+export type RestartGameResult =
+    | {
+          accepted: true;
+          restartedAt: number;
+          currentPlayerSessionId: string;
+      }
+    | {
+          accepted: false;
+          reason: "GAME_NOT_STARTED" | "NO_PLAYERS";
+      };
+
 type SubmitAnswerFailureReason =
     | "GAME_NOT_PLAYING"
     | "TIME_EXPIRED"

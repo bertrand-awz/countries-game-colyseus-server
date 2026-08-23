@@ -10,6 +10,7 @@ import {
     AnswerValidationRequest,
     PassTurnResult,
     PauseGameResult,
+    RestartGameResult,
     ResumeGameResult,
     StartGameResult,
     SubmitAnswerResult,
@@ -116,6 +117,32 @@ export class CountriesGame {
             accepted: true,
             resumedAt,
             endAt: this.state.endAt,
+        };
+    }
+
+    restart(): RestartGameResult {
+        if (this.state.numberOfPlayers === 0) {
+            return {
+                accepted: false,
+                reason: "NO_PLAYERS",
+            };
+        }
+
+        if (this.state.status === GameStatus.WAITING) {
+            return {
+                accepted: false,
+                reason: "GAME_NOT_STARTED",
+            };
+        }
+
+        const restartedAt = Date.now();
+
+        this.resetGame();
+
+        return {
+            accepted: true,
+            restartedAt,
+            currentPlayerSessionId: this.getCurrentPlayerSessionId(),
         };
     }
 
@@ -304,6 +331,13 @@ export class CountriesGame {
         this.state.endAt = 0;
         this.pausedAt = null;
         this.foundCountries.clear();
+        this.turnManager.resetTurn();
+        this.state.players.forEach((player) => {
+            player.resetProgress();
+        });
+        this.state.continents.forEach((continent) => {
+            continent.reset();
+        });
     }
 
     private validateAnswer(answer: string, language: SupportedLanguage): CountryValidationResult {

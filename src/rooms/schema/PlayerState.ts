@@ -26,4 +26,9 @@ export class PlayerState extends Schema {
     incrementCountriesFound() {
         this.totalCountriesFound++;
     }
+
+    resetProgress() {
+        this.score = 0;
+        this.totalCountriesFound = 0;
+    }
 }

@@ -30,4 +30,8 @@ export class ContinentProgressState extends Schema {
     incrementNumberOfCountriesFound() {
         this.countriesFoundNumber++;
     }
+
+    reset() {
+        this.countriesFoundNumber = 0;
+    }
 }
