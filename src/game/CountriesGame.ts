@@ -1,10 +1,11 @@
 import { TurnManager } from "./TurnManager.js";
 import { CountriesGameState, GameStatus } from "#rooms/schema/CountriesGameState.js";
 import { PlayerState } from "#rooms/schema/PlayerState.js";
+import { PLAYER_COLOR_SLOTS } from "#game/GameRoomConstraints.js";
 import {
     CountryNameValidator,
+    type AnswerValidationLanguage,
     type CountryValidationResult,
-    SupportedLanguage,
 } from "./CountryNameValidator.js";
 import {
     AnswerValidationRequest,
@@ -36,11 +37,20 @@ export class CountriesGame {
         this.turnManager = new TurnManager();
     }
 
-    addPlayer(sessionId: string, username: string): void {
+    addPlayer(
+        sessionId: string,
+        username: string,
+        answerValidationLanguage: AnswerValidationLanguage = "any",
+    ): void {
         const existingPlayer = this.state.getPlayer(sessionId);
 
         if (!existingPlayer) {
-            const player = new PlayerState(sessionId, username);
+            const player = new PlayerState(
+                sessionId,
+                username,
+                answerValidationLanguage,
+                this.getNextAvailablePlayerColorSlot(),
+            );
             this.state.addPlayer(sessionId, player);
         }
 
@@ -226,7 +236,7 @@ export class CountriesGame {
         const pointsAwarded = this.scoreProvider.getPoints(validation.countryId);
 
         this.addPointToPlayer(sessionId, pointsAwarded);
-        this.markCountryAsFound(validation.countryId);
+        this.markCountryAsFound(validation.countryId, sessionId);
         this.incrementContinentProgress(validation.continentId);
 
         const isGameFinished = this.foundCountries.size >= this.totalCountries;
@@ -333,6 +343,7 @@ export class CountriesGame {
         this.state.endAt = 0;
         this.pausedAt = null;
         this.foundCountries.clear();
+        this.state.clearFoundCountries();
         this.turnManager.resetTurn();
         this.state.players.forEach((player) => {
             player.resetProgress();
@@ -342,7 +353,10 @@ export class CountriesGame {
         });
     }
 
-    private validateAnswer(answer: string, language: SupportedLanguage): CountryValidationResult {
+    private validateAnswer(
+        answer: string,
+        language: AnswerValidationLanguage,
+    ): CountryValidationResult {
         const validationLanguage = this.state.allowAnswerValidationInPlayerCurrentLanguage
             ? language
             : this.state.defaultLanguage;
@@ -360,12 +374,26 @@ export class CountriesGame {
         player.incrementCountriesFound();
     }
 
-    private markCountryAsFound(countryId: string): void {
+    private markCountryAsFound(countryId: string, playerSessionId: string): void {
         this.foundCountries.add(countryId);
+
+        const player = this.state.getPlayer(playerSessionId);
+
+        if (!player) {
+            return;
+        }
+
+        this.state.addFoundCountry(countryId, playerSessionId, player.colorSlot);
     }
 
     private hasCountryBeenFound(countryId: string): boolean {
         return this.foundCountries.has(countryId);
+    }
+
+    private getNextAvailablePlayerColorSlot(): number {
+        const usedSlots = new Set(this.state.players.map((player) => player.colorSlot));
+
+        return PLAYER_COLOR_SLOTS.find((slot) => !usedSlots.has(slot)) ?? 0;
     }
 
     private incrementContinentProgress(continentId: string): void {

@@ -2,7 +2,8 @@ import { ArraySchema, Schema, type } from "@colyseus/schema";
 import { PlayerState } from "./PlayerState.js";
 import { ContinentProgressState } from "./ContinentProgressState.js";
 import { WaitingPlayerState } from "./WaitingPlayerState.js";
-import { SupportedLanguage } from "#game/CountryNameValidator.js";
+import { FoundCountryState } from "./FoundCountryState.js";
+import type { AnswerValidationLanguage, SupportedLanguage } from "#game/CountryNameValidator.js";
 import { continentsDetails } from "#data/continents.js";
 
 export enum GameStatus {
@@ -46,6 +47,9 @@ export class CountriesGameState extends Schema {
     @type([WaitingPlayerState])
     waitingPlayers = new ArraySchema<WaitingPlayerState>();
 
+    @type([FoundCountryState])
+    foundCountries = new ArraySchema<FoundCountryState>();
+
     @type([ContinentProgressState])
     continents = new ArraySchema<ContinentProgressState>();
 
@@ -54,12 +58,15 @@ export class CountriesGameState extends Schema {
         gameDuration: number,
         turnDurationInSeconds: number,
         maxPlayersAllowed: number,
+        allowAnswerValidationInPlayerCurrentLanguage: boolean = true,
     ) {
         super();
         this.defaultLanguage = defaultLanguage;
         this.durationInSeconds = gameDuration;
         this.turnDurationInSeconds = turnDurationInSeconds;
         this.maxPlayersAllowed = maxPlayersAllowed;
+        this.allowAnswerValidationInPlayerCurrentLanguage =
+            allowAnswerValidationInPlayerCurrentLanguage;
         this.continents.push(
             ...continentsDetails.map(
                 (continent) =>
@@ -127,6 +134,34 @@ export class CountriesGameState extends Schema {
         this.waitingPlayers.splice(0, 1);
 
         return waitingPlayer;
+    }
+
+    updatePlayerAnswerValidationLanguage(
+        playerSessionId: string,
+        language: AnswerValidationLanguage,
+    ): boolean {
+        const player = this.getPlayer(playerSessionId);
+
+        if (!player) {
+            return false;
+        }
+
+        player.updateAnswerValidationLanguage(language);
+        return true;
+    }
+
+    addFoundCountry(countryId: string, foundByPlayerId: string, playerColorSlot: number) {
+        if (this.foundCountries.some((country) => country.countryId === countryId)) {
+            return;
+        }
+
+        this.foundCountries.push(
+            new FoundCountryState(countryId, foundByPlayerId, playerColorSlot),
+        );
+    }
+
+    clearFoundCountries() {
+        this.foundCountries.splice(0, this.foundCountries.length);
     }
 
     getContinentProgress(continentId: string) {

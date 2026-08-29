@@ -3,6 +3,8 @@ type MinMaxConstraint = {
     max: number;
 };
 
+export const PLAYER_COLOR_SLOTS = [0, 1, 2, 3, 4, 5, 6, 7] as const;
+
 export const GameRoomConstraints = {
     TURN_DURATION_IN_SECONDS: {
         min: 30,

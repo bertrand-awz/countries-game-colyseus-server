@@ -13,7 +13,24 @@ export type CountryAnswerValidationData = {
     acceptedAnswers: string[];
 };
 
-export type SupportedLanguage = keyof CountryNames;
+export const SUPPORTED_ANSWER_VALIDATION_LANGUAGES = ["fr", "en", "de", "es", "ja"] as const;
+export const ANY_ANSWER_VALIDATION_LANGUAGE = "any";
+
+export type SupportedLanguage = (typeof SUPPORTED_ANSWER_VALIDATION_LANGUAGES)[number];
+export type AnswerValidationLanguage = SupportedLanguage | typeof ANY_ANSWER_VALIDATION_LANGUAGE;
+
+export function isSupportedLanguage(language: unknown): language is SupportedLanguage {
+    return (
+        typeof language === "string" &&
+        SUPPORTED_ANSWER_VALIDATION_LANGUAGES.includes(language as SupportedLanguage)
+    );
+}
+
+export function isAnswerValidationLanguage(
+    language: unknown,
+): language is AnswerValidationLanguage {
+    return language === ANY_ANSWER_VALIDATION_LANGUAGE || isSupportedLanguage(language);
+}
 
 export type CountryValidationResult =
     | {
@@ -28,34 +45,44 @@ export type CountryValidationResult =
       };
 
 export class CountryNameValidator {
-    private readonly normalizedAnswers = new Map<
-        string,
-        {
-            countryID: string;
-            continentID: string;
-            names: CountryNames;
-        }
+    private readonly normalizedAnswersByLanguage = new Map<
+        SupportedLanguage,
+        Map<
+            string,
+            {
+                countryID: string;
+                continentID: string;
+                names: CountryNames;
+            }
+        >
     >();
 
     constructor(private readonly countries: CountryAnswerValidationData[]) {
-        for (const country of countries) {
-            const acceptedAnswers = [...Object.values(country.names), ...country.acceptedAnswers];
+        for (const language of SUPPORTED_ANSWER_VALIDATION_LANGUAGES) {
+            this.normalizedAnswersByLanguage.set(language, new Map());
+        }
 
-            for (const acceptedAnswer of acceptedAnswers) {
-                this.normalizedAnswers.set(this.normalize(acceptedAnswer), {
-                    countryID: country.id,
-                    continentID: country.continentID,
-                    names: country.names,
-                });
+        for (const country of countries) {
+            for (const language of SUPPORTED_ANSWER_VALIDATION_LANGUAGES) {
+                this.normalizedAnswersByLanguage
+                    .get(language)
+                    ?.set(this.normalize(country.names[language]), {
+                        countryID: country.id,
+                        continentID: country.continentID,
+                        names: country.names,
+                    });
             }
         }
     }
 
-    validate(answer: string, language: SupportedLanguage = "fr"): CountryValidationResult {
+    validate(
+        answer: string,
+        language: AnswerValidationLanguage = ANY_ANSWER_VALIDATION_LANGUAGE,
+    ): CountryValidationResult {
         const normalizedAnswer = this.normalize(answer);
-        const country = this.normalizedAnswers.get(normalizedAnswer);
+        const match = this.findCountryByAnswer(normalizedAnswer, language);
 
-        if (!country) {
+        if (!match) {
             return {
                 valid: false,
             };
@@ -63,11 +90,31 @@ export class CountryNameValidator {
 
         return {
             valid: true,
-            countryId: country.countryID,
-            continentId: country.continentID,
-            canonicalName: country.names[language],
-            names: country.names,
+            countryId: match.country.countryID,
+            continentId: match.country.continentID,
+            canonicalName: match.country.names[match.canonicalLanguage],
+            names: match.country.names,
         };
+    }
+
+    private findCountryByAnswer(normalizedAnswer: string, language: AnswerValidationLanguage) {
+        if (language !== ANY_ANSWER_VALIDATION_LANGUAGE) {
+            const country = this.normalizedAnswersByLanguage.get(language)?.get(normalizedAnswer);
+
+            return country ? { country, canonicalLanguage: language } : null;
+        }
+
+        for (const supportedLanguage of SUPPORTED_ANSWER_VALIDATION_LANGUAGES) {
+            const country = this.normalizedAnswersByLanguage
+                .get(supportedLanguage)
+                ?.get(normalizedAnswer);
+
+            if (country) {
+                return { country, canonicalLanguage: supportedLanguage };
+            }
+        }
+
+        return null;
     }
 
     private normalize(value: string): string {

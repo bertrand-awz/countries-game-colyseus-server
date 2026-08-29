@@ -3,7 +3,15 @@ import { Room, Client, CloseCode } from "colyseus";
 import { CountriesGameState, GameStatus } from "#rooms/schema/CountriesGameState.js";
 import { CountriesGame } from "#game/CountriesGame.js";
 import { GameRoomMessageType } from "#rooms/GameRoomMessageType.js";
-import { CountryNameValidator } from "#game/CountryNameValidator.js";
+import {
+    ANY_ANSWER_VALIDATION_LANGUAGE,
+    CountryNameValidator,
+    isAnswerValidationLanguage,
+    isSupportedLanguage,
+    SUPPORTED_ANSWER_VALIDATION_LANGUAGES,
+    type AnswerValidationLanguage,
+    type SupportedLanguage,
+} from "#game/CountryNameValidator.js";
 
 import {
     GameRoomConstraints,
@@ -13,7 +21,6 @@ import {
 
 import countriesAnswerValidation from "#data/json/countries-answer-validation.json" with { type: "json" };
 import countriesScores from "#data/json/country-scores.json" with { type: "json" };
-import { SupportedLanguage } from "#data/continents.js";
 import { AnswerValidationRequest, SubmitAnswerResult } from "#game/types.js";
 import { JSONScoreProvider } from "#game/ScoreProvider.js";
 
@@ -22,7 +29,8 @@ type JoinOptions = {
 };
 
 type CreateOptions = {
-    gameLanguage: SupportedLanguage;
+    gameLanguage: unknown;
+    allowAnswerValidationInPlayerCurrentLanguage?: boolean;
     gameDurationInSeconds: number;
     turnDurationInSeconds?: number;
     maxPlayersAllowed: number;
@@ -30,13 +38,16 @@ type CreateOptions = {
 
 type SubmitCountryMessage = {
     countryName: string;
-    validationLanguage: SupportedLanguage;
 };
 
 type UpdateRoomSettingsMessage = {
     gameDurationInSeconds: number;
     turnDurationInSeconds: number;
     maxPlayersAllowed: number;
+};
+
+type UpdateAnswerValidationLanguageMessage = {
+    answerValidationLanguage: unknown;
 };
 
 type VotedGameAction = "pause" | "resume" | "restart";
@@ -95,12 +106,16 @@ export class CountriesGameRoom extends Room {
 
     onCreate(options: CreateOptions): void {
         const maxPlayersAllowed = options.maxPlayersAllowed ?? 8;
+        const defaultLanguage = getSupportedAnswerValidationLanguage(options.gameLanguage);
+        const allowAnswerValidationInPlayerCurrentLanguage =
+            options.allowAnswerValidationInPlayerCurrentLanguage ?? true;
 
         this.state = new CountriesGameState(
-            options.gameLanguage,
+            defaultLanguage,
             options.gameDurationInSeconds,
             normalizeTurnDurationInSeconds(options.turnDurationInSeconds),
             maxPlayersAllowed,
+            allowAnswerValidationInPlayerCurrentLanguage,
         );
 
         this.maxClients = maxPlayersAllowed;
@@ -134,6 +149,13 @@ export class CountriesGameRoom extends Room {
             GameRoomMessageType.UPDATE_ROOM_SETTINGS,
             (client, message: UpdateRoomSettingsMessage) => {
                 this.updateRoomSettings(client, message);
+            },
+        );
+
+        this.onMessage(
+            GameRoomMessageType.UPDATE_ANSWER_VALIDATION_LANGUAGE,
+            (client, message: UpdateAnswerValidationLanguageMessage) => {
+                this.updateAnswerValidationLanguage(client, message);
             },
         );
 
@@ -195,7 +217,11 @@ export class CountriesGameRoom extends Room {
     }
 
     private addActivePlayer(client: Client, username: string): void {
-        this.game.addPlayer(client.sessionId, username);
+        const answerValidationLanguage = this.state.allowAnswerValidationInPlayerCurrentLanguage
+            ? ANY_ANSWER_VALIDATION_LANGUAGE
+            : this.state.defaultLanguage;
+
+        this.game.addPlayer(client.sessionId, username, answerValidationLanguage);
 
         this.sendToActivePlayers(GameRoomMessageType.PLAYER_JOIN_ROOM, {
             playerSessionId: client.sessionId,
@@ -364,7 +390,7 @@ export class CountriesGameRoom extends Room {
         const previousPlayerSessionId = this.game.getCurrentPlayerSessionId();
         const answer = {
             answer: message.countryName,
-            language: message.validationLanguage,
+            language: this.getAnswerValidationLanguageForPlayer(client.sessionId),
         } as AnswerValidationRequest;
         const result = this.game.submitAnswer(client.sessionId, answer);
 
@@ -385,6 +411,49 @@ export class CountriesGameRoom extends Room {
             previousPlayerSessionId,
             this.isTurnConsumingCountrySubmissionResult(result),
         );
+    }
+
+    private updateAnswerValidationLanguage(
+        client: Client,
+        message: UpdateAnswerValidationLanguageMessage,
+    ): void {
+        if (!this.state.allowAnswerValidationInPlayerCurrentLanguage) {
+            client.send(GameRoomMessageType.UPDATE_ROOM_SETTINGS_REJECTED, {
+                accepted: false,
+                reason: "ANSWER_VALIDATION_LANGUAGE_SELECTION_NOT_ALLOWED",
+            });
+            return;
+        }
+
+        if (!this.isActivePlayer(client.sessionId)) {
+            client.send(GameRoomMessageType.UPDATE_ROOM_SETTINGS_REJECTED, {
+                accepted: false,
+                reason: "PLAYER_NOT_ACTIVE",
+            });
+            return;
+        }
+
+        if (!isAnswerValidationLanguage(message.answerValidationLanguage)) {
+            client.send(GameRoomMessageType.UPDATE_ROOM_SETTINGS_REJECTED, {
+                accepted: false,
+                reason: "UNSUPPORTED_ANSWER_VALIDATION_LANGUAGE",
+                supportedLanguages: [
+                    ANY_ANSWER_VALIDATION_LANGUAGE,
+                    ...SUPPORTED_ANSWER_VALIDATION_LANGUAGES,
+                ],
+            });
+            return;
+        }
+
+        this.state.updatePlayerAnswerValidationLanguage(
+            client.sessionId,
+            message.answerValidationLanguage,
+        );
+
+        client.send(GameRoomMessageType.ROOM_SETTINGS_UPDATED, {
+            accepted: true,
+            answerValidationLanguage: message.answerValidationLanguage,
+        });
     }
 
     private updateRoomSettings(client: Client, message: UpdateRoomSettingsMessage): void {
@@ -426,6 +495,15 @@ export class CountriesGameRoom extends Room {
             accepted: true,
             ...nextSettings,
         });
+    }
+
+    private getAnswerValidationLanguageForPlayer(
+        playerSessionId: string,
+    ): AnswerValidationLanguage {
+        return (
+            this.state.getPlayer(playerSessionId)?.answerValidationLanguage ??
+            this.state.defaultLanguage
+        );
     }
 
     private handlePassTurn(client: Client): void {
@@ -574,6 +652,7 @@ export class CountriesGameRoom extends Room {
         this.sendToActivePlayers(GameRoomMessageType.COUNTRY_FOUND, {
             countryId: result.countryId,
             player,
+            playerColorSlot: player.colorSlot,
             pointsAwarded: result.pointsAwarded,
         });
     }
@@ -863,4 +942,12 @@ export class CountriesGameRoom extends Room {
             client.send(type, message);
         });
     }
+}
+
+function getSupportedAnswerValidationLanguage(language: unknown): SupportedLanguage {
+    if (isSupportedLanguage(language)) {
+        return language;
+    }
+
+    throw new Error("UNSUPPORTED_ANSWER_VALIDATION_LANGUAGE");
 }

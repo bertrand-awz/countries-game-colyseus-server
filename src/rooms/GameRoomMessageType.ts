@@ -25,6 +25,7 @@ export enum GameRoomMessageType {
     GAME_RESTARTED = "game_restarted",
 
     UPDATE_ROOM_SETTINGS = "update_room_settings",
+    UPDATE_ANSWER_VALIDATION_LANGUAGE = "update_answer_validation_language",
     UPDATE_ROOM_SETTINGS_REJECTED = "update_room_settings_rejected",
     ROOM_SETTINGS_UPDATED = "room_settings_updated",
 

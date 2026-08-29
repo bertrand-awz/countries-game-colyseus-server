@@ -1,4 +1,4 @@
-import { SupportedLanguage } from "#data/continents.js";
+import type { AnswerValidationLanguage } from "#game/CountryNameValidator.js";
 
 export type StartGameResult =
     | {
@@ -90,5 +90,5 @@ export type PassTurnResult =
 
 export type AnswerValidationRequest = {
     answer: string;
-    language: SupportedLanguage;
+    language: AnswerValidationLanguage;
 };

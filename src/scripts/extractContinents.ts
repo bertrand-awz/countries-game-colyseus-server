@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { continentsDetails } from "#data/continents.js";
+import { continentsDetails, type ContinentCode } from "#data/continents.js";
 
 const DEFAULT_COUNTRIES_PATH = "src/data/json/countries-answer-validation.json";
 const DEFAULT_OUTPUT_PATH = "src/data/json/continents.json";
@@ -28,11 +28,13 @@ async function main() {
 
     const data = await loadCountries(countriesPath);
 
-    const knownContinentIds = new Set(continentsDetails.map((continent) => continent.code));
-    const countsByContinent = new Map<string, number>();
+    const knownContinentIds = new Set<ContinentCode>(
+        continentsDetails.map((continent) => continent.code),
+    );
+    const countsByContinent = new Map<ContinentCode, number>();
 
     for (const country of data.countries) {
-        if (!knownContinentIds.has(country.continentID)) {
+        if (!isKnownContinentId(country.continentID, knownContinentIds)) {
             throw new Error(
                 `Unknown continent id ${country.continentID} for country ${country.id}`,
             );
@@ -55,6 +57,13 @@ async function main() {
 
     console.log(`Extracted ${output.length} continents from ${data.countries.length} countries.`);
     console.log(`Output: ${outputPath}`);
+}
+
+function isKnownContinentId(
+    continentId: string,
+    knownContinentIds: ReadonlySet<ContinentCode>,
+): continentId is ContinentCode {
+    return knownContinentIds.has(continentId as ContinentCode);
 }
 
 main().catch((error) => {
