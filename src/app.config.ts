@@ -1,9 +1,15 @@
-import {createEndpoint, createRouter, defineRoom, defineServer, monitor, playground,} from "colyseus";
+import {
+    createEndpoint,
+    createRouter,
+    defineRoom,
+    defineServer,
+    monitor,
+    playground,
+} from "colyseus";
 
-import {CountriesGameRoom} from "#rooms/CountriesGameRoom.js";
-import continentsJSON from "#data/json/continents.json" with {type: "json"};
-import {countriesMapService} from "#services/CountriesMapService.js";
-
+import { CountriesGameRoom } from "#rooms/CountriesGameRoom.js";
+import continentsJSON from "#data/json/continents.json" with { type: "json" };
+import { countriesMapService } from "#services/CountriesMapService.js";
 
 const server = defineServer({
     rooms: {

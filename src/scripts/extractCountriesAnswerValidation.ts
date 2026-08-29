@@ -3,6 +3,18 @@ import { mkdir, writeFile } from "node:fs/promises";
 const NATURAL_EARTH_URL =
     "https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_50m_admin_0_countries.geojson";
 
+const OUTPUT_PATH = "src/data/json/countries-answer-validation.json";
+
+/**
+ * Natural Earth classifies a few entities that we still want to make playable
+ * with TYPE values other than "Sovereign country" or "Country".
+ *
+ * We keep this list explicit instead of accepting every "Sovereignty",
+ * "Disputed" or "Indeterminate" feature, because those categories also contain
+ * entities that are outside the rules of this game.
+ */
+const EXTRA_PLAYABLE_COUNTRY_IDS = new Set(["CUB", "ISR", "KAZ", "KOS"]);
+
 type SupportedLanguage = "fr" | "en" | "de" | "es" | "ja";
 
 export type ContinentCode =
@@ -123,9 +135,19 @@ function isPlayableCountry(feature: NaturalEarthFeature): boolean {
         return false;
     }
 
-    // On exclut seulement Antarctica. On garde Seven seas (open ocean).
+    // Antarctica is intentionally not playable.
     if (props.CONTINENT === "Antarctica") {
         return false;
+    }
+
+    const id = getCountryId(props);
+
+    if (!id) {
+        return false;
+    }
+
+    if (EXTRA_PLAYABLE_COUNTRY_IDS.has(id)) {
+        return true;
     }
 
     return props.TYPE === "Sovereign country" || props.TYPE === "Country";
@@ -145,6 +167,26 @@ function countCountriesByContinent(
         },
         {} as Record<ContinentCode, number>,
     );
+}
+
+function validateCountries(countries: CountryAnswerValidation[]): void {
+    const ids = new Set<string>();
+
+    for (const country of countries) {
+        if (ids.has(country.id)) {
+            throw new Error(`Duplicate country id: ${country.id}`);
+        }
+
+        ids.add(country.id);
+    }
+
+    const missingExtraCountries = [...EXTRA_PLAYABLE_COUNTRY_IDS].filter((id) => !ids.has(id));
+
+    if (missingExtraCountries.length > 0) {
+        throw new Error(
+            `Required playable countries were not found in Natural Earth: ${missingExtraCountries.join(", ")}`,
+        );
+    }
 }
 
 async function main() {
@@ -201,17 +243,15 @@ async function main() {
         })
         .sort((a, b) => a.names.en.localeCompare(b.names.en));
 
+    validateCountries(countries);
+
     const output: CountriesAnswerValidationData = {
         countries,
     };
 
     await mkdir("src/data/json", { recursive: true });
 
-    await writeFile(
-        "src/data/json/countries-answer-validation.json",
-        JSON.stringify(output, null, 2),
-        "utf-8",
-    );
+    await writeFile(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, "utf-8");
 
     const countryCountByContinent = countCountriesByContinent(countries);
 
@@ -222,7 +262,7 @@ async function main() {
         console.log(`- ${continentID}: ${countryCount}`);
     }
 
-    console.log("Output: src/data/json/countries-answer-validation.json");
+    console.log(`Output: ${OUTPUT_PATH}`);
 }
 
 main().catch((error) => {

@@ -1,0 +1,793 @@
+{
+    "version": 1,
+    "capturedAt": "2026-08-29",
+    "source": "https://www.jetpunk.com/quizzes/how-many-countries-can-you-name/stats",
+    "quiz": "Countries of the World Quiz",
+    "countryCount": 196,
+    "countries": [
+        {
+            "name": "United States",
+            "recognitionRate": 0.96
+        },
+        {
+            "name": "Canada",
+            "recognitionRate": 0.95
+        },
+        {
+            "name": "Russia",
+            "recognitionRate": 0.94
+        },
+        {
+            "name": "China",
+            "recognitionRate": 0.93
+        },
+        {
+            "name": "France",
+            "recognitionRate": 0.93
+        },
+        {
+            "name": "Mexico",
+            "recognitionRate": 0.93
+        },
+        {
+            "name": "United Kingdom",
+            "recognitionRate": 0.93
+        },
+        {
+            "name": "Brazil",
+            "recognitionRate": 0.92
+        },
+        {
+            "name": "Australia",
+            "recognitionRate": 0.91
+        },
+        {
+            "name": "Italy",
+            "recognitionRate": 0.91
+        },
+        {
+            "name": "Germany",
+            "recognitionRate": 0.9
+        },
+        {
+            "name": "India",
+            "recognitionRate": 0.9
+        },
+        {
+            "name": "Japan",
+            "recognitionRate": 0.9
+        },
+        {
+            "name": "Spain",
+            "recognitionRate": 0.9
+        },
+        {
+            "name": "Argentina",
+            "recognitionRate": 0.86
+        },
+        {
+            "name": "Iceland",
+            "recognitionRate": 0.86
+        },
+        {
+            "name": "Egypt",
+            "recognitionRate": 0.85
+        },
+        {
+            "name": "Ireland",
+            "recognitionRate": 0.85
+        },
+        {
+            "name": "Portugal",
+            "recognitionRate": 0.85
+        },
+        {
+            "name": "Sweden",
+            "recognitionRate": 0.85
+        },
+        {
+            "name": "Chile",
+            "recognitionRate": 0.84
+        },
+        {
+            "name": "South Africa",
+            "recognitionRate": 0.84
+        },
+        {
+            "name": "South Korea",
+            "recognitionRate": 0.84
+        },
+        {
+            "name": "North Korea",
+            "recognitionRate": 0.83
+        },
+        {
+            "name": "Norway",
+            "recognitionRate": 0.83
+        },
+        {
+            "name": "Finland",
+            "recognitionRate": 0.82
+        },
+        {
+            "name": "Turkey",
+            "recognitionRate": 0.82
+        },
+        {
+            "name": "Greece",
+            "recognitionRate": 0.81
+        },
+        {
+            "name": "Poland",
+            "recognitionRate": 0.81
+        },
+        {
+            "name": "Denmark",
+            "recognitionRate": 0.8
+        },
+        {
+            "name": "Iran",
+            "recognitionRate": 0.8
+        },
+        {
+            "name": "New Zealand",
+            "recognitionRate": 0.79
+        },
+        {
+            "name": "Iraq",
+            "recognitionRate": 0.77
+        },
+        {
+            "name": "Ukraine",
+            "recognitionRate": 0.77
+        },
+        {
+            "name": "Madagascar",
+            "recognitionRate": 0.76
+        },
+        {
+            "name": "Switzerland",
+            "recognitionRate": 0.76
+        },
+        {
+            "name": "Cuba",
+            "recognitionRate": 0.75
+        },
+        {
+            "name": "Netherlands",
+            "recognitionRate": 0.75
+        },
+        {
+            "name": "Pakistan",
+            "recognitionRate": 0.75
+        },
+        {
+            "name": "Peru",
+            "recognitionRate": 0.75
+        },
+        {
+            "name": "Mongolia",
+            "recognitionRate": 0.74
+        },
+        {
+            "name": "Niger",
+            "recognitionRate": 0.74
+        },
+        {
+            "name": "Austria",
+            "recognitionRate": 0.73
+        },
+        {
+            "name": "Belgium",
+            "recognitionRate": 0.73
+        },
+        {
+            "name": "Colombia",
+            "recognitionRate": 0.73
+        },
+        {
+            "name": "Indonesia",
+            "recognitionRate": 0.72
+        },
+        {
+            "name": "Saudi Arabia",
+            "recognitionRate": 0.72
+        },
+        {
+            "name": "Morocco",
+            "recognitionRate": 0.71
+        },
+        {
+            "name": "Thailand",
+            "recognitionRate": 0.71
+        },
+        {
+            "name": "Afghanistan",
+            "recognitionRate": 0.69
+        },
+        {
+            "name": "Vietnam",
+            "recognitionRate": 0.69
+        },
+        {
+            "name": "Israel",
+            "recognitionRate": 0.68
+        },
+        {
+            "name": "Kazakhstan",
+            "recognitionRate": 0.67
+        },
+        {
+            "name": "Democratic Republic of the Congo",
+            "recognitionRate": 0.66
+        },
+        {
+            "name": "Uruguay",
+            "recognitionRate": 0.66
+        },
+        {
+            "name": "Nigeria",
+            "recognitionRate": 0.65
+        },
+        {
+            "name": "Panama",
+            "recognitionRate": 0.65
+        },
+        {
+            "name": "Romania",
+            "recognitionRate": 0.65
+        },
+        {
+            "name": "Venezuela",
+            "recognitionRate": 0.65
+        },
+        {
+            "name": "Bolivia",
+            "recognitionRate": 0.64
+        },
+        {
+            "name": "Hungary",
+            "recognitionRate": 0.64
+        },
+        {
+            "name": "Philippines",
+            "recognitionRate": 0.64
+        },
+        {
+            "name": "Algeria",
+            "recognitionRate": 0.63
+        },
+        {
+            "name": "Croatia",
+            "recognitionRate": 0.63
+        },
+        {
+            "name": "Republic of the Congo",
+            "recognitionRate": 0.63
+        },
+        {
+            "name": "Sudan",
+            "recognitionRate": 0.63
+        },
+        {
+            "name": "Paraguay",
+            "recognitionRate": 0.62
+        },
+        {
+            "name": "Czech Republic",
+            "recognitionRate": 0.61
+        },
+        {
+            "name": "Nepal",
+            "recognitionRate": 0.61
+        },
+        {
+            "name": "Estonia",
+            "recognitionRate": 0.6
+        },
+        {
+            "name": "Slovakia",
+            "recognitionRate": 0.6
+        },
+        {
+            "name": "United Arab Emirates",
+            "recognitionRate": 0.6
+        },
+        {
+            "name": "Yemen",
+            "recognitionRate": 0.6
+        },
+        {
+            "name": "Latvia",
+            "recognitionRate": 0.59
+        },
+        {
+            "name": "Albania",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Belarus",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Jamaica",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Libya",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Lithuania",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Oman",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Somalia",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Syria",
+            "recognitionRate": 0.58
+        },
+        {
+            "name": "Chad",
+            "recognitionRate": 0.57
+        },
+        {
+            "name": "Ecuador",
+            "recognitionRate": 0.57
+        },
+        {
+            "name": "Haiti",
+            "recognitionRate": 0.57
+        },
+        {
+            "name": "Bulgaria",
+            "recognitionRate": 0.56
+        },
+        {
+            "name": "Ethiopia",
+            "recognitionRate": 0.56
+        },
+        {
+            "name": "Kenya",
+            "recognitionRate": 0.56
+        },
+        {
+            "name": "Malaysia",
+            "recognitionRate": 0.56
+        },
+        {
+            "name": "Papua New Guinea",
+            "recognitionRate": 0.56
+        },
+        {
+            "name": "Sri Lanka",
+            "recognitionRate": 0.56
+        },
+        {
+            "name": "Dominica",
+            "recognitionRate": 0.55
+        },
+        {
+            "name": "Serbia",
+            "recognitionRate": 0.55
+        },
+        {
+            "name": "Jordan",
+            "recognitionRate": 0.54
+        },
+        {
+            "name": "Laos",
+            "recognitionRate": 0.54
+        },
+        {
+            "name": "Luxembourg",
+            "recognitionRate": 0.54
+        },
+        {
+            "name": "Slovenia",
+            "recognitionRate": 0.54
+        },
+        {
+            "name": "Taiwan",
+            "recognitionRate": 0.54
+        },
+        {
+            "name": "Bangladesh",
+            "recognitionRate": 0.53
+        },
+        {
+            "name": "Bosnia and Herzegovina",
+            "recognitionRate": 0.53
+        },
+        {
+            "name": "Cambodia",
+            "recognitionRate": 0.53
+        },
+        {
+            "name": "Uzbekistan",
+            "recognitionRate": 0.53
+        },
+        {
+            "name": "Tunisia",
+            "recognitionRate": 0.52
+        },
+        {
+            "name": "Costa Rica",
+            "recognitionRate": 0.51
+        },
+        {
+            "name": "Georgia",
+            "recognitionRate": 0.51
+        },
+        {
+            "name": "Zimbabwe",
+            "recognitionRate": 0.51
+        },
+        {
+            "name": "Cyprus",
+            "recognitionRate": 0.5
+        },
+        {
+            "name": "Dominican Republic",
+            "recognitionRate": 0.5
+        },
+        {
+            "name": "Honduras",
+            "recognitionRate": 0.5
+        },
+        {
+            "name": "Vatican City",
+            "recognitionRate": 0.5
+        },
+        {
+            "name": "Qatar",
+            "recognitionRate": 0.49
+        },
+        {
+            "name": "South Sudan",
+            "recognitionRate": 0.49
+        },
+        {
+            "name": "Ghana",
+            "recognitionRate": 0.48
+        },
+        {
+            "name": "Guatemala",
+            "recognitionRate": 0.48
+        },
+        {
+            "name": "Myanmar",
+            "recognitionRate": 0.48
+        },
+        {
+            "name": "North Macedonia",
+            "recognitionRate": 0.48
+        },
+        {
+            "name": "Mali",
+            "recognitionRate": 0.47
+        },
+        {
+            "name": "Turkmenistan",
+            "recognitionRate": 0.47
+        },
+        {
+            "name": "Armenia",
+            "recognitionRate": 0.46
+        },
+        {
+            "name": "Bahamas",
+            "recognitionRate": 0.46
+        },
+        {
+            "name": "Angola",
+            "recognitionRate": 0.45
+        },
+        {
+            "name": "Lebanon",
+            "recognitionRate": 0.45
+        },
+        {
+            "name": "Andorra",
+            "recognitionRate": 0.44
+        },
+        {
+            "name": "Malta",
+            "recognitionRate": 0.44
+        },
+        {
+            "name": "Moldova",
+            "recognitionRate": 0.44
+        },
+        {
+            "name": "Singapore",
+            "recognitionRate": 0.44
+        },
+        {
+            "name": "Azerbaijan",
+            "recognitionRate": 0.43
+        },
+        {
+            "name": "El Salvador",
+            "recognitionRate": 0.43
+        },
+        {
+            "name": "Nicaragua",
+            "recognitionRate": 0.43
+        },
+        {
+            "name": "Belize",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Fiji",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Guinea",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Kosovo",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Monaco",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Montenegro",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Zambia",
+            "recognitionRate": 0.42
+        },
+        {
+            "name": "Bhutan",
+            "recognitionRate": 0.41
+        },
+        {
+            "name": "Guyana",
+            "recognitionRate": 0.41
+        },
+        {
+            "name": "Ivory Coast",
+            "recognitionRate": 0.41
+        },
+        {
+            "name": "Tanzania",
+            "recognitionRate": 0.41
+        },
+        {
+            "name": "Uganda",
+            "recognitionRate": 0.41
+        },
+        {
+            "name": "Central African Republic",
+            "recognitionRate": 0.4
+        },
+        {
+            "name": "Botswana",
+            "recognitionRate": 0.39
+        },
+        {
+            "name": "Kuwait",
+            "recognitionRate": 0.39
+        },
+        {
+            "name": "Liechtenstein",
+            "recognitionRate": 0.39
+        },
+        {
+            "name": "Suriname",
+            "recognitionRate": 0.39
+        },
+        {
+            "name": "Namibia",
+            "recognitionRate": 0.38
+        },
+        {
+            "name": "Senegal",
+            "recognitionRate": 0.38
+        },
+        {
+            "name": "Cameroon",
+            "recognitionRate": 0.37
+        },
+        {
+            "name": "Kyrgyzstan",
+            "recognitionRate": 0.37
+        },
+        {
+            "name": "Mozambique",
+            "recognitionRate": 0.37
+        },
+        {
+            "name": "Tajikistan",
+            "recognitionRate": 0.37
+        },
+        {
+            "name": "Liberia",
+            "recognitionRate": 0.36
+        },
+        {
+            "name": "Rwanda",
+            "recognitionRate": 0.36
+        },
+        {
+            "name": "Togo",
+            "recognitionRate": 0.36
+        },
+        {
+            "name": "Lesotho",
+            "recognitionRate": 0.35
+        },
+        {
+            "name": "Maldives",
+            "recognitionRate": 0.35
+        },
+        {
+            "name": "San Marino",
+            "recognitionRate": 0.35
+        },
+        {
+            "name": "Eritrea",
+            "recognitionRate": 0.34
+        },
+        {
+            "name": "Barbados",
+            "recognitionRate": 0.32
+        },
+        {
+            "name": "Trinidad and Tobago",
+            "recognitionRate": 0.32
+        },
+        {
+            "name": "Bahrain",
+            "recognitionRate": 0.31
+        },
+        {
+            "name": "Eswatini",
+            "recognitionRate": 0.31
+        },
+        {
+            "name": "Mauritania",
+            "recognitionRate": 0.31
+        },
+        {
+            "name": "Benin",
+            "recognitionRate": 0.3
+        },
+        {
+            "name": "Djibouti",
+            "recognitionRate": 0.29
+        },
+        {
+            "name": "Gambia",
+            "recognitionRate": 0.28
+        },
+        {
+            "name": "Malawi",
+            "recognitionRate": 0.28
+        },
+        {
+            "name": "Mauritius",
+            "recognitionRate": 0.28
+        },
+        {
+            "name": "Gabon",
+            "recognitionRate": 0.27
+        },
+        {
+            "name": "Seychelles",
+            "recognitionRate": 0.27
+        },
+        {
+            "name": "Sierra Leone",
+            "recognitionRate": 0.27
+        },
+        {
+            "name": "Brunei",
+            "recognitionRate": 0.26
+        },
+        {
+            "name": "Burkina Faso",
+            "recognitionRate": 0.26
+        },
+        {
+            "name": "Cape Verde",
+            "recognitionRate": 0.26
+        },
+        {
+            "name": "Equatorial Guinea",
+            "recognitionRate": 0.26
+        },
+        {
+            "name": "Federated States of Micronesia",
+            "recognitionRate": 0.26
+        },
+        {
+            "name": "Saint Lucia",
+            "recognitionRate": 0.25
+        },
+        {
+            "name": "Samoa",
+            "recognitionRate": 0.25
+        },
+        {
+            "name": "Tonga",
+            "recognitionRate": 0.25
+        },
+        {
+            "name": "Burundi",
+            "recognitionRate": 0.24
+        },
+        {
+            "name": "East Timor",
+            "recognitionRate": 0.24
+        },
+        {
+            "name": "Solomon Islands",
+            "recognitionRate": 0.24
+        },
+        {
+            "name": "Antigua and Barbuda",
+            "recognitionRate": 0.23
+        },
+        {
+            "name": "Guinea-Bissau",
+            "recognitionRate": 0.23
+        },
+        {
+            "name": "Saint Kitts and Nevis",
+            "recognitionRate": 0.23
+        },
+        {
+            "name": "Marshall Islands",
+            "recognitionRate": 0.22
+        },
+        {
+            "name": "Tuvalu",
+            "recognitionRate": 0.22
+        },
+        {
+            "name": "Vanuatu",
+            "recognitionRate": 0.21
+        },
+        {
+            "name": "Grenada",
+            "recognitionRate": 0.2
+        },
+        {
+            "name": "Kiribati",
+            "recognitionRate": 0.2
+        },
+        {
+            "name": "Palau",
+            "recognitionRate": 0.2
+        },
+        {
+            "name": "Comoros",
+            "recognitionRate": 0.19
+        },
+        {
+            "name": "Saint Vincent and the Grenadines",
+            "recognitionRate": 0.19
+        },
+        {
+            "name": "São Tomé and Príncipe",
+            "recognitionRate": 0.18
+        },
+        {
+            "name": "Nauru",
+            "recognitionRate": 0.18
+        }
+    ]
+}

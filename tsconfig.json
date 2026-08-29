@@ -13,22 +13,11 @@
         "forceConsistentCasingInFileNames": true,
         "useDefineForClassFields": false,
         "paths": {
-            "#data/*": [
-                "./src/data/*"
-            ],
-            "#rooms/*": [
-                "./src/rooms/*"
-            ],
-            "#services/*": [
-                "./src/services/*"
-            ],
-            "#game/*": [
-                "./src/game/*"
-            ]
+            "#data/*": ["./src/data/*"],
+            "#rooms/*": ["./src/rooms/*"],
+            "#services/*": ["./src/services/*"],
+            "#game/*": ["./src/game/*"]
         }
     },
-    "include": [
-        "src",
-        "test"
-    ]
+    "include": ["src", "test"]
 }

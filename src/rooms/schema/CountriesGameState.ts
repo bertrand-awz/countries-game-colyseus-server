@@ -108,7 +108,9 @@ export class CountriesGameState extends Schema {
     }
 
     removeWaitingPlayer(playerSessionId: string) {
-        const playerIndex = this.waitingPlayers.findIndex((player) => player.id === playerSessionId);
+        const playerIndex = this.waitingPlayers.findIndex(
+            (player) => player.id === playerSessionId,
+        );
 
         if (playerIndex >= 0) {
             this.waitingPlayers.splice(playerIndex, 1);

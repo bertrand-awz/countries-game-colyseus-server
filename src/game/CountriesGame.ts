@@ -15,6 +15,7 @@ import {
     StartGameResult,
     SubmitAnswerResult,
 } from "#game/types.js";
+import { ScoreProvider } from "./ScoreProvider.js";
 
 class SubmitAnswerFailureReason {}
 
@@ -29,6 +30,7 @@ export class CountriesGame {
     constructor(
         private readonly state: CountriesGameState,
         private readonly answerValidator: CountryNameValidator,
+        private readonly scoreProvider: ScoreProvider,
         private readonly totalCountries: number,
     ) {
         this.turnManager = new TurnManager();
@@ -221,7 +223,7 @@ export class CountriesGame {
             );
         }
 
-        const pointsAwarded = 1;
+        const pointsAwarded = this.scoreProvider.getPoints(validation.countryId);
 
         this.addPointToPlayer(sessionId, pointsAwarded);
         this.markCountryAsFound(validation.countryId);

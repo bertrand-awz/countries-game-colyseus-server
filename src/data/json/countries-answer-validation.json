@@ -505,6 +505,18 @@
             "acceptedAnswers": ["croatie", "croatia", "kroatien", "croacia", "クロアチア"]
         },
         {
+            "id": "CUB",
+            "continentID": "NORTH_AMERICA",
+            "names": {
+                "fr": "Cuba",
+                "en": "Cuba",
+                "de": "Kuba",
+                "es": "Cuba",
+                "ja": "キューバ"
+            },
+            "acceptedAnswers": ["cuba", "kuba", "キュハ"]
+        },
+        {
             "id": "CUW",
             "continentID": "NORTH_AMERICA",
             "names": {
@@ -1063,6 +1075,18 @@
             "acceptedAnswers": ["ile de man", "isle of man", "isla de man", "マン島"]
         },
         {
+            "id": "ISR",
+            "continentID": "ASIA",
+            "names": {
+                "fr": "Israël",
+                "en": "Israel",
+                "de": "Israel",
+                "es": "Israel",
+                "ja": "イスラエル"
+            },
+            "acceptedAnswers": ["israel", "イスラエル"]
+        },
+        {
             "id": "ITA",
             "continentID": "EUROPE",
             "names": {
@@ -1141,6 +1165,18 @@
             "acceptedAnswers": ["jordanie", "jordan", "jordanien", "jordania", "ヨルタン"]
         },
         {
+            "id": "KAZ",
+            "continentID": "ASIA",
+            "names": {
+                "fr": "Kazakhstan",
+                "en": "Kazakhstan",
+                "de": "Kasachstan",
+                "es": "Kazajistán",
+                "ja": "カザフスタン"
+            },
+            "acceptedAnswers": ["kazakhstan", "kasachstan", "kazajistan", "カサフスタン"]
+        },
+        {
             "id": "KEN",
             "continentID": "AFRICA",
             "names": {
@@ -1163,6 +1199,18 @@
                 "ja": "キリバス"
             },
             "acceptedAnswers": ["kiribati", "キリハス"]
+        },
+        {
+            "id": "KOS",
+            "continentID": "EUROPE",
+            "names": {
+                "fr": "Kosovo",
+                "en": "Kosovo",
+                "de": "Kosovo",
+                "es": "Kosovo",
+                "ja": "コソボ共和国"
+            },
+            "acceptedAnswers": ["kosovo", "コソホ共和国"]
         },
         {
             "id": "KWT",

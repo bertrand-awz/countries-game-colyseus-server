@@ -4,6 +4,7 @@ import { CountriesGameState, GameStatus } from "#rooms/schema/CountriesGameState
 import { CountriesGame } from "#game/CountriesGame.js";
 import { GameRoomMessageType } from "#rooms/GameRoomMessageType.js";
 import { CountryNameValidator } from "#game/CountryNameValidator.js";
+
 import {
     GameRoomConstraints,
     isTurnDurationInSecondsAllowed,
@@ -11,8 +12,10 @@ import {
 } from "#game/GameRoomConstraints.js";
 
 import countriesAnswerValidation from "#data/json/countries-answer-validation.json" with { type: "json" };
+import countriesScores from "#data/json/country-scores.json" with { type: "json" };
 import { SupportedLanguage } from "#data/continents.js";
 import { AnswerValidationRequest, SubmitAnswerResult } from "#game/types.js";
+import { JSONScoreProvider } from "#game/ScoreProvider.js";
 
 type JoinOptions = {
     username?: string;
@@ -103,10 +106,12 @@ export class CountriesGameRoom extends Room {
         this.maxClients = maxPlayersAllowed;
 
         const countryNameValidator = new CountryNameValidator(countriesAnswerValidation.countries);
+        const countryJSONScoreProvider = new JSONScoreProvider(countriesScores);
 
         this.game = new CountriesGame(
             this.state,
             countryNameValidator,
+            countryJSONScoreProvider,
             countriesAnswerValidation.countries.length,
         );
 
@@ -573,7 +578,9 @@ export class CountriesGameRoom extends Room {
         });
     }
 
-    private isCountryFoundSubmissionResult(result: unknown): result is CountryFoundSubmissionResult {
+    private isCountryFoundSubmissionResult(
+        result: unknown,
+    ): result is CountryFoundSubmissionResult {
         const submissionResult = result as Partial<CountryFoundSubmissionResult> | null;
 
         return (
