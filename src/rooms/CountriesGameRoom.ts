@@ -192,7 +192,7 @@ export class CountriesGameRoom extends Room {
     private addActivePlayer(client: Client, username: string): void {
         this.game.addPlayer(client.sessionId, username);
 
-        this.broadcast(GameRoomMessageType.PLAYER_JOIN_ROOM, {
+        this.sendToActivePlayers(GameRoomMessageType.PLAYER_JOIN_ROOM, {
             playerSessionId: client.sessionId,
             username,
             numberOfPlayers: this.state.numberOfPlayers,
@@ -214,7 +214,7 @@ export class CountriesGameRoom extends Room {
 
         this.game.removePlayer(client.sessionId);
 
-        this.broadcast(GameRoomMessageType.PLAYER_LEFT_ROOM, {
+        this.sendToActivePlayers(GameRoomMessageType.PLAYER_LEFT_ROOM, {
             playerSessionId: client.sessionId,
             username,
             numberOfPlayers: this.state.numberOfPlayers,
@@ -285,7 +285,7 @@ export class CountriesGameRoom extends Room {
         this.scheduleGameEnd();
         this.scheduleTurnTimeout();
 
-        this.broadcast(GameRoomMessageType.GAME_STARTED, {
+        this.sendToActivePlayers(GameRoomMessageType.GAME_STARTED, {
             startAt: result.startAt,
             endAt: result.endAt,
             durationInSeconds: this.state.durationInSeconds,
@@ -306,7 +306,7 @@ export class CountriesGameRoom extends Room {
         this.clearGameEndTimeout();
         this.pauseTurnTimeout();
 
-        this.broadcast(GameRoomMessageType.GAME_PAUSED, {
+        this.sendToActivePlayers(GameRoomMessageType.GAME_PAUSED, {
             pausedAt: result.pausedAt,
             pausedBy,
         });
@@ -324,7 +324,7 @@ export class CountriesGameRoom extends Room {
         this.resumeTurnTimeout();
         this.broadcastTurnChanged();
 
-        this.broadcast(GameRoomMessageType.GAME_RESUMED, {
+        this.sendToActivePlayers(GameRoomMessageType.GAME_RESUMED, {
             resumedAt: result.resumedAt,
             endAt: result.endAt,
             resumedBy,
@@ -343,7 +343,7 @@ export class CountriesGameRoom extends Room {
         this.clearTurnTimeout();
         this.clearGameActionVoteRequests();
 
-        this.broadcast(GameRoomMessageType.GAME_RESTARTED, {
+        this.sendToActivePlayers(GameRoomMessageType.GAME_RESTARTED, {
             restartedAt: result.restartedAt,
             currentPlayerSessionId: result.currentPlayerSessionId,
             restartedBy,
@@ -365,7 +365,7 @@ export class CountriesGameRoom extends Room {
 
         client.send(GameRoomMessageType.SUBMIT_COUNTRY_NAME_RESULT, result);
 
-        this.broadcast(GameRoomMessageType.COUNTRY_SUBMITTED, {
+        this.sendToActivePlayers(GameRoomMessageType.COUNTRY_SUBMITTED, {
             result,
             currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
         });
@@ -429,7 +429,7 @@ export class CountriesGameRoom extends Room {
 
         client.send(GameRoomMessageType.PASS_TURN_RESULT, result);
 
-        this.broadcast(GameRoomMessageType.TURN_PASSED, {
+        this.sendToActivePlayers(GameRoomMessageType.TURN_PASSED, {
             result,
             currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
         });
@@ -450,7 +450,7 @@ export class CountriesGameRoom extends Room {
         const previousPlayerSessionId = this.game.getCurrentPlayerSessionId();
         const result = this.game.passTurn(previousPlayerSessionId);
 
-        this.broadcast(GameRoomMessageType.TURN_PASSED, {
+        this.sendToActivePlayers(GameRoomMessageType.TURN_PASSED, {
             result,
             currentPlayerSessionId: this.game.getCurrentPlayerSessionId(),
             reason: "TURN_TIMEOUT",
@@ -534,7 +534,7 @@ export class CountriesGameRoom extends Room {
             return;
         }
 
-        this.broadcast(GameRoomMessageType.TURN_CHANGED, {
+        this.sendToActivePlayers(GameRoomMessageType.TURN_CHANGED, {
             player,
             currentPlayerSessionId,
             turnDurationInSeconds: Math.ceil(this.currentTurnDurationMilliseconds / 1000),
@@ -566,7 +566,7 @@ export class CountriesGameRoom extends Room {
             return;
         }
 
-        this.broadcast(GameRoomMessageType.COUNTRY_FOUND, {
+        this.sendToActivePlayers(GameRoomMessageType.COUNTRY_FOUND, {
             countryId: result.countryId,
             player,
             pointsAwarded: result.pointsAwarded,
@@ -602,7 +602,7 @@ export class CountriesGameRoom extends Room {
 
         this.game.finish();
 
-        this.broadcast(GameRoomMessageType.GAME_FINISHED, {
+        this.sendToActivePlayers(GameRoomMessageType.GAME_FINISHED, {
             reason,
             endedBy,
             finishedAt: Date.now(),
@@ -610,6 +610,14 @@ export class CountriesGameRoom extends Room {
     }
 
     private requestVotedGameAction(client: Client, action: VotedGameAction): void {
+        if (!this.isActivePlayer(client.sessionId)) {
+            client.send(votedGameActionMessages[action].rejected, {
+                accepted: false,
+                reason: "PLAYER_NOT_ACTIVE",
+            });
+            return;
+        }
+
         const requestFailureReason = this.getVotedGameActionRequestFailureReason(action);
 
         if (requestFailureReason) {
@@ -628,7 +636,7 @@ export class CountriesGameRoom extends Room {
             return;
         }
 
-        const requiredVoterSessionIds = this.clients
+        const requiredVoterSessionIds = this.getActiveClients()
             .map((roomClient) => roomClient.sessionId)
             .filter((sessionId) => sessionId !== client.sessionId);
 
@@ -655,7 +663,7 @@ export class CountriesGameRoom extends Room {
 
         this.gameActionVoteRequests.set(request.id, request);
 
-        this.broadcast(votedGameActionMessages[action].requested, {
+        this.sendToActivePlayers(votedGameActionMessages[action].requested, {
             requestId: request.id,
             requestedByPlayerSessionId: request.requestedByPlayerSessionId,
             requestedByUsername: request.requestedByUsername,
@@ -689,6 +697,11 @@ export class CountriesGameRoom extends Room {
         }
 
         if (!message.accepted) {
+            if (action === "restart") {
+                client.leave(CloseCode.NORMAL_CLOSURE);
+                return;
+            }
+
             this.rejectGameActionVoteRequest(request.id, "VOTE_DECLINED", client.sessionId);
             return;
         }
@@ -734,7 +747,7 @@ export class CountriesGameRoom extends Room {
 
         this.removeGameActionVoteRequest(requestId);
 
-        this.broadcast(votedGameActionMessages[request.action].rejected, {
+        this.sendToActivePlayers(votedGameActionMessages[request.action].rejected, {
             accepted: false,
             reason,
             requestId,
@@ -828,5 +841,19 @@ export class CountriesGameRoom extends Room {
 
         clearTimeout(this.turnTimeout);
         this.turnTimeout = null;
+    }
+
+    private getActiveClients(): Client[] {
+        return this.clients.filter((client) => this.isActivePlayer(client.sessionId));
+    }
+
+    private isActivePlayer(sessionId: string): boolean {
+        return this.state.getPlayer(sessionId) !== undefined;
+    }
+
+    private sendToActivePlayers(type: GameRoomMessageType, message: unknown): void {
+        this.getActiveClients().forEach((client) => {
+            client.send(type, message);
+        });
     }
 }
