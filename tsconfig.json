@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "resolveJsonModule": true,
-        "outDir": "build",
         "target": "ESNext",
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
@@ -13,13 +12,23 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "useDefineForClassFields": false,
-        "baseUrl": ".",
         "paths": {
-            "#data/*": ["src/data/*"],
-            "#rooms/*": ["src/rooms/*"],
-            "#services/*": ["src/services/*"],
-            "#game/*": ["src/game/*"]
+            "#data/*": [
+                "./src/data/*"
+            ],
+            "#rooms/*": [
+                "./src/rooms/*"
+            ],
+            "#services/*": [
+                "./src/services/*"
+            ],
+            "#game/*": [
+                "./src/game/*"
+            ]
         }
     },
-    "include": ["src", "test"]
+    "include": [
+        "src",
+        "test"
+    ]
 }

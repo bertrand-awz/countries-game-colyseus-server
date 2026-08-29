@@ -9,10 +9,10 @@
         "node": ">= 20.9.0"
     },
     "imports": {
-        "#rooms": "./dist/rooms/*",
-        "#services": "./dist/services/*",
-        "#data": "./dist/data/*",
-        "#game": "./dist/game/*"
+        "#rooms/*": "./build/rooms/*",
+        "#services/*": "./build/services/*",
+        "#data/*": "./build/data/*",
+        "#game/*": "./build/game/*"
     },
     "scripts": {
         "extract:answers": "tsx src/scripts/extractCountriesAnswerValidation.ts",
