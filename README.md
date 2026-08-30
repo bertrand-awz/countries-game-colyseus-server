@@ -6,7 +6,16 @@ This project has been created using [⚔️ `create-colyseus-app`](https://githu
 
 ## :crossed_swords: Usage
 
+Development:
+
 ```
+npm run dev
+```
+
+Production:
+
+```
+npm run build
 npm start
 ```
 
@@ -18,7 +27,8 @@ npm start
 - `loadtest/example.ts`: scriptable client for the loadtest tool (see `npm run loadtest`)
 - `package.json`:
     - `scripts`:
-        - `npm start`: runs `ts-node-dev index.ts`
+        - `npm run dev`: runs the TypeScript server in watch mode
+        - `npm start`: runs the compiled production server from `build/index.js`
         - `npm test`: runs mocha test suite
         - `npm run loadtest`: runs the [`@colyseus/loadtest`](https://github.com/colyseus/colyseus-loadtest/) tool for testing the connection, using the `loadtest/example.ts` script.
 - `tsconfig.json`: TypeScript configuration file
