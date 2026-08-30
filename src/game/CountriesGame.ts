@@ -33,6 +33,7 @@ export class CountriesGame {
         private readonly answerValidator: CountryNameValidator,
         private readonly scoreProvider: ScoreProvider,
         private readonly totalCountries: number,
+        private readonly randomNumberGenerator: () => number = Math.random,
     ) {
         this.turnManager = new TurnManager();
     }
@@ -49,7 +50,7 @@ export class CountriesGame {
                 sessionId,
                 username,
                 answerValidationLanguage,
-                this.getNextAvailablePlayerColorSlot(),
+                this.getRandomAvailablePlayerColorSlot(),
             );
             this.state.addPlayer(sessionId, player);
         }
@@ -390,10 +391,15 @@ export class CountriesGame {
         return this.foundCountries.has(countryId);
     }
 
-    private getNextAvailablePlayerColorSlot(): number {
+    private getRandomAvailablePlayerColorSlot(): number {
         const usedSlots = new Set(this.state.players.map((player) => player.colorSlot));
+        const availableSlots = PLAYER_COLOR_SLOTS.filter((slot) => !usedSlots.has(slot));
 
-        return PLAYER_COLOR_SLOTS.find((slot) => !usedSlots.has(slot)) ?? 0;
+        if (availableSlots.length === 0) {
+            return 0;
+        }
+
+        return availableSlots[Math.floor(this.randomNumberGenerator() * availableSlots.length)];
     }
 
     private incrementContinentProgress(continentId: string): void {
