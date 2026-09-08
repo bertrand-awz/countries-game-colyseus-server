@@ -1,5 +1,7 @@
 <div align="center">
 
+[English](README.md) | [Français](README.fr.md)
+
 [![Made with TypeScript][typescript-shield]][typescript-url]
 [![Runs on Node.js][nodejs-shield]][nodejs-url]
 [![Powered by Colyseus][colyseus-shield]][colyseus-url]
@@ -10,118 +12,116 @@
 
 <div align="center">
   <a href="./">
-    <img src="assets/img/countries-game.png" alt="Logo Countries Game" width="140" height="140">
+    <img src="assets/img/countries-game.png" alt="Countries Game logo" width="140" height="140">
   </a>
 
   <h1 align="center">
-    Countries Game — Serveur de jeu
+    Countries Game — Game Server
   </h1>
 </div>
 
-Countries Game est un jeu de géographie multijoueur dans lequel les joueurs nomment des pays à tour de
-rôle avant la fin du temps imparti. Ce serveur, développé en TypeScript avec Colyseus, gère les salles,
-la validation des réponses, les scores et la synchronisation des parties en temps réel.
+Countries Game is a multiplayer geography game where players take turns naming countries before time
+runs out. Built with TypeScript and Colyseus, this server manages rooms, answer validation, scores and
+real-time game synchronization.
 
-Il fournit également les données géographiques utilisées par
-[l'application web](https://github.com/bertrand-awz/countries-game-webapp). Les réponses peuvent être
-validées en français, en anglais, en allemand, en espagnol ou en japonais, selon les paramètres de la
-partie.
+It also provides the geographic data used by the
+[web application](https://github.com/bertrand-awz/countries-game-webapp). Answers can be validated in
+French, English, German, Spanish or Japanese, depending on the game settings.
 
-## Prérequis
+## Prerequisites
 
-Pour exécuter le serveur ou contribuer au projet, installez Node.js 22, version 22.13.0 ou ultérieure
-dans cette branche, avec npm.
+To run the server or contribute to the project, install Node.js 22 (version 22.13.0 or later in the
+22.x series) with npm.
 
-Docker est optionnel et permet de construire et démarrer le serveur à partir du `Dockerfile`.
+Docker is optional and lets you build and run the server using the `Dockerfile`.
 
-Les parties sont conservées en mémoire et les données géographiques sont fournies dans
-`src/data/json/`. Aucune base de données n'est nécessaire au démarrage.
+Games are stored in memory, and geographic data is included in `src/data/json/`. No database is
+required to start the server.
 
 ---
 
-## Commandes à connaître
+## Useful commands
 
-Les commandes suivantes s'exécutent à la racine du projet serveur.
+Run the following commands from the server project's root directory.
 
-### 1. Installer les dépendances
+### 1. Install dependencies
 
 ```bash
 npm ci
 ```
 
-### 2. Compiler le projet
+### 2. Build the project
 
 ```bash
 npm run build
 ```
 
-Cette commande nettoie le dossier `build/`, puis y compile le code TypeScript et y copie les données
-JSON importées par le serveur.
+This command cleans the `build/` directory, compiles the TypeScript code into it and copies the JSON
+data imported by the server.
 
-### 3. Démarrer le serveur
+### 3. Start the server
 
-Pour développer avec un redémarrage automatique lors des modifications :
+To develop with automatic restarts when files change:
 
 ```bash
 npm run dev
 ```
 
-Pour exécuter la version compilée en mode production :
+To run the compiled application in production mode:
 
 ```bash
 npm run build
 NODE_ENV=production npm start
 ```
 
-Le serveur écoute par défaut sur `http://localhost:2567`. La variable d'environnement `PORT` permet
-de choisir un autre port :
+The server listens on `http://localhost:2567` by default. Use the `PORT` environment variable to
+choose a different port:
 
 ```bash
 PORT=3000 npm run dev
 ```
 
-Pour vérifier que le serveur répond, ouvrez `http://localhost:2567/api/heartbeat` dans un navigateur.
-La salle Colyseus enregistrée porte le nom `countries_game`.
+To check that the server is responding, open `http://localhost:2567/api/heartbeat` in a browser.
+The registered Colyseus room is named `countries_game`.
 
-| Route HTTP                | Description                        |
-| ------------------------- | ---------------------------------- |
-| `GET /api/heartbeat`      | Vérification du fonctionnement.    |
-| `GET /api/map/continents` | Liste des continents.              |
-| `GET /api/map/countries`  | Géométries des pays pour la carte. |
+| HTTP endpoint             | Description                     |
+| ------------------------- | ------------------------------- |
+| `GET /api/heartbeat`      | Server health check.            |
+| `GET /api/map/continents` | List of continents.             |
+| `GET /api/map/countries`  | Country geometries for the map. |
 
-Pour jouer, démarrez également l'application web avec
-`VITE_GAME_SERVER_URL=http://localhost:2567`.
+To play, also start the web application with `VITE_GAME_SERVER_URL=http://localhost:2567`.
 
-### 4. Lancer les tests unitaires
+### 4. Run unit tests
 
 ```bash
 npm test
 ```
 
-Les tests Mocha se trouvent dans `test/` et couvrent notamment la validation des noms de pays et les
-règles du jeu.
+The Mocha tests are located in `test/` and cover country name validation and game rules, among other
+behaviors.
 
-### 5. Vérifier et appliquer le style
+### 5. Check and apply code style
 
-Le projet utilise ESLint pour l'analyse du code et Prettier pour le formatage.
+The project uses ESLint for code analysis and Prettier for formatting.
 
-Pour vérifier le code et son formatage :
+To check the code and its formatting:
 
 ```bash
 npm run lint
 npm run format:check
 ```
 
-Pour appliquer les corrections automatiques et le formatage :
+To apply automatic fixes and formatting:
 
 ```bash
 npm run lint:fix
 npm run format
 ```
 
-### 6. Démarrer avec Docker
+### 6. Run with Docker
 
-Depuis la racine du projet serveur, construisez l'image et démarrez le conteneur en arrière-plan :
+From the server project's root directory, build the image and start the container in the background:
 
 ```bash
 docker build -t countries-game-server .
@@ -129,22 +129,23 @@ docker run --rm -d --name countries-game-server \
   -p 127.0.0.1:2567:2567 countries-game-server
 ```
 
-Le `Dockerfile` installe les dépendances, compile le projet et démarre le serveur en mode production.
-Le serveur est accessible sur la machine hôte à l'adresse `http://localhost:2567`. Ouvrez
-`http://localhost:2567/api/heartbeat` pour vérifier qu'il répond.
+The `Dockerfile` installs dependencies, builds the project and starts the server in production mode.
+The server is available on the host machine at `http://localhost:2567`. Open
+`http://localhost:2567/api/heartbeat` to check that it is responding.
 
-Pour arrêter le conteneur :
+To stop the container:
 
 ```bash
 docker stop countries-game-server
 ```
 
-L'option `--rm` supprime le conteneur à son arrêt. Pour le relancer, réexécutez la commande `docker run`.
+The `--rm` option removes the container when it stops. To start it again, rerun the `docker run`
+command.
 
-### 7. Régénérer les données du jeu
+### 7. Regenerate game data
 
-Les fichiers JSON sont déjà inclus dans le projet. Pour les mettre à jour, exécutez les scripts
-suivants dans cet ordre :
+The JSON files are already included in the project. To update them, run the following scripts in this
+order:
 
 ```bash
 npm run extract:answers
@@ -153,35 +154,37 @@ npm run extract:public-map
 npm run generate:country-scores
 ```
 
-Ils reconstruisent les données de validation, les continents, la carte et les scores dans
-`src/data/json/`. Certains scripts téléchargent des données externes et nécessitent une connexion
-Internet. Recompilez ensuite le serveur pour utiliser les nouvelles données en production.
+They regenerate validation data, continents, map data and scores in `src/data/json/`. Some scripts
+download external data and require an Internet connection. Rebuild the server afterward to use the
+updated data in production.
 
 ---
 
-## Structure du projet
+## Project structure
 
-| Emplacement         | Rôle                                              |
-| ------------------- | ------------------------------------------------- |
-| `src/index.ts`      | Point d'entrée du serveur.                        |
-| `src/app.config.ts` | Enregistrement de la salle et des routes HTTP.    |
-| `src/rooms/`        | Salles Colyseus, messages et états synchronisés.  |
-| `src/game/`         | Règles du jeu, tours, validation et scores.       |
-| `src/services/`     | Accès aux données géographiques et de validation. |
-| `src/data/`         | Données des pays, des continents et des scores.   |
-| `src/scripts/`      | Extraction et génération des données.             |
-| `test/`             | Tests unitaires.                                  |
+| Location            | Purpose                                          |
+| ------------------- | ------------------------------------------------ |
+| `src/index.ts`      | Server entry point.                              |
+| `src/app.config.ts` | Room and HTTP route registration.                |
+| `src/rooms/`        | Colyseus rooms, messages and synchronized state. |
+| `src/game/`         | Game rules, turns, validation and scoring.       |
+| `src/services/`     | Access to geographic and validation data.        |
+| `src/data/`         | Country, continent and scoring data.             |
+| `src/scripts/`      | Data extraction and generation.                  |
+| `test/`             | Unit tests.                                      |
 
 ---
 
-## Comment contribuer au projet
+## Contributing
 
-Après vos modifications, lancez les tests, les vérifications de style et la compilation avec les
-commandes ci-dessus. Si vous modifiez les messages Colyseus, les états synchronisés ou les routes HTTP,
-vérifiez également leur utilisation dans l'application web.
+After making changes, run the tests, style checks and build using the commands above. If you change
+Colyseus messages, synchronized state or HTTP routes, also check how they are used by the web
+application.
+
+Keep the English and French README files in sync when updating the documentation.
 
 <!-- BADGES LINKS -->
-<!-- Symbole Colyseus : https://github.com/colyseus/colyseus/blob/master/media/logo.svg -->
+<!-- Colyseus symbol: https://github.com/colyseus/colyseus/blob/master/media/logo.svg -->
 
 [typescript-shield]: https://img.shields.io/badge/Made%20with-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=3178C6
 [typescript-url]: https://www.typescriptlang.org/
